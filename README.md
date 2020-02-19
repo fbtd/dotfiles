@@ -2,7 +2,7 @@
 Configuration for my linux/osx workstation
 
 ## TODO
-* vim: cleanup and copy form old repo
 * bash: fix alias ff
+* tmux: alias tt, attach-session /detach others
 * installer: everything
 * decide what to do with old scripts
