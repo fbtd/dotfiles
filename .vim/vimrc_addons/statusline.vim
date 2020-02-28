@@ -17,7 +17,8 @@ endfunction
 
 function! s:Echobar(original_statusline)
     if &statusline =~ '^[-#]'
-        execute "setlocal statusline=" . escape(a:original_statusline, ' \')
+        " TODO use variable "original_statusline"
+        setlocal statusline=%f\ %#Todo#%m%*\ [%{strlen(&fenc)?(&fenc.','):''}%{&ff}]%h%r%=c0x%B\ %c,%l/%L\ %{Hbar()}\ a%{argidx()+1}\ b%{bufnr(\"%\")}\ w%{winnr()}\ t%{tabpagenr()}\ %p%%
         return
     endif
 
