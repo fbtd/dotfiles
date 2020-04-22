@@ -141,7 +141,7 @@ inoremap £ <C-X><C-]>
 "" plugin related "
 """""""""""""""""""
 
-noremap <Leader>n :NERDTreeToggle<Esc>
+"noremap <Leader>n :NERDTreeToggle<Esc>
 
 "imap <C-J> <Plug>snipMateNextOrTrigger
 "smap <C-J> <Plug>snipMateNextOrTrigger
