@@ -5,3 +5,4 @@ Configuration for my linux/osx workstation
 * bash: fix alias ff
 * installer: everything
 * decide what to do with old scripts
+* vim: surround

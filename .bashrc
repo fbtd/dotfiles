@@ -81,7 +81,6 @@ alias ll='ls -lah'
 alias la='ls -A'
 alias l='ls -CF'
 alias ..='cd ..'
-# alias ,,='echo -e "### ### ### ### ###\n### ### ### ### ###\n### ### ### ### ###"'
 alias hgrep='history | grep'
 alias dfc='df -h | cowsay -bn'
 alias mm='~/scripts/manmaker.sh'
@@ -104,6 +103,7 @@ function ,, () {
 function wc4 () {
     dc -e "4 $(wc -c $1 | cut -d' ' -f1) * p"
 }
+function f () { find . -not -path '*/.git/*' ; }
 
 export MANWIDTH=$(($(tput cols) - 3))
 
