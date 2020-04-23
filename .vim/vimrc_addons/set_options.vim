@@ -45,3 +45,7 @@ set nowrapscan              " no file wrap during search
 set grepprg=grep\ -rn\ '$*'\ .\ /dev/null "use gre as recursive search from .
 set modeline                " allow modeline ( /* vim: set sw=2: */ )
 set notimeout
+set path=.,,*,**
+
+let g:netrw_banner=0        " no banner
+let g:netrw_liststyle=3     " tree view
