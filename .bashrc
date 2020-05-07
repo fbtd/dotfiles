@@ -85,9 +85,9 @@ alias td='tree -Cd'
 alias ..='cd ..'
 alias hgrep='history | grep'
 alias dfc='df -h | cowsay -bn'
-alias mm='~/scripts/manmaker.sh'
+#alias mm='~/scripts/manmaker.sh'
 alias tt='tmux -2 new-session -A -s wrk'
-alias ff='fc 0 -200'
+#alias ff='fc 0 -200'
 alias pd='pushd'
 alias pd2='pushd +2'
 alias pd3='pushd +3'
@@ -97,6 +97,19 @@ alias pd5='pushd +5'
 # functions: TODO put in different file
 function mkcd () { mkdir -p $1 && cd $1 ; }
 function ,, () {
+echo ""
+echo "   ██▓ ███▄    █ ▄▄▄█████▓▓█████  ██▀███   ███▄ ▄███▓ ██▓  ██████   ██████  ██▓ ▒█████   ███▄    █ ";
+echo "  ▓██▒ ██ ▀█   █ ▓  ██▒ ▓▒▓█   ▀ ▓██ ▒ ██▒▓██▒▀█▀ ██▒▓██▒▒██    ▒ ▒██    ▒ ▓██▒▒██▒  ██▒ ██ ▀█   █ ";
+echo "  ▒██▒▓██  ▀█ ██▒▒ ▓██░ ▒░▒███   ▓██ ░▄█ ▒▓██    ▓██░▒██▒░ ▓██▄   ░ ▓██▄   ▒██▒▒██░  ██▒▓██  ▀█ ██▒";
+echo "  ░██░▓██▒  ▐▌██▒░ ▓██▓ ░ ▒▓█  ▄ ▒██▀▀█▄  ▒██    ▒██ ░██░  ▒   ██▒  ▒   ██▒░██░▒██   ██░▓██▒  ▐▌██▒";
+echo "  ░██░▒██░   ▓██░  ▒██▒ ░ ░▒████▒░██▓ ▒██▒▒██▒   ░██▒░██░▒██████▒▒▒██████▒▒░██░░ ████▓▒░▒██░   ▓██░";
+echo "  ░▓  ░ ▒░   ▒ ▒   ▒ ░░   ░░ ▒░ ░░ ▒▓ ░▒▓░░ ▒░   ░  ░░▓  ▒ ▒▓▒ ▒ ░▒ ▒▓▒ ▒ ░░▓  ░ ▒░▒░▒░ ░ ▒░   ▒ ▒ ";
+echo "   ▒ ░░ ░░   ░ ▒░    ░     ░ ░  ░  ░▒ ░ ▒░░  ░      ░ ▒ ░░ ░▒  ░ ░░ ░▒  ░ ░ ▒ ░  ░ ▒ ▒░ ░ ░░   ░ ▒░";
+echo "   ▒ ░   ░   ░ ░   ░         ░     ░░   ░ ░      ░    ▒ ░░  ░  ░  ░  ░  ░   ▒ ░░ ░ ░ ▒     ░   ░ ░ ";
+echo "   ░           ░             ░  ░   ░            ░    ░        ░        ░   ░      ░ ░           ░ ";
+echo "                                                                                                   ";
+}
+function , () {
     for i in $(seq 1 $(tput cols)) ; do
         echo -n "#"
     done
