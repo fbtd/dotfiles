@@ -120,7 +120,7 @@ function wc4 () {
 }
 function f () { find . -not -path '*/.git/*' ; }
 
-export MANWIDTH=$(($(tput cols) - 3))
+export MANWIDTH=$COLUMNS
 
 export CLICOLOR=1
 # enable color support of ls and also add handy aliases
