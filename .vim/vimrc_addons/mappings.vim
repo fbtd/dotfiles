@@ -4,14 +4,14 @@ let maplocalleader = "à"
 "" using space to move between buffers "
 """"""""""""""""""""""""""""""""""""""""
 
-nnoremap <space><space>B :bfirst<CR>:args<CR>
-nnoremap <space><space>b :blast<CR>:args<CR>
-nnoremap <space>b :bnext<CR>:args<CR>
-nnoremap <space>B :bNext<CR>:args<CR>
-nnoremap <space><space>A :first<CR>:args<CR>
-nnoremap <space><space>a :last<CR>:args<CR>
-nnoremap <space>a :next<CR>:args<CR>
-nnoremap <space>A :Next<CR>:args<CR>
+nnoremap <space><space>B :bfirst<CR>
+nnoremap <space><space>b :blast<CR>
+nnoremap <space>b :bnext<CR>
+nnoremap <space>B :bNext<CR>
+nnoremap <space><space>A :first<CR>
+nnoremap <space><space>a :last<CR>
+nnoremap <space>a :next<CR>
+nnoremap <space>A :Next<CR>
 nnoremap <space><space>T :tabfirst<CR>:args<CR>
 nnoremap <space><space>t :tablast<CR>:args<CR>
 nnoremap <space>t :tabnext<CR>
@@ -23,13 +23,13 @@ nnoremap <space>4 :4tabnext<CR>
 nnoremap <space>5 :5tabnext<CR>
 nnoremap <space>6 :6tabnext<CR>
 
-nnoremap <leader>0 :0argu<CR>:args<CR>
-nnoremap <leader>1 :1argu<CR>:args<CR>
-nnoremap <leader>2 :2argu<CR>:args<CR>
-nnoremap <leader>3 :3argu<CR>:args<CR>
-nnoremap <leader>4 :4argu<CR>:args<CR>
-nnoremap <leader>5 :5argu<CR>:args<CR>
-nnoremap <leader>6 :6argu<CR>:args<CR>
+nnoremap <leader>0 :0argu<CR>
+nnoremap <leader>1 :1argu<CR>
+nnoremap <leader>2 :2argu<CR>
+nnoremap <leader>3 :3argu<CR>
+nnoremap <leader>4 :4argu<CR>
+nnoremap <leader>5 :5argu<CR>
+nnoremap <leader>6 :6argu<CR>
 
 "" More navigation "
 """"""""""""""""""""
