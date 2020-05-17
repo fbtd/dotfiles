@@ -143,8 +143,6 @@ if [ -f ~/.bash_local ] ; then
     . ~/.bash_local
 fi
 
-#rvm
-
 # default editor: vim
 export SUDO_EDITOR=vim
 export EDITOR=vim
@@ -161,12 +159,3 @@ export EDITOR=vim
 #    pane=$(tmux list-panes | grep '(active)' | cut -c 1)
 #    PS1="\[$(tput setaf 5)\]<\[$(tmux list-panes | grep '(active)' | cut -c 1)\]> "$PS1
 #fi
-
-
-export make='eval make 2>&1 | tee .log'
-export run='./a.out'
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-if [ $(uname -s) = 'Darwin' ]; then
-    source /Users/boris/.rvm/scripts/rvm
-    PATH=/usr/local/bin:$PATH # required by brew
-fi
