@@ -1,0 +1,8 @@
+[user]
+	name = fbtd
+	email = fabiano.taddei@gmail.com
+[core]
+	editor = vim
+	excludesFile = /home/pi/dotfiles/.gitignore_global
+[merge]
+	tool = vimdiff
