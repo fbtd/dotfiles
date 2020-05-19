@@ -154,6 +154,8 @@ export EDITOR=vim
 #[ $TERM == 'screen-256color' ] || tmux -2 attach -t wrk
 #[ $? -ne 0 ] && [ -f ~/scripts/tmux.init.sh ] && . ~/scripts/tmux.init.sh
 
+export T_RUN='./.run.sh'
+
 #if [ ! -z $TMUX ]
 #then
 #    pane=$(tmux list-panes | grep '(active)' | cut -c 1)

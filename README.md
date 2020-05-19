@@ -2,9 +2,10 @@
 Configuration for my linux/osx workstation
 
 ## TODO
-* bash: fix alias ff
-* decide what to do with old scripts
-* mod vim surround
+ - [ ] bash: fix alias ff
+ - [ ] decide what to do with old scripts
+ - [ ] mod vim surround
+ - [ ] tmux: temperature portable
 
 ## Installation
 ### Git
@@ -14,5 +15,5 @@ Configuration for my linux/osx workstation
 ### TMUX
 `ln -s dotfiles/.tmux.conf .tmux.conf`
 ### VIM
-`ln -s dotfiles/.vim .vim`
+`ln -s dotfiles/.vim .vim`<br/>
 `ln -s dotfiles/.vimrc .vimrc`
