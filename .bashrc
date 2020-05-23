@@ -93,6 +93,7 @@ alias pd2='pushd +2'
 alias pd3='pushd +3'
 alias pd4='pushd +4'
 alias pd5='pushd +5'
+alias man='MANWIDTH=$COLUMNS man'
 
 # functions: TODO put in different file
 function mkcd () { mkdir -p $1 && cd $1 ; }
@@ -119,8 +120,6 @@ function wc4 () {
     dc -e "4 $(wc -c $1 | cut -d' ' -f1) * p"
 }
 function f () { find . -not -path '*/.git/*' ; }
-
-export MANWIDTH=$COLUMNS
 
 export CLICOLOR=1
 # enable color support of ls and also add handy aliases

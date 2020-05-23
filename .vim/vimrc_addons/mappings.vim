@@ -129,6 +129,7 @@ nnoremap <Leader>c :pclose<cr>
 nnoremap <Leader>y :set previewheight=1<CR>
 nnoremap <Leader>x :set previewheight=10<CR>
 
+nnoremap <Leader>ç :vertical resize 80<CR>
 " make Y behave like other capitals
 noremap Y y$
 
