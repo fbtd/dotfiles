@@ -9,9 +9,11 @@ Configuration for my linux/osx workstation
 
 ## Installation
 ### Git
-`ln -s dotfiles/gitconfig_global .gitconfig`
+`ln -s ~/dotfiles/gitconfig_global .gitconfig`
 ### Bashrc
-`ln -s ~/dotfiles/.bashrc .bashrc` or append `. ~/dotfiles/.bashrc` to .bashrc
+remove .bashrc and
+`ln -s ~/dotfiles/.bashrc .bashrc`<br/>
+or append `. ~/dotfiles/.bashrc` to .bashrc
 ### TMUX
 `ln -s dotfiles/.tmux.conf .tmux.conf`
 ### VIM

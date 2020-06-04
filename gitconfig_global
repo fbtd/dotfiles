@@ -3,6 +3,6 @@
 	email = fabiano.taddei@gmail.com
 [core]
 	editor = vim
-	excludesFile = /home/pi/dotfiles/.gitignore_global
+	excludesFile = ~/dotfiles/.gitignore_global
 [merge]
 	tool = vimdiff
