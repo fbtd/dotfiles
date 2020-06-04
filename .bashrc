@@ -94,6 +94,7 @@ alias pd3='pushd +3'
 alias pd4='pushd +4'
 alias pd5='pushd +5'
 alias man='MANWIDTH=$COLUMNS man'
+alias c8='COLUMNS=80'
 
 # functions: TODO put in different file
 function mkcd () { mkdir -p $1 && cd $1 ; }
@@ -129,6 +130,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
+    alias ip='ip --color=auto'
 fi
 
 # enable programmable completion features (you don't need to enable
