@@ -1,6 +1,8 @@
 [user]
-	name = fbtd
+	name = fabiano taddei
 	email = fabiano.taddei@gmail.com
+[credential]
+    username = fbtd
 [core]
 	editor = vim
 	excludesFile = ~/dotfiles/.gitignore_global
