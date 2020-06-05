@@ -1,5 +1,5 @@
 let mapleader = "ö"
-let maplocalleader = "à"
+let maplocalleader = "ä"
 
 "" using space to move between buffers "
 """"""""""""""""""""""""""""""""""""""""

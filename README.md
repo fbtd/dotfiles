@@ -3,7 +3,7 @@ Configuration for my linux/osx workstation
 
 ## TODO
  - [ ] bash: fix alias ff
- - [ ] decide what to do with old scripts
+ - [x] decide what to do with old scripts
  - [ ] mod vim surround
  - [ ] tmux: temperature portable
 
