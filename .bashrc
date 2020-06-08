@@ -122,7 +122,7 @@ function wc4 () {
 }
 function f () { find . -not -path '*/.git/*' ; }
 
-function m () { vim -c 'source $VIMRUNTIME/ftplugin/man.vim' -c "Man $1" -c 'only' ; }
+function mm () { vim -c 'source $VIMRUNTIME/ftplugin/man.vim' -c "Man $1" -c 'only' ; }
 
 export CLICOLOR=1
 # enable color support of ls and also add handy aliases
@@ -140,6 +140,11 @@ fi
 # sources /etc/bash.bashrc).
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
+fi
+
+if [ -f /usr/share/bash-completion/completions/man ]; then
+    . /usr/share/bash-completion/completions/man
+    complete -o default -o nospace -F _man mm
 fi
 
 if [ -f ~/.bash_local ] ; then
