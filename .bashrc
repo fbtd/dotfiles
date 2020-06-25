@@ -122,7 +122,7 @@ function wc4 () {
 }
 function f () { find . -not -path '*/.git/*' ; }
 
-function mm () { vim -c 'source $VIMRUNTIME/ftplugin/man.vim' -c "Man $1" -c 'only' ; }
+function mm () { vim -c 'source $VIMRUNTIME/ftplugin/man.vim' -c "Man $*" -c 'only' ; }
 
 export CLICOLOR=1
 # enable color support of ls and also add handy aliases
