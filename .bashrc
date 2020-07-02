@@ -163,6 +163,7 @@ export EDITOR=vim
 #[ $? -ne 0 ] && [ -f ~/scripts/tmux.init.sh ] && . ~/scripts/tmux.init.sh
 
 export T_RUN='./.run.sh'
+export T_MAKE='git status --short'
 
 #if [ ! -z $TMUX ]
 #then
