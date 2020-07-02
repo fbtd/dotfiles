@@ -12,9 +12,11 @@ augroup filetype_ruby
     autocmd FileType ruby vnoremap <buffer> <LocalLeader>C :s,^#,,<Esc>
 augroup END
 
-augroup filetype_eruby
+augroup filetype_eruby_html_css
     autocmd!
     autocmd FileType eruby setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
 augroup END
 
 augroup filetype_vim
