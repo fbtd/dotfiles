@@ -6,7 +6,8 @@ set showcmd             " show the command you are typing
 set colorcolumn=81      " highlight 80th col
 set nolist              " end of line and trailing spaces visibility
 set listchars=trail:*,tab:>-,eol:$
-set scrolloff=2         " keep cursor distant from top/pottom while scrolling
+set scrolloff=2         " keep cursor distant from top/bottom while scrolling
+set sidescroll=2        " keep cursor distant from longline end while scrolling
 set splitbelow          " split in a logic way
 set splitright          " split in a logic way
 set foldmethod=indent

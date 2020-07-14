@@ -154,6 +154,7 @@ fi
 # default editor: vim
 export SUDO_EDITOR=vim
 export EDITOR=vim
+export LESS=M
 
 # display
 #DISPLAY=:10.0
