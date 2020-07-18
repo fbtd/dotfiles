@@ -123,11 +123,13 @@ nnoremap <C-e> <C-e><C-e><C-e>
 
 nnoremap <Leader>v :execute "silent pedit +" . line(".") . "\|normal\\ zt %"<cr>
 nnoremap <Leader>c :pclose<cr>
+nnoremap <Leader>y :set completeopt+=preview<cr>
+nnoremap <Leader>x :set completeopt-=preview<cr>
 
 " TODO: call function to display cool arglist
 "nnoremap <Leader>a :args<cr>
-nnoremap <Leader>y :set previewheight=1<CR>
-nnoremap <Leader>x :set previewheight=10<CR>
+"nnoremap <Leader>y :set previewheight=1<CR>
+"nnoremap <Leader>x :set previewheight=10<CR>
 
 nnoremap <Leader>ç :vertical resize 80<CR>
 " make Y behave like other capitals
