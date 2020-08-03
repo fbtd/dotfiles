@@ -107,7 +107,6 @@ vnoremap <Leader><Leader>  <Esc><Esc>
 
 noremap <Leader>h :set hlsearch!<Esc>
 noremap <Leader>l :set list!<Esc>
-noremap <Leader>p :set paste!<Esc>
 noremap <Leader>s :set spell!<Esc>
 
 noremap <Leader>r :registers<Esc>
@@ -140,6 +139,17 @@ noremap Y y$
 noremap <Leader>t :tags<Esc>
 nnoremap £ <C-]>
 inoremap £ <C-X><C-]>
+
+
+"" copy/paste and clipboard "
+""""" work in progress """"""
+noremap <Leader>p :set paste!<Esc>
+
+function Func2X11()
+:call system('xclip -selection clipboard', @r)
+endfunction
+vnoremap <leader><C-a> "ry:call Func2X11()<cr>
+nnoremap <leader><C-v> :set paste<cr>:r !xclip -o -selection clipboard<cr>:set nopaste<cr>
 
 "" plugin related "
 """""""""""""""""""
