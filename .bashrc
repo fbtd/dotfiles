@@ -166,7 +166,7 @@ export LESS=RM
 export T_RUN='./.run.sh'
 export T_MAKE='git status --short'
 
-export PYTHONSTARTUP='./.pythonrc'
+export PYTHONSTARTUP=~/.pythonrc
 
 #if [ ! -z $TMUX ]
 #then
