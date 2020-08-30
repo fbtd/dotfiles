@@ -3,9 +3,10 @@ Configuration for my linux/osx workstation
 
 ## TODO
  - [ ] bash: fix alias ff
- - [x] decide what to do with old scripts
  - [ ] mod vim surround
  - [ ] tmux: temperature portable
+ - [ ] nvim man pages
+ - [ ] nvim args list howto
 
 ## Installation
 ### Git
