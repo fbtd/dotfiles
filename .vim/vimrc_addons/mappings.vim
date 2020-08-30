@@ -140,16 +140,20 @@ noremap <Leader>t :tags<Esc>
 nnoremap £ <C-]>
 inoremap £ <C-X><C-]>
 
-
 "" copy/paste and clipboard "
-""""" work in progress """"""
 noremap <Leader>p :set paste!<Esc>
 
-function Func2X11()
-:call system('xclip -selection clipboard', @r)
-endfunction
-vnoremap <leader><C-a> "ry:call Func2X11()<cr>
-nnoremap <leader><C-v> :set paste<cr>:r !xclip -o -selection clipboard<cr>:set nopaste<cr>
+"" TODO Tmux integration
+if !has('nvim')
+    function Func2X11()
+        :call system('xclip -selection clipboard', @r)
+    endfunction
+    vnoremap <leader><C-a> "ry:call Func2X11()<cr>
+    nnoremap <leader><C-v> :set paste<cr>:r !xclip -o -selection clipboard<cr>:set nopaste<cr>
+else
+    vnoremap <leader><C-a> "+y
+    nnoremap <leader><C-v> "+p
+endif
 
 "" plugin related "
 """""""""""""""""""

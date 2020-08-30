@@ -1,4 +1,7 @@
-set nocompatible              " be iMproved, required
+if !has('nvim')
+    set nocompatible              " be iMproved, required
+endif
+
 syntax enable
 source ~/.vim/vimrc_addons/set_options.vim
 source ~/.vim/vimrc_addons/fmt.vim " TODO: implement as plugin
@@ -12,17 +15,9 @@ source ~/.vim/vimrc_addons/camelCase.vim
 "set statusline=%f\ %#Todo#%m%*\ [%{strlen(&fenc)?(&fenc.','):''}%{&ff}]%h%r%=c0x%B\ %c,%l/%L\ %{Hbar()}\ w%{winnr()}\ b%{bufnr('%')}\ %p%%
 source ~/.vim/vimrc_addons/statusline.vim
 
-"" Grafical - affecting vim "
-"""""""""""""""""""""""""""""
-" if terminal allow funny coloring, use them all!
 if $TERM == "xterm" || $TERM == "screen-256color" || $TERM == "xterm-256color"
     set t_Co=256
     colorscheme bubblegum
 else
     colorscheme desert
 endif
-
-
-"" filtype dependent commands "
-"""""""""""""""""""""""""""""""
-"see more on http://vimcasts.org/episodes/whitespace-preferences-and-filetypes/
