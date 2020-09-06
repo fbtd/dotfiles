@@ -167,6 +167,8 @@ endif
 "imap <C-G> <Plug>snipMateShow
 "smap <C-G> <Plug>snipMateShow
 
+inoremap <silent><expr> <c-space> coc#refresh()
+
 map <Leader>a <Plug>llArgList:silent! argument<space>0
 map <Leader>b <Plug>llFullList:silent! buffer<space>0
 nnoremap  <leader><tab> :args<cr>

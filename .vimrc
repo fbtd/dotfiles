@@ -1,5 +1,9 @@
 if !has('nvim')
     set nocompatible              " be iMproved, required
+else
+    call plug#begin('~/.vim/plugged')
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    call plug#end()
 endif
 
 syntax enable

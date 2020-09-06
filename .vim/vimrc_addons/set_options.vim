@@ -19,6 +19,7 @@ set nowrap
 set ignorecase          " search is not case sensitive
 set smartcase           " search is case sensitive if upper UPPER letter in pattern
 set nohlsearch          " highlight searchs
+set noincsearch         " no jumpiung around!
 
 "" Tabs "
 """""""""
@@ -53,4 +54,4 @@ set path=.,,*,**            " allws :find to find stuff in subfolders
 let g:netrw_banner=0        " no banner
 let g:netrw_liststyle=3     " tree view
 
-let g:ycm_auto_trigger = 0  " no auto autocomplete
+"let g:ycm_auto_trigger = 0  " no auto autocomplete

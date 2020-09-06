@@ -38,12 +38,14 @@ augroup bash-fc
     autocmd BufRead /tmp/bash-fc-* nnoremap q   :0,$d<CR>ZZ
 augroup END
 
-augroup man
-    autocmd FileType man  silent %s/.//ge | call setpos('.',[0,1,0,0])
-    autocmd FileType man  setlocal cursorline nolist colorcolumn=0 "manpages, yay
-    autocmd FileType man  noremap <buffer> <LocalLeader>f /\C^\s\+--\?,\?\($\\|\s\\|=\)<left><left><left><left><left><left><left><left><left><left><left><left><left><left><left>
-    autocmd FileType man  noremap <buffer> <LocalLeader>s /^\c\C[A-Z ]*$<left><left><left><left><left><left><left><left><left><left>
-    autocmd FileType man  noremap q :q!<Esc>
+augroup manual_pages
+    autocmd!
+    autocmd FileType man silent! %s/.//ge | call setpos('.',[0,1,0,0])
+    autocmd FileType man setlocal cursorline nolist colorcolumn=0 "manpages, yay
+    autocmd FileType man mapclear <buffer>
+    autocmd FileType man nnoremap <buffer> <LocalLeader>f /\C^\s\+--\?,\?\($\\|\s\\|=\)<left><left><left><left><left><left><left><left><left><left><left><left><left><left><left>
+    autocmd FileType man nnoremap <buffer> <LocalLeader>s /^\c\C[A-Z ]*$<left><left><left><left><left><left><left><left><left><left>
+    autocmd FileType man nnoremap <buffer> q :q!<CR>
 augroup END
 
 augroup help
