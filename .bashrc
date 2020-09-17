@@ -126,9 +126,10 @@ function f () {
 }
 
 function mm () {
-    which nvim >/dev/null>/dev/null   \
-        && nvim -c "Man $*" -c 'only' \
-        || vim -c 'source $VIMRUNTIME/ftplugin/man.vim' -c "Man $*" -c 'only'
+    nvim -c "Man $*" -c 'only'
+#   which nvim >/dev/null>/dev/null   \
+#       && nvim -c "Man $*" -c 'only' \
+#       || vim -c 'source $VIMRUNTIME/ftplugin/man.vim' -c "Man $*" -c 'only'
 }
 
 export CLICOLOR=1
@@ -159,8 +160,8 @@ if [ -f ~/.bash_local ] ; then
 fi
 
 # default editor: vim
-export SUDO_EDITOR=vim
-export EDITOR=vim
+export SUDO_EDITOR=nvim
+export EDITOR=nvim
 export LESS=RM
 
 # display
