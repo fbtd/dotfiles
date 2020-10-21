@@ -93,8 +93,10 @@ alias pd2='pushd +2'
 alias pd3='pushd +3'
 alias pd4='pushd +4'
 alias pd5='pushd +5'
-alias man='MANWIDTH=$COLUMNS man'
-alias c8='COLUMNS=80'
+#alias man='MANWIDTH=$COLUMNS man'
+#alias c8='COLUMNS=80'
+alias gla='git log --oneline --all --graph'
+alias gl='git log --oneline --graph'
 
 # functions: TODO put in different file
 function mkcd () { mkdir -p $1 && cd $1 ; }
@@ -125,13 +127,6 @@ function f () {
     find . -not -path '*/.git/*'
 }
 
-function mm () {
-    nvim -c "Man $*" -c 'only'
-#   which nvim >/dev/null>/dev/null   \
-#       && nvim -c "Man $*" -c 'only' \
-#       || vim -c 'source $VIMRUNTIME/ftplugin/man.vim' -c "Man $*" -c 'only'
-}
-
 function s3 () {
     tmux split-window -t .0 -h
     tmux split-window -t .1 -v
@@ -149,6 +144,8 @@ if [ -x /usr/bin/dircolors ]; then
     alias ip='ip --color=auto'
 fi
 
+export LESS=RM
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -165,10 +162,25 @@ if [ -f ~/.bash_local ] ; then
     . ~/.bash_local
 fi
 
-# default editor: vim
-export SUDO_EDITOR=nvim
-export EDITOR=nvim
-export LESS=RM
+if which nvim >/dev/null ; then 
+    # NVIM
+    alias v=nvim
+    export SUDO_EDITOR=nvim
+    export EDITOR=nvim
+
+    function mm () {
+        nvim -c "Man $*" -c 'only'
+    }
+else
+    # VIM
+    alias v=vim
+    export SUDO_EDITOR=vim
+    export EDITOR=vim
+
+    function mm () {
+       vim -c 'source $VIMRUNTIME/ftplugin/man.vim' -c "Man $*" -c 'only'
+    }
+fi
 
 # display
 #DISPLAY=:10.0
