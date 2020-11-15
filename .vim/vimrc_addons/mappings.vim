@@ -167,7 +167,9 @@ endif
 "imap <C-G> <Plug>snipMateShow
 "smap <C-G> <Plug>snipMateShow
 
+"Coc triggers
 inoremap <silent><expr> <c-space> coc#refresh()
+inoremap <silent> <leader>s <C-o>:call CocActionAsync('showSignatureHelp')<cr>
 
 map <Leader>a <Plug>llArgList:silent! argument<space>0
 map <Leader>b <Plug>llFullList:silent! buffer<space>0
