@@ -8,10 +8,10 @@ nnoremap <space><space>B :bfirst<CR>
 nnoremap <space><space>b :blast<CR>
 nnoremap <space>b :bnext<CR>
 nnoremap <space>B :bNext<CR>
-nnoremap <space><space>A :first<CR>
-nnoremap <space><space>a :last<CR>
-nnoremap <space>a :next<CR>
-nnoremap <space>A :Next<CR>
+nnoremap <space><space>A :first<CR>:args<CR>
+nnoremap <space><space>a :last<CR>:args<CR>
+nnoremap <space>a :next<CR>:args<CR>
+nnoremap <space>A :Next<CR>:args<CR>
 nnoremap <space><space>T :tabfirst<CR>:args<CR>
 nnoremap <space><space>t :tablast<CR>:args<CR>
 nnoremap <space>t :tabnext<CR>
@@ -77,6 +77,10 @@ inoremap <C-a> <C-o>0
 inoremap <C-e> <C-o>$
 inoremap <C-f> <C-o>l
 inoremap <C-b> <C-o>h
+
+" left and right scroll
+nnoremap zl 25zl
+nnoremap zh 25zh
 
 " a couple bindings for better CamelCase and under_score_case navigation
 source ~/.vim/vimrc_addons/camelCase.vim
