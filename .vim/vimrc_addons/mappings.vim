@@ -116,6 +116,7 @@ noremap <Leader>s :set spell!<Esc>
 noremap <Leader>r :registers<Esc>
 inoremap <Leader>r <C-o>:registers<Esc>
 noremap <Leader>m :marks<Esc>
+noremap <Leader>M :marks QWERTZUIOPASDFGHJKLYXCVBNM<Esc>
 noremap <Leader>j :jumps<Esc>
 
 nnoremap <C-y> <C-y><C-y><C-y>
@@ -175,6 +176,11 @@ endif
 inoremap <silent><expr> <c-space> coc#refresh()
 inoremap <silent> <leader>s <C-o>:call CocActionAsync('showSignatureHelp')<cr>
 
-map <Leader>a <Plug>llArgList:silent! argument<space>0
-map <Leader>b <Plug>llFullList:silent! buffer<space>0
+"map <Leader>a <Plug>llArgList:silent! argument<space>0
+"map <Leader>b <Plug>llFullList:silent! buffer<space>0
 nnoremap  <leader><tab> :args<cr>
+" MarkerPath
+" MP_MarkersToGlobals()     to save Markers ino global vars
+" MP_EchomAll()             to show a list of open files w/ markers
+nnoremap <leader>S :call MP_MarkersToGlobals()<cr>
+nnoremap <leader><space> :call MP_EchomAll()<cr>

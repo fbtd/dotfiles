@@ -3,6 +3,7 @@ if !has('nvim')
 else
     call plug#begin('~/.vim/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'fbtd/markerpath'
     call plug#end()
 endif
 

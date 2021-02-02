@@ -48,6 +48,8 @@ set grepprg=grep\ -rn\ '$*'\ .\ /dev/null "use gre as recursive search from .
 set modeline                " allow modeline ( /* vim: set sw=2: */ )
 set notimeout
 set path=.,,*,**            " allws :find to find stuff in subfolders
+set sessionoptions+=globals
+set shadafile=NONE
 
 "" Plugins "
 """"""""""""

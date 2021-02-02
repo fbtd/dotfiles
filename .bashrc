@@ -162,10 +162,10 @@ if [ -f ~/.bash_local ] ; then
     . ~/.bash_local
 fi
 
+export SUDO_EDITOR=vim
 if which nvim >/dev/null ; then 
     # NVIM
     alias v=nvim
-    export SUDO_EDITOR=nvim
     export EDITOR=nvim
 
     function mm () {
@@ -174,7 +174,6 @@ if which nvim >/dev/null ; then
 else
     # VIM
     alias v=vim
-    export SUDO_EDITOR=vim
     export EDITOR=vim
 
     function mm () {
