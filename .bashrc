@@ -55,7 +55,7 @@ fi
 
 if [ "$color_prompt" = yes ]; then
     #PS1="\[$(tput bold)\]\[$(tput setaf 4)\]\u \[$(tput setaf 5)\]\w \[$(tput setaf 4)\][\j] \t\n\[$(tput setaf 1)\]\! \$ \[$(tput sgr0)\]"
-	PS1="\[$(tput bold)\]\[$(tput setaf 4)\]\w\[$(tput setaf 1)\] \\$ \[$(tput sgr0)\]"
+    PS1="\[$(tput bold)$(tput setaf 4)\]\w\[$(tput setaf 1)\$(test \$? != 0 && tput smso)\] \\$ \[$(tput sgr0)\]"
     #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;30m\]\u\[\033[00m\] \[\033[01;34m\]\w \[\033[00;37m\]\$\[\033[00m\] '
     PS4='\[\033[00;32m\[==> \[\033[00m\['
 #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;34m\]\w \$\[\033[00m\] '

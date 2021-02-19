@@ -182,5 +182,5 @@ nnoremap  <leader><tab> :args<cr>
 " MarkerPath
 " MP_MarkersToGlobals()     to save Markers ino global vars
 " MP_EchomAll()             to show a list of open files w/ markers
-nnoremap <leader>S :call MP_MarkersToGlobals()<cr>
+nnoremap <leader>S :call MP_MarkersToGlobals()<cr>:mksession!<cr>
 nnoremap <leader><space> :call MP_EchomAll()<cr>
