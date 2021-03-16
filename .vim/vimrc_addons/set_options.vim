@@ -49,7 +49,9 @@ set modeline                " allow modeline ( /* vim: set sw=2: */ )
 set notimeout
 set path=.,,*,**            " allws :find to find stuff in subfolders
 set sessionoptions+=globals
-set shadafile=NONE
+if has('nvim')
+    set shadafile=NONE
+endif
 
 "" Plugins "
 """"""""""""
