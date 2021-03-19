@@ -5,6 +5,7 @@
     username = fbtd
 [core]
 	editor = nvim
+    pager = less -XF
 	excludesFile = ~/dotfiles/.gitignore_global
 [merge]
 	tool = vimdiff
