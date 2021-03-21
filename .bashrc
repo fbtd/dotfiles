@@ -98,6 +98,15 @@ alias pd5='pushd +5'
 alias gla='git log --oneline --all --graph'
 alias gl='git log --oneline --graph'
 
+function gs () {
+    git status
+    echo "--- HEAD ----"
+    git diff --stat
+    echo ""
+    echo "--- INDEX ---"
+    git diff --stat --staged
+}
+
 # functions: TODO put in different file
 function mkcd () { mkdir -p $1 && cd $1 ; }
 function ,, () {
@@ -128,6 +137,7 @@ function f () {
 }
 
 function s3 () {
+    [ -z ${TMUX+x} ] && tt  # if tmux is not running, start it
     tmux split-window -t .0 -h
     tmux split-window -t .1 -v
     tmux resize-pane  -t .0 -x 85

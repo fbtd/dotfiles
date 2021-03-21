@@ -1,11 +1,26 @@
 [user]
-	name = fabiano taddei
-	email = fabiano.taddei@gmail.com
+    name = fabiano taddei
+    email = fabiano.taddei@gmail.com
 [credential]
     username = fbtd
+
 [core]
-	editor = nvim
+    editor = nvim
+#   editor = vim
     pager = less -XF
-	excludesFile = ~/dotfiles/.gitignore_global
+    excludesFile = ~/dotfiles/.gitignore_global
+
 [merge]
-	tool = vimdiff
+    tool = nvim
+#   tool = vimdiff
+[mergetool "nvim"]
+    cmd = nvim -d $MERGED $LOCAL $REMOTE
+
+[diff]
+    tool = nvim
+#   tool = vimdiff
+[difftool "nvim"]
+    cmd = nvim -d $LOCAL $REMOTE
+
+[clean]
+    requireForce = false
