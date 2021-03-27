@@ -6,8 +6,9 @@
 [ -z "$PS1" ] && return
 
 # don't put duplicate lines or lines starting with space in the history.
+# avoid duplicated
 # See bash(1) for more options
-HISTCONTROL=ignoreboth
+HISTCONTROL=ignoreboth:erasedups
 
 # append to the history file, don't overwrite it
 shopt -s histappend
