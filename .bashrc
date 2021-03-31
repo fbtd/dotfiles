@@ -96,8 +96,9 @@ alias pd4='pushd +4'
 alias pd5='pushd +5'
 #alias man='MANWIDTH=$COLUMNS man'
 #alias c8='COLUMNS=80'
-alias gla='git log --oneline --all --graph'
-alias gl='git log --oneline --graph'
+alias gl="git log --pretty='%C(yellow)%h %C(cyan)%ad %Creset%s%C(auto)%d' --date=relative"
+alias glg="gl --graph"
+alias gla='glg --all'
 
 function gs () {
     git status
