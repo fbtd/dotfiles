@@ -19,6 +19,8 @@
 [diff]
     tool = nvim
 #   tool = vimdiff
+[difftool]
+    prompt = false
 [difftool "nvim"]
     cmd = nvim -d $LOCAL $REMOTE
 
