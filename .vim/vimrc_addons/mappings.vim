@@ -102,7 +102,8 @@ noremap <Leader>W :%s/\s\+$//e<CR>:w<CR>
 """"""""""""""
 
 nnoremap <leader>e :exec getline(".")<cr>
-noremap <S-tab> :set rnu!<cr>
+noremap <S-tab> :set rnu! nu<cr>
+noremap <leader><S-tab> :set nonu nornu<cr>
 
 cnoremap <Leader><Leader>  <Esc><Esc>
 inoremap <Leader><Leader>  <Esc><Esc>
