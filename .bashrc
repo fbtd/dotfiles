@@ -145,6 +145,16 @@ function s3 () {
     tmux resize-pane  -t .0 -x 85
 }
 
+function svba () {
+    a=./${1:-venv}/bin/activate
+    if [ -a $a ]; then
+        source $a
+    else
+        echo $a not found
+        return 1
+    fi
+}
+
 export CLICOLOR=1
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
