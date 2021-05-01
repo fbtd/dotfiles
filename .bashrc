@@ -135,7 +135,7 @@ function wc4 () {
 }
 
 function f () {
-    find . -not -path '*/.git/*'
+    find . -not -path '*/.git/*' -not -path '*/venv/*'
 }
 
 function s3 () {
