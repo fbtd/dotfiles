@@ -1,10 +1,10 @@
-if !has('nvim')
-    set nocompatible              " be iMproved, required
-else
+if has('nvim')
     call plug#begin('~/.vim/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'fbtd/markerpath'
     call plug#end()
+else
+    set nocompatible              " be iMproved, required
 endif
 
 syntax enable
