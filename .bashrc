@@ -142,7 +142,7 @@ function s3 () {
     [ -z ${TMUX+x} ] && tt  # if tmux is not running, start it
     tmux split-window -t .0 -h
     tmux split-window -t .1 -v
-    tmux resize-pane  -t .0 -x 85
+    tmux resize-pane  -t .1 -x 87
 }
 
 function svba () {
