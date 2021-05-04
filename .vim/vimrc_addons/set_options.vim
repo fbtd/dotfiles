@@ -59,3 +59,6 @@ let g:netrw_banner=0        " no banner
 let g:netrw_liststyle=3     " tree view
 
 "let g:ycm_auto_trigger = 0  " no auto autocomplete
+
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_custom_ignore = {'dir': '\v[\/](\.git|venv)$'}
