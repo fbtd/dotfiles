@@ -112,7 +112,7 @@ vnoremap <Leader><Leader>  <Esc><Esc>
 
 noremap <Leader>h :set hlsearch!<Esc>
 noremap <Leader>l :set list!<Esc>
-noremap <Leader>s :set spell!<Esc>
+"noremap <Leader>s :set spell!<Esc>
 
 noremap <Leader>r :registers<Esc>
 inoremap <Leader>r <C-o>:registers<Esc>
@@ -176,6 +176,18 @@ endif
 "Coc triggers
 inoremap <silent><expr> <c-space> coc#refresh()
 inoremap <silent> <leader>s <C-o>:call CocActionAsync('showSignatureHelp')<cr>
+nnoremap <silent> <leader>s :call CocActionAsync('showSignatureHelp')<cr>
+nnoremap <silent> <leader>d :call CocActionAsync('jumpDeclaration')<cr>
+nnoremap <silent> <c-space> :call CocActionAsync('highlight')<cr>
+nnoremap <silent> <leader>i :call CocActionAsync('doHover')<cr>
+
+"scroll float
+nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 
 "map <Leader>a <Plug>llArgList:silent! argument<space>0
 "map <Leader>b <Plug>llFullList:silent! buffer<space>0
