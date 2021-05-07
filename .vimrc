@@ -2,7 +2,9 @@ if has('nvim')
     call plug#begin('~/.vim/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'fbtd/markerpath'
+    Plug 'fbtd/vim-non-blank-scroll'
     Plug 'ctrlpvim/ctrlp.vim'
+    Plug 'tpope/vim-surround'
     call plug#end()
 else
     set nocompatible              " be iMproved, required
