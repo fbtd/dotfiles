@@ -100,6 +100,9 @@ alias gl="git log --pretty='%C(yellow)%h %C(cyan)%ad %Creset%s%C(auto)%d' --date
 alias glg="gl --graph"
 alias gla='glg --all'
 
+alias p="python3"
+alias bp="python3 -m bpython"
+
 function gs () {
     git status
     echo "--- HEAD ----"
