@@ -34,6 +34,9 @@ nnoremap <leader>6 :6argu<CR>
 "" More navigation "
 """"""""""""""""""""
 
+nnoremap <space>l 25l
+nnoremap <space>h 25h
+
 "allow link follow with enter
 nnoremap £ <C-]>
 
@@ -177,7 +180,7 @@ endif
 inoremap <silent><expr> <c-space> coc#refresh()
 inoremap <silent> <leader>s <C-o>:call CocActionAsync('showSignatureHelp')<cr>
 nnoremap <silent> <leader>s :call CocActionAsync('showSignatureHelp')<cr>
-nnoremap <silent> <leader>d :call CocActionAsync('jumpDeclaration')<cr>
+nnoremap <silent> <leader>d :call CocActionAsync('jumpDefinition')<cr>
 nnoremap <silent> <c-space> :call CocActionAsync('highlight')<cr>
 nnoremap <silent> <leader>i :call CocActionAsync('doHover')<cr>
 

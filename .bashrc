@@ -207,7 +207,7 @@ else
 fi
 
 # display
-#DISPLAY=:10.0
+export DISPLAY=:0
 
 # tmux autostart/autoattach if needed
 #[ $TERM == 'screen-256color' ] || tmux -2 attach -t wrk
