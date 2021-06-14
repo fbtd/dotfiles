@@ -44,7 +44,7 @@ setlocal spelllang=en_us         " set lang for spellcheck
 set formatoptions-=o        " no autocomment new lines
 set formatoptions-=r        " no autocomment new lines
 set nowrapscan              " no file wrap during search
-set grepprg=grep\ -rn\ '$*'\ .\ /dev/null "use gre as recursive search from .
+set grepprg=grep\ -rnI\ --exclude-dir\ .pytest_cache\ --exclude-dir\ .git\ --exclude-dir\ venv\ $*\ .\ /dev/null "use gre as recursive search from .
 set modeline                " allow modeline ( /* vim: set sw=2: */ )
 set notimeout
 set path=.,,*,**            " allws :find to find stuff in subfolders
@@ -52,6 +52,7 @@ set sessionoptions+=globals
 if has('nvim')
     set shadafile=NONE
 endif
+set wildignore+=.git/*,venv/*
 
 "" Plugins "
 """"""""""""
