@@ -1,1 +1,5 @@
 from pprint import pprint as pp
+d = dict(a='a', b='b', c='c')
+s = set('abc')
+t = tuple('abc')
+l = list('abc')
