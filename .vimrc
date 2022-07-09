@@ -25,7 +25,8 @@ source ~/.vim/vimrc_addons/statusline.vim
 
 if $TERM == "xterm" || $TERM == "screen-256color" || $TERM == "xterm-256color"
     set t_Co=256
-    colorscheme bubblegum
+    set background=light
+    colorscheme solarized
 else
     colorscheme desert
 endif
