@@ -194,7 +194,11 @@ if which nvim >/dev/null ; then
     export EDITOR=nvim
 
     function mm () {
-        nvim -c "Man $*" -c 'only'
+        if man --where $* &> /dev/null ; then
+            nvim -c "Man $*" -c 'only'
+        else
+           echo 'man page not found'
+        fi
     }
 else
     # VIM
@@ -202,7 +206,11 @@ else
     export EDITOR=vim
 
     function mm () {
-       vim -c 'source $VIMRUNTIME/ftplugin/man.vim' -c "Man $*" -c 'only'
+        if man --where $* &> /dev/null ; then
+           vim -c 'source $VIMRUNTIME/ftplugin/man.vim' -c "Man $*" -c 'only'
+        else
+           echo 'man page not found'
+        fi
     }
 fi
 
