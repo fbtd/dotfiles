@@ -26,3 +26,6 @@
 
 [clean]
     requireForce = false
+
+[include]
+	path = ~/.gitconfig_local
