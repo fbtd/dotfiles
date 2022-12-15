@@ -103,6 +103,9 @@ alias gla='glg --all'
 alias p="python3"
 alias bp="python3 -m bpython"
 
+
+# functions: TODO put in different file
+
 function gs () {
     git status
     echo "--- HEAD ----"
@@ -112,7 +115,10 @@ function gs () {
     git diff --stat --staged
 }
 
-# functions: TODO put in different file
+function we() {
+    explorer.exe ${1:-.}
+}
+
 function mkcd () { mkdir -p $1 && cd $1 ; }
 function ,, () {
 echo ""
