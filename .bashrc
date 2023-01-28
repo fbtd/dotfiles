@@ -147,6 +147,11 @@ function f () {
     find . -not -path '*/.git/*' -not -path '*/venv/*'
 }
 
+function s2 () {
+    [ -z ${TMUX+x} ] && tt  # if tmux is not running, start it
+    tmux split-window -t .0 -v
+}
+
 function s3 () {
     [ -z ${TMUX+x} ] && tt  # if tmux is not running, start it
     tmux split-window -t .0 -h
@@ -163,6 +168,35 @@ function svba () {
         return 1
     fi
 }
+
+# docker stuff, thx https://gist.github.com/jgrodziski/9ed4a17709baad10dbcd4530b60dfcbb
+function dex {
+	docker exec -it $1 ${2:-bash}
+}
+
+function dnames {
+	for ID in `docker ps | awk '{print $1}' | grep -v 'CONTAINER'`
+	do
+    	docker inspect $ID | grep Name | head -1 | awk '{print $2}' | sed 's/,//g' | sed 's%/%%g' | sed 's/"//g'
+	done
+}
+
+function dip {
+    echo "IP addresses of all named running containers"
+
+    for DOC in `dnames`
+    do
+        IP=`docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}} {{end}}' "$DOC"`
+        OUT+=$DOC'\t'$IP'\n'
+    done
+    echo -e $OUT | column -t
+    unset OUT
+}
+
+alias drrm="docker run --rm"
+alias dps="docker ps"
+alias dpsa="docker ps -a"
+alias dcp="docker container prune"
 
 export CLICOLOR=1
 # enable color support of ls and also add handy aliases
