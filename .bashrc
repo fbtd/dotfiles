@@ -228,7 +228,7 @@ if [ -f ~/.bash_local ] ; then
 fi
 
 export SUDO_EDITOR=vim
-if which nvim >/dev/null ; then 
+if which nvim &>/dev/null ; then 
     # NVIM
     alias v=nvim
     export EDITOR=nvim
