@@ -13,6 +13,7 @@ set splitright          " split in a logic way
 set foldmethod=indent
 set nofoldenable
 set nowrap
+set display=uhex
 
 "" Search "
 """""""""""
