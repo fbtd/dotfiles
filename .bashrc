@@ -94,6 +94,8 @@ alias pd2='pushd +2'
 alias pd3='pushd +3'
 alias pd4='pushd +4'
 alias pd5='pushd +5'
+alias dv='dirs -v'
+
 #alias man='MANWIDTH=$COLUMNS man'
 #alias c8='COLUMNS=80'
 alias gl="git log --pretty='%C(yellow)%h %C(cyan)%ad %Creset%s%C(auto)%d' --date=relative"
@@ -160,13 +162,19 @@ function s3 () {
 }
 
 function svba () {
-    a=./${1:-venv}/bin/activate
-    if [ -a $a ]; then
-        source $a
+    if [ -n "$1" ]; then
+        source ./$1/bin/activate
+        return $?
     else
-        echo $a not found
-        return 1
+        for venv_folder in "venv" ".venv"; do
+            if [ -d "$venv_folder" ]; then
+                source ./$venv_folder/bin/activate
+                return $?
+            fi
+        done
     fi
+    echo venv folder not found
+    return 1
 }
 
 # docker stuff, thx https://gist.github.com/jgrodziski/9ed4a17709baad10dbcd4530b60dfcbb
