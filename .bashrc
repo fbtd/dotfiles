@@ -15,7 +15,17 @@ shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
-HISTFILESIZE=2000
+HISTFILESIZE=10000
+
+# history sync
+function hs() {
+    history -a
+    sort -u $HISTFILE > /tmp/.bash_history_sorted
+    mv /tmp/.bash_history_sorted $HISTFILE
+    fc -ln -100 | sed 's/^\s*//' >> $HISTFILE
+    history -c
+    history -r
+}
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -105,6 +115,9 @@ alias gla='glg --all'
 alias p="python3"
 alias bp="python3 -m bpython"
 
+function jqless () {
+    jq '.' -C $1 | less -r
+}
 
 # functions: TODO put in different file
 
@@ -217,7 +230,7 @@ fi
 export LESS=RM
 
 
-# ugliy context grep
+# ugly context grep
 function cgrep {
     head -n 5 $2
     echo "..."
