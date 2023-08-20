@@ -202,3 +202,4 @@ nnoremap <leader>S :call MP_MarkersToGlobals()<cr>:mksession!<cr>
 nnoremap <leader><space> :call MP_EchomAll()<cr>
 
 nnoremap <C-n> :CtrlPMRU<cr>
+nnoremap <C-b> :CtrlPBuffer<cr>
