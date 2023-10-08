@@ -45,6 +45,7 @@ augroup manual_pages
     autocmd FileType man mapclear <buffer>
     autocmd FileType man nnoremap <buffer> <LocalLeader>f /\C^\s\+--\?,\?\($\\|\s\\|=\)<left><left><left><left><left><left><left><left><left><left><left><left><left><left><left>
     autocmd FileType man nnoremap <buffer> <LocalLeader>s /^\c\C[A-Z ]*$<left><left><left><left><left><left><left><left><left><left>
+    autocmd FileType man nnoremap <buffer> <LocalLeader>d /\C^ *
     autocmd FileType man nnoremap <buffer> q :q!<CR>
 augroup END
 
