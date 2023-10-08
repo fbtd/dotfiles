@@ -303,3 +303,52 @@ export PYTHONSTARTUP=~/.pythonrc
 #    pane=$(tmux list-panes | grep '(active)' | cut -c 1)
 #    PS1="\[$(tput setaf 5)\]<\[$(tmux list-panes | grep '(active)' | cut -c 1)\]> "$PS1
 #fi
+
+# fzf https://github.com/junegunn/fzf
+if which fzf &>/dev/null ; then
+    function fcd () {
+        dir=$(find  $1 -type d 2>/dev/null | fzf --preview 'ls -ah {}' --tiebreak=length)
+        [ -z "$dir" ] && return 1
+        cd $dir
+    }
+
+    function fkill () {
+        local pid 
+        if [ "$UID" != "0" ]; then
+            pid=$(ps -f -u $UID | sed 1d | fzf -m | awk '{print $2}')
+        else
+            pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+        fi
+
+        if [ "x$pid" != "x" ]
+        then
+            echo $pid | xargs kill -${1:-9}
+        fi
+    }
+
+    function fman() {
+        man -k . | \
+            fzf --prompt='Man> ' | \
+            awk '{print $1}' | \
+            xargs -r --replace bash -c "man {}"
+    }
+
+    f1=''
+    f2=''
+    f3=''
+    function f1 () {
+        f1=$(find $1 | fzf --preview 'cat {}' --tiebreak=length)
+        [ -z "$f1" ] && return 1
+        echo $f1
+    }
+    function f2 () {
+        f2=$(find $1 | fzf --preview 'cat {}' --tiebreak=length)
+        [ -z "$f2" ] && return 1
+        echo $f2
+    }
+    function f3 () {
+        f3=$(find $1 | fzf --preview 'cat {}' --tiebreak=length)
+        [ -z "$f3" ] && return 1
+        echo $f3
+    }
+fi

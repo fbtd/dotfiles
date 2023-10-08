@@ -1,6 +1,8 @@
 if has('nvim')
     call plug#begin('~/.vim/plugged')
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    if filereadable(expand("~/.vimrc_local_plugins"))
+        source ~/.vimrc_local_plugins
+    endif
     Plug 'fbtd/markerpath'
     Plug 'fbtd/vim-non-blank-scroll'
     Plug 'ctrlpvim/ctrlp.vim'
@@ -29,4 +31,8 @@ if $TERM == "xterm" || $TERM == "screen-256color" || $TERM == "xterm-256color"
     colorscheme solarized
 else
     colorscheme desert
+endif
+
+if filereadable(expand("~/.vimrc_local"))
+    source ~/.vimrc_local
 endif
