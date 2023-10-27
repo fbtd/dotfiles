@@ -312,6 +312,13 @@ if which fzf &>/dev/null ; then
         cd $dir
     }
 
+    function ffcd () {
+        dir=$(find  $1 2>/dev/null | fzf --preview 'ls -ah {}' --tiebreak=length)
+        [ -z "$dir" ] && return 1
+        [ -d "$dir" ] && cd $dir && return 0
+        cd $(dirname $dir)
+    }
+
     function fkill () {
         local pid 
         if [ "$UID" != "0" ]; then
@@ -337,17 +344,17 @@ if which fzf &>/dev/null ; then
     f2=''
     f3=''
     function f1 () {
-        f1=$(find $1 | fzf --preview 'cat {}' --tiebreak=length)
+        f1=$(find $1 2>/dev/null | fzf --preview 'cat {}' --tiebreak=length)
         [ -z "$f1" ] && return 1
         echo $f1
     }
     function f2 () {
-        f2=$(find $1 | fzf --preview 'cat {}' --tiebreak=length)
+        f2=$(find $1 2>/dev/null | fzf --preview 'cat {}' --tiebreak=length)
         [ -z "$f2" ] && return 1
         echo $f2
     }
     function f3 () {
-        f3=$(find $1 | fzf --preview 'cat {}' --tiebreak=length)
+        f3=$(find $1 2>/dev/null | fzf --preview 'cat {}' --tiebreak=length)
         [ -z "$f3" ] && return 1
         echo $f3
     }
