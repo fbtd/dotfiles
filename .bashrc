@@ -259,6 +259,9 @@ if [ -f ~/.bash_local ] ; then
     . ~/.bash_local
 fi
 
+
+## VIM STUFF ##
+
 export SUDO_EDITOR=vim
 if which nvim &>/dev/null ; then 
     # NVIM
@@ -285,6 +288,11 @@ else
         fi
     }
 fi
+
+# edit file:linenumber passed in as $1
+function vl {
+    v +${1#*:} ${1%%:*}
+}
 
 # display
 export DISPLAY=:0
