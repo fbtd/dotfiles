@@ -17,23 +17,13 @@ shopt -s histappend
 HISTSIZE=1000
 HISTFILESIZE=10000
 
-# history sync
-function hs() {
-    history -a
-    sort -u $HISTFILE > /tmp/.bash_history_sorted
-    mv /tmp/.bash_history_sorted $HISTFILE
-    fc -ln -100 | sed 's/^\s*//' >> $HISTFILE
-    history -c
-    history -r
-}
-
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
-#shopt -s globstar
+shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -96,9 +86,7 @@ alias td='tree -Cd'
 alias ..='cd ..'
 alias hgrep='history | grep'
 alias dfc='df -h | cowsay -bn'
-#alias mm='~/scripts/manmaker.sh'
 alias tt='tmux -2 new-session -A -s wrk'
-#alias ff='fc 0 -200'
 alias pd='pushd'
 alias pd2='pushd +2'
 alias pd3='pushd +3'
@@ -150,9 +138,6 @@ function , () {
         echo -n "#"
     done
     echo ""
-}
-function wc4 () {
-    dc -e "4 $(wc -c $1 | cut -d' ' -f1) * p"
 }
 
 function f () {
@@ -232,13 +217,17 @@ export LESS=RM
 
 # ugly context grep
 function cgrep {
+    echo "$(tput setaf 5)$(file $2)$(tput setaf 0)"
+    echo "$(tput setaf 6)> head -n 5$(tput setaf 0)"
     head -n 5 $2
-    echo "..."
-    grep -n -C3 "$1" --color=always $2
-    echo "..."
+    echo ""
+    echo "$(tput setaf 6)> grep -C 3$(tput setaf 0)"
+    grep -n -C 3 "$1" --color=always $2
+    echo ""
+    echo ">$(tput setaf 6) tail -n 5$(tput setaf 0)"
     tail -n 5 $2
-    echo -n "line count: "
-    wc -l $2
+    echo ""
+    echo "$(tput setaf 6)line count: $(tput setaf 5) $(wc -l $2)$(tput setaf 0)"
 }
 
 
@@ -297,20 +286,10 @@ function vl {
 # display
 export DISPLAY=:0
 
-# tmux autostart/autoattach if needed
-#[ $TERM == 'screen-256color' ] || tmux -2 attach -t wrk
-#[ $? -ne 0 ] && [ -f ~/scripts/tmux.init.sh ] && . ~/scripts/tmux.init.sh
-
 export T_RUN='./.run.sh'
 export T_MAKE='git status --short'
 
 export PYTHONSTARTUP=~/.pythonrc
-
-#if [ ! -z $TMUX ]
-#then
-#    pane=$(tmux list-panes | grep '(active)' | cut -c 1)
-#    PS1="\[$(tput setaf 5)\]<\[$(tmux list-panes | grep '(active)' | cut -c 1)\]> "$PS1
-#fi
 
 # fzf https://github.com/junegunn/fzf
 if which fzf &>/dev/null ; then
@@ -346,6 +325,13 @@ if which fzf &>/dev/null ; then
             fzf --prompt='Man> ' | \
             awk '{print $1}' | \
             xargs -r --replace bash -c "man {}"
+    }
+
+    function fmm() {
+        man -k . | \
+        fzf --prompt='Man> ' | \
+        awk '{print $1}' | \
+        xargs -r bash -c -i 'mm $1' 0
     }
 
     f1=''

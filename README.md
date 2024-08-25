@@ -10,7 +10,7 @@ remove .bashrc and
 `ln -s ~/dotfiles/.bashrc ~/.bashrc`<br/>
 or append `. ~/dotfiles/.bashrc` to .bashrc
 ### .initrc
-maps *ctrl-.* to windows-style autocomplete <br/>
+maps *ctrl-y* to windows-style autocomplete <br/>
 `ln -s ~/dotfiles/.initrc ~/.initrc`<br/>
 ### TMUX
 `ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf`
