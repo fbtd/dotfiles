@@ -7,6 +7,9 @@ if has('nvim')
     Plug 'fbtd/vim-non-blank-scroll'
     Plug 'ctrlpvim/ctrlp.vim'
     Plug 'tpope/vim-surround'
+    Plug 'neovim/nvim-lspconfig'
+    "Plug 'nvim-tree/nvim-web-devicons'
+    Plug 'nvim-tree/nvim-tree.lua'
     call plug#end()
 else
     set nocompatible              " be iMproved, required
@@ -28,11 +31,16 @@ source ~/.vim/vimrc_addons/statusline.vim
 if $TERM == "xterm" || $TERM == "screen-256color" || $TERM == "xterm-256color"
     set t_Co=256
     set background=light
-    colorscheme solarized
+    colorscheme derpy
 else
     colorscheme desert
 endif
 
 if filereadable(expand("~/.vimrc_local"))
     source ~/.vimrc_local
+endif
+
+if has('nvim')
+    lua require('lsp_settings')
+    lua require('nvim-tree_settings')
 endif

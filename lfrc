@@ -1,0 +1,28 @@
+set scrolloff 3
+set ratios 1:2:1
+set hidden
+
+cmd open &true
+
+map ö2 :set ratios 1:2
+map ö3 :set ratios 1:2:1
+map ö4 :set ratios 1:1:2:1
+
+cmd fzf_jump ${{
+    res="$(find . | fzf --reverse --header='Jump to location')"
+    if [ -n "$res" ]; then
+        if [ -d "$res" ]; then
+            cmd="cd"
+        else
+            cmd="select"
+        fi
+        res="$(printf '%s' "$res" | sed 's/\\/\\\\/g;s/"/\\"/g')"
+        lf -remote "send $id $cmd \"$res\""
+    fi
+}}
+map öf :fzf_jump
+
+cmd to_vim_edit_this ${{
+    echo "edit $f" > ~/tmp/vim_to_this.vim
+}}
+map öe :to_vim_edit_this

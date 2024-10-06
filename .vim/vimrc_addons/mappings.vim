@@ -90,7 +90,6 @@ source ~/.vim/vimrc_addons/camelCase.vim
 
 "" Buffers related "
 """"""""""""""""""""
-
 " jump to buffers CTRL_^ replacement
 "noremap <leader>b <C-^>
 noremap § <C-^>
@@ -101,9 +100,13 @@ noremap <Leader>q :confirm q<Esc>
 noremap <Leader>Q :confirm qa<Esc>
 noremap <Leader>W :%s/\s\+$//e<CR>:w<CR>
 
+" execute cmd from ext file
+nnoremap <leader>s :source ~/tmp/vim_to_this.vim<CR>
+
 "" Shortcuts "
 """"""""""""""
 
+nnoremap  <leader><tab> :args<cr>
 nnoremap <leader>e :exec getline(".")<cr>
 noremap <S-tab> :set rnu! nu<cr>
 noremap <leader><S-tab> :set nonu nornu<cr>
@@ -166,35 +169,6 @@ endif
 
 "" plugin related "
 """""""""""""""""""
-
-"noremap <Leader>n :NERDTreeToggle<Esc>
-
-"imap <C-J> <Plug>snipMateNextOrTrigger
-"smap <C-J> <Plug>snipMateNextOrTrigger
-"imap <C-H> <Plug>snipMateBack
-"smap <C-H> <Plug>snipMateBack
-"imap <C-G> <Plug>snipMateShow
-"smap <C-G> <Plug>snipMateShow
-
-"Coc triggers
-inoremap <silent><expr> <c-space> coc#refresh()
-inoremap <silent> <leader>s <C-o>:call CocActionAsync('showSignatureHelp')<cr>
-nnoremap <silent> <leader>s :call CocActionAsync('showSignatureHelp')<cr>
-nnoremap <silent> <leader>d :call CocActionAsync('jumpDefinition')<cr>
-nnoremap <silent> <c-space> :call CocActionAsync('highlight')<cr>
-nnoremap <silent> <leader>i :call CocActionAsync('doHover')<cr>
-
-"scroll float
-nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-
-"map <Leader>a <Plug>llArgList:silent! argument<space>0
-"map <Leader>b <Plug>llFullList:silent! buffer<space>0
-nnoremap  <leader><tab> :args<cr>
 " MarkerPath
 " MP_MarkersToGlobals()     to save Markers ino global vars
 " MP_EchomAll()             to show a list of open files w/ markers
