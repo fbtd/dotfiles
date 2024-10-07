@@ -22,6 +22,7 @@ install latest neovim from https://github.com/neovim/neovim/blob/master/INSTALL.
 `ln -s ~/dotfiles/.vimrc ~/.config/nvim/init.vim`<br/>
 `ln -s ~/dotfiles/nvim/lsp_settings.lua ~/.config/nvim/lua/lsp_settings.lua`<br/>
 `ln -s ~/dotfiles/nvim/nvim-tree_settings.lua ~/.config/nvim/lua/nvim-tree_settings.lua`<br/>
+`ln -s ~/dotfiles/nvim/fzf_settings.lua ~/.config/nvim/lua/fzf_settings.lua`<br/>
 `ln -s ~/dotfiles/.vim/colors/ ~/.config/nvim/colors`<br/>
 local config in `~/.vimrc_local` and `~/.vimrc_local_plugins`
 #### INSTALL vim-plug

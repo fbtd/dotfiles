@@ -5,7 +5,8 @@ if has('nvim')
     endif
     Plug 'fbtd/markerpath'
     Plug 'fbtd/vim-non-blank-scroll'
-    Plug 'ctrlpvim/ctrlp.vim'
+    "Plug 'ctrlpvim/ctrlp.vim'
+    Plug 'ibhagwan/fzf-lua'
     Plug 'tpope/vim-surround'
     Plug 'neovim/nvim-lspconfig'
     "Plug 'nvim-tree/nvim-web-devicons'
@@ -43,4 +44,5 @@ endif
 if has('nvim')
     lua require('lsp_settings')
     lua require('nvim-tree_settings')
+    lua require('fzf_settings')
 endif

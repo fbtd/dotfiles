@@ -31,6 +31,11 @@ nnoremap <leader>4 :4argu<CR>
 nnoremap <leader>5 :5argu<CR>
 nnoremap <leader>6 :6argu<CR>
 
+" add and remove to arglist
+nnoremap <leader>a :argadd<CR>
+nnoremap <leader>A :argdelete<CR>
+
+
 "" More navigation "
 """"""""""""""""""""
 
@@ -105,8 +110,6 @@ nnoremap <leader>s :source ~/tmp/vim_to_this.vim<CR>
 
 "" Shortcuts "
 """"""""""""""
-
-nnoremap  <leader><tab> :args<cr>
 nnoremap <leader>e :exec getline(".")<cr>
 noremap <S-tab> :set rnu! nu<cr>
 noremap <leader><S-tab> :set nonu nornu<cr>
@@ -120,6 +123,7 @@ noremap <Leader>h :set hlsearch!<Esc>
 noremap <Leader>l :set list!<Esc>
 "noremap <Leader>s :set spell!<Esc>
 
+" use fzf instead
 noremap <Leader>r :registers<Esc>
 inoremap <Leader>r <C-o>:registers<Esc>
 noremap <Leader>m :marks<Esc>
@@ -175,5 +179,5 @@ endif
 nnoremap <leader>S :call MP_MarkersToGlobals()<cr>:mksession!<cr>
 nnoremap <leader><space> :call MP_EchomAll()<cr>
 
-nnoremap <C-n> :CtrlPMRU<cr>
-nnoremap <C-b> :CtrlPBuffer<cr>
+"nnoremap <C-n> :CtrlPMRU<cr>
+"nnoremap <C-b> :CtrlPBuffer<cr>
