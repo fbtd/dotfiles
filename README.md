@@ -19,6 +19,7 @@ maps *ctrl-y* to windows-style autocomplete <br/>
 `ln -s ~/dotfiles/.vimrc ~/.vimrc`<br/>
 ### NEOVIM
 install latest neovim from https://github.com/neovim/neovim/blob/master/INSTALL.md#appimage-universal-linux-package<br/>
+`mkdir -p ~/.config/nvim/lua`<br/>
 `ln -s ~/dotfiles/.vimrc ~/.config/nvim/init.vim`<br/>
 `ln -s ~/dotfiles/nvim/lsp_settings.lua ~/.config/nvim/lua/lsp_settings.lua`<br/>
 `ln -s ~/dotfiles/nvim/nvim-tree_settings.lua ~/.config/nvim/lua/nvim-tree_settings.lua`<br/>
