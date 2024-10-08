@@ -9,9 +9,42 @@ vim.keymap.set("n", "ü/", require('fzf-lua').blines)
 vim.keymap.set("n", "üc", require('fzf-lua').quickfix)
 vim.keymap.set("n", "ül", require('fzf-lua').loclist)
 vim.keymap.set("n", "üt", require('fzf-lua').tabs)
-vim.keymap.set("n", "üa", require('fzf-lua').args)
+-- vim.keymap.set("n", "üa", require('fzf-lua').args)
 vim.keymap.set("n", "ür", require('fzf-lua').resume)
 vim.keymap.set("n", "üm", require('fzf-lua').marks)
 vim.keymap.set("n", "üj", require('fzf-lua').jumps)
 vim.keymap.set("n", "ü\"", require('fzf-lua').registers)
 
+local YELLOW = "\27[33m"
+local RESET = "\27[0m"
+function Fzf_args_n()
+    local opts = {
+        prompt = "Args: ",
+        actions = {
+            ["default"] =  {
+            type = "cmd",
+            fn = function(selected)
+                local path = selected[1]:match(".[0-9]*. (.*)")
+                vim.cmd("edit " .. path)
+            end,
+        },
+        },
+        preview = {
+            type = "cmd",
+            fn = function(items)
+                local path = items[1]:match(".[0-9]*. (.*)")
+                return "cat " .. path
+            end,
+        }
+    }
+
+    local args = vim.fn.argv()
+    local args_n = {}
+    for i, arg in pairs(args) do
+        local arg_n = "[" .. YELLOW .. i .. RESET .. "] " .. arg
+        table.insert(args_n, arg_n)
+    end
+
+    require"fzf-lua".fzf_exec(args_n, opts)
+end
+vim.keymap.set('n', 'üa', Fzf_args_n, { noremap = true})

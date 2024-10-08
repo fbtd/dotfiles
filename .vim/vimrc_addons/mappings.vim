@@ -32,9 +32,10 @@ nnoremap <leader>5 :5argu<CR>
 nnoremap <leader>6 :6argu<CR>
 
 " add and remove to arglist
-nnoremap <leader>a :argadd<CR>
-nnoremap <leader>A :argdelete<CR>
-
+nnoremap <leader>a :argadd<CR>:argdedupe<CR>:args<CR>
+nnoremap <leader>A :argdelete<CR>:args<CR>
+nnoremap <leader><tab> :args<CR>
+nnoremap <leader>t :tabe \| arglocal! %<left><left><left><left><left><left><left><left><left><left><left><left><left>
 
 "" More navigation "
 """"""""""""""""""""
@@ -107,10 +108,11 @@ noremap <Leader>W :%s/\s\+$//e<CR>:w<CR>
 
 " execute cmd from ext file
 nnoremap <leader>s :source ~/tmp/vim_to_this.vim<CR>
+"nnoremap <leader>e :call system(
 
 "" Shortcuts "
 """"""""""""""
-nnoremap <leader>e :exec getline(".")<cr>
+"nnoremap <leader>e :exec getline(".")<cr>
 noremap <S-tab> :set rnu! nu<cr>
 noremap <leader><S-tab> :set nonu nornu<cr>
 
@@ -152,7 +154,6 @@ noremap Y y$
 
 "" tags "
 """""""""
-noremap <Leader>t :tags<Esc>
 nnoremap £ <C-]>
 inoremap £ <C-X><C-]>
 
