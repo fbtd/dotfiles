@@ -33,7 +33,7 @@ nnoremap <leader>6 :6argu<CR>
 
 " add and remove to arglist
 nnoremap <leader>a :argadd<CR>:argdedupe<CR>:args<CR>
-nnoremap <leader>A :argdelete<CR>:args<CR>
+nnoremap <leader>A :argdelete %<CR>:args<CR>
 nnoremap <leader><tab> :args<CR>
 nnoremap <leader>t :tabe \| arglocal! %<left><left><left><left><left><left><left><left><left><left><left><left><left>
 
@@ -148,9 +148,12 @@ nnoremap <Leader>x :set completeopt-=preview<cr>
 "nnoremap <Leader>y :set previewheight=1<CR>
 "nnoremap <Leader>x :set previewheight=10<CR>
 
+"" QoL ""
+"""""""""
 nnoremap <Leader>ç :vertical resize 80<CR>
 " make Y behave like other capitals
 noremap Y y$
+nnoremap q: :q<CR>
 
 "" tags "
 """""""""
