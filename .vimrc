@@ -22,6 +22,7 @@ source ~/.vim/vimrc_addons/fmt.vim " TODO: implement as plugin
 source ~/.vim/vimrc_addons/mappings.vim
 source ~/.vim/vimrc_addons/autocmd.vim
 source ~/.vim/vimrc_addons/camelCase.vim
+source ~/.vim/vimrc_addons/echomargs.lua
 
 " TODO: implement as plugin
 " statusline

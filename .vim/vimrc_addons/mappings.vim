@@ -8,12 +8,12 @@ nnoremap <space><space>B :bfirst<CR>
 nnoremap <space><space>b :blast<CR>
 nnoremap <space>b :bnext<CR>
 nnoremap <space>B :bNext<CR>
-nnoremap <space><space>A :first<CR>:args<CR>
-nnoremap <space><space>a :last<CR>:args<CR>
-nnoremap <space>a :next<CR>:args<CR>
-nnoremap <space>A :Next<CR>:args<CR>
-nnoremap <space><space>T :tabfirst<CR>:args<CR>
-nnoremap <space><space>t :tablast<CR>:args<CR>
+nnoremap <space><space>A :first<CR>:lua EchomArgs()<CR>
+nnoremap <space><space>a :last<CR>:lua EchomArgs()<CR>
+nnoremap <space>a :next<CR>:lua EchomArgs()<CR>
+nnoremap <space>A :Next<CR>:lua EchomArgs()<CR>
+nnoremap <space><space>T :tabfirst<CR>:lua EchomArgs()<CR>
+nnoremap <space><space>t :tablast<CR>:lua EchomArgs()<CR>
 nnoremap <space>t :tabnext<CR>
 nnoremap <space>T :tabNext<CR>
 nnoremap <space>1 :1tabnext<CR>
@@ -23,18 +23,22 @@ nnoremap <space>4 :4tabnext<CR>
 nnoremap <space>5 :5tabnext<CR>
 nnoremap <space>6 :6tabnext<CR>
 
-nnoremap <leader>0 :0argu<CR>
-nnoremap <leader>1 :1argu<CR>
-nnoremap <leader>2 :2argu<CR>
-nnoremap <leader>3 :3argu<CR>
-nnoremap <leader>4 :4argu<CR>
-nnoremap <leader>5 :5argu<CR>
-nnoremap <leader>6 :6argu<CR>
+nnoremap <leader>0 :0argu<CR>:lua EchomArgs()<CR>
+nnoremap <leader>1 :1argu<CR>:lua EchomArgs()<CR>
+nnoremap <leader>2 :2argu<CR>:lua EchomArgs()<CR>
+nnoremap <leader>3 :3argu<CR>:lua EchomArgs()<CR>
+nnoremap <leader>4 :4argu<CR>:lua EchomArgs()<CR>
+nnoremap <leader>5 :5argu<CR>:lua EchomArgs()<CR>
+nnoremap <leader>6 :6argu<CR>:lua EchomArgs()<CR>
+nnoremap <leader>7 :7argu<CR>:lua EchomArgs()<CR>
+nnoremap <leader>8 :8argu<CR>:lua EchomArgs()<CR>
+nnoremap <leader>9 :9argu<CR>:lua EchomArgs()<CR>
 
 " add and remove to arglist
-nnoremap <leader>a :argadd<CR>:argdedupe<CR>:args<CR>
-nnoremap <leader>A :argdelete %<CR>:args<CR>
-nnoremap <leader><tab> :args<CR>
+nnoremap <leader>a :argadd<CR>:argdedupe<CR>:lua EchomArgs()<CR>
+nnoremap <leader>A :argdelete %<CR>:lua EchomArgs()<CR>
+nnoremap <leader><tab> :lua EchomArgs()<CR>
+nnoremap <tab> :lua EchomArgs()<CR>
 nnoremap <leader>t :tabe \| arglocal! %<left><left><left><left><left><left><left><left><left><left><left><left><left>
 
 "" More navigation "
@@ -98,7 +102,7 @@ source ~/.vim/vimrc_addons/camelCase.vim
 """"""""""""""""""""
 " jump to buffers CTRL_^ replacement
 "noremap <leader>b <C-^>
-noremap § <C-^>
+noremap § <C-^>:lua EchomArgs()<CR>
 
 noremap <Leader>w :w<Esc>
 inoremap <Leader>w <esc>:w<Esc>
@@ -148,17 +152,17 @@ nnoremap <Leader>x :set completeopt-=preview<cr>
 "nnoremap <Leader>y :set previewheight=1<CR>
 "nnoremap <Leader>x :set previewheight=10<CR>
 
+"" tags "
+"""""""""
+nnoremap £ <C-]>
+inoremap £ <C-X><C-]>
+
 "" QoL ""
 """""""""
 nnoremap <Leader>ç :vertical resize 80<CR>
 " make Y behave like other capitals
 noremap Y y$
 nnoremap q: :q<CR>
-
-"" tags "
-"""""""""
-nnoremap £ <C-]>
-inoremap £ <C-X><C-]>
 
 "" copy/paste and clipboard "
 noremap <Leader>p :set paste!<Esc>
