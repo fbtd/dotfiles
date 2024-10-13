@@ -20,7 +20,9 @@ cmd fzf_jump ${{
         lf -remote "send $id $cmd \"$res\""
     fi
 }}
-map öf :fzf_jump
+
+# like in nvim
+map üf :fzf_jump
 
 cmd to_vim_edit_this ${{
     echo "edit $f" > ~/tmp/vim_to_this.vim

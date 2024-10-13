@@ -36,8 +36,6 @@ set hidden                  " allow hidden buffers
 set mouse=""                " disable mouse
 set exrc                    " enable local .exrc file
 set noswapfile              " no .%.swp
-set wildmenu                " autocomplete suggestion menu
-set wildmode=longest,list   " autocomplete term style
 "set nrformats+=alpha        " CTRL+A and CTRL+X works also for letters
 set virtualedit=block       " enable virtualedit for visual block mode
 "set iskeyword-=_            " treat _ like whitespace and tabs
@@ -54,6 +52,15 @@ if has('nvim')
     set shadafile=NONE
 endif
 set wildignore+=.git/*,venv/*
+
+"" autocomplete "
+"""""""""""""""""
+" command mode
+set wildmenu                " autocomplete suggestion menu
+set wildmode=longest,list   " autocomplete term style
+" insert mode
+set completeopt=menuone,menu,noselect,popup
+
 
 "" Plugins "
 """"""""""""

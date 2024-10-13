@@ -91,9 +91,14 @@ inoremap <C-e> <C-o>$
 inoremap <C-f> <C-o>l
 inoremap <C-b> <C-o>h
 
+" autocomplete, choose next and prev like fzf
+inoremap <C-j> <C-n>
+inoremap <C-k> <C-p>
+
 " left and right scroll
 nnoremap zl 25zl
 nnoremap zh 25zh
+
 
 " a couple bindings for better CamelCase and under_score_case navigation
 source ~/.vim/vimrc_addons/camelCase.vim
