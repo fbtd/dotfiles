@@ -18,13 +18,28 @@ Plug('tpope/vim-surround')
 Plug('neovim/nvim-lspconfig')
 Plug('nvim-tree/nvim-tree.lua')
 
+-- colorscheme
+Plug('sainnhe/everforest')
+
+-- autocompletion
+Plug('hrsh7th/cmp-nvim-lsp')
+Plug('hrsh7th/cmp-buffer')
+Plug('hrsh7th/cmp-path')
+Plug('hrsh7th/cmp-cmdline')
+Plug('hrsh7th/nvim-cmp')
+
 vim.call('plug#end')
 
 ---------------
 -- apparence --
 ---------------
 
-vim.cmd.colorscheme('derpy')
+vim.opt.termguicolors = true
+vim.g.everforest_background = 'hard'
+vim.g.everforest_dim_inactive_windows = '1'
+vim.g.everforest_sign_column_background = 'grey'
+vim.g.everforest_diagnostic_virtual_text = 'colored'
+vim.cmd.colorscheme('everforest')
 
 vim.opt.number = true    -- line numbers
 vim.opt.showcmd = true    -- show the command you are typing
@@ -188,7 +203,7 @@ vim.keymap.set('n', 'q:', ':q<CR>')
 vim.keymap.set('n', '<Leader>p', ':set paste!<Esc>')
 
 -- execute cmd from ext file
-vim.keymap.set('n', '<leader>s', ':source ~/tmp/vim_to_this.vim<CR>')
+vim.keymap.set('n', '<leader>SS', ':source ~/tmp/vim_to_this.vim<CR>')
 
 -- leader leader to escape
 vim.keymap.set('c', '<Leader><Leader> ', '<Esc><Esc>')
@@ -208,9 +223,11 @@ vim.opt.completeopt = {'menuone','menu','noselect','popup'} -- insert mode
 vim.keymap.set('i', '<C-j>', '<C-n>')
 vim.keymap.set('i', '<C-k>', '<C-p>')
 
--- require('lsp_settings')
--- require('nvim-tree_settings')
--- require('fzf_settings')
+-- sessions and shada
+-- vim.keymap.set('n', '<Leader>s', ':mksession!<CR>:wshada '.. vim.fn.getcwd() ..'/.shada<CR>')
+vim.keymap.set('n', '<Leader>s', ':mksession!<CR>:wshada<CR>')
+vim.opt.shada = {'!', '\'200', '<1000', 's100' }
+
 
 -- load local nvim configuration
 local local_init_path = os.getenv('HOME') .. '/nvim_init_local.lua'

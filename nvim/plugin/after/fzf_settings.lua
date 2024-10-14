@@ -12,7 +12,14 @@ vim.keymap.set("n", "üü", require('fzf-lua').builtin)
 vim.keymap.set("n", "üh", require('fzf-lua').helptags)
 vim.keymap.set("n", "üf", require('fzf-lua').files)
 vim.keymap.set("n", "üb", require('fzf-lua').buffers)
-vim.keymap.set("n", "ü/", require('fzf-lua').blines)
+vim.keymap.set("n", "ü/", function()
+    local number = vim.opt.ft:get() ~= "man"
+    require('fzf-lua').blines({
+    ["winopts.preview.layout"] = "vertical",
+    ["winopts.preview.vertical"] = "down:90%",
+    ["winopts.preview.winopts.number"] = number,
+    ["winopts.fullscreen"] = true})
+end )
 vim.keymap.set("n", "üc", require('fzf-lua').quickfix)
 vim.keymap.set("n", "ül", require('fzf-lua').loclist)
 vim.keymap.set("n", "üt", require('fzf-lua').tabs)
@@ -20,6 +27,7 @@ vim.keymap.set("n", "üm", require('fzf-lua').marks)
 vim.keymap.set("n", "üj", require('fzf-lua').jumps)
 vim.keymap.set("n", "ü\"", require('fzf-lua').registers)
 vim.keymap.set("n", "üg", require('fzf-lua').grep)
+vim.keymap.set("n", "ü:", require('fzf-lua').commands)
 
 vim.keymap.set("i", "üf", require('fzf-lua').complete_path)
 

@@ -77,6 +77,7 @@ hi Search	cterm=NONE ctermfg=grey ctermbg=blue
 hi MoreMsg	ctermfg=darkgreen
 hi ModeMsg	cterm=NONE ctermfg=brown
 hi LineNr	ctermbg=gray ctermfg=black
+hi CursorLine	ctermbg=gray ctermfg=black
 hi Question	ctermfg=green
 hi StatusLine	cterm=bold,reverse
 hi StatusLineNC ctermbg=black ctermfg=gray
