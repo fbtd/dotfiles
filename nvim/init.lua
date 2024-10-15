@@ -49,6 +49,7 @@ vim.opt.scrolloff = 2   -- keep cursor distant from top/bottom while scrolling
 vim.opt.splitbelow = true    -- split in a logic way
 vim.opt.splitright = true    -- split in a logic way
 vim.opt.wrap = false    -- end of line and trailing spaces visibility
+vim.keymap.set('n', '<Leader>r', ':set wrap!<CR>')
 vim.opt.display="uhex"  -- display unprintable chars as <xx>
 
 -- preview window
@@ -114,6 +115,17 @@ vim.keymap.set('n', 'zh', '25zh')
 -- scroll faster
 vim.keymap.set('n', '<C-y>', '<C-y><C-y><C-y>')
 vim.keymap.set('n', '<C-e>', '<C-e><C-e><C-e>')
+
+-- no line jumping for w, W, b, B, e, E
+local function more_words()
+    return vim.fn.search("\\W\\w", "nW", vim.fn.line('.'))
+end
+for _, key in pairs {'w', 'W', 'e', 'E'} do
+    vim.keymap.set('n', key, function()
+        _=more_words() > 0 and vim.cmd("normal! " .. key) or vim.cmd("normal! $")
+    end)
+end
+
 
 ------------------------
 -- moving text around --

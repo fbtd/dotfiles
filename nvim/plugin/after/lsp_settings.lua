@@ -19,6 +19,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         -- See `:help vim.lsp.*` for documentation on any of the below functions
         local opts = { buffer = ev.buf }
         vim.keymap.set('n', '<space><space>', vim.lsp.buf.hover, opts)
+        vim.keymap.set('n', '<F2>', vim.lsp.buf.rename, opts)
         vim.keymap.set('n', '<space>f', 'gqlh')
         vim.keymap.set('v', '<space>f', 'gq')
         vim.keymap.set('n', '<space>F', vim.lsp.buf.format, opts)
@@ -28,8 +29,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set("n", "<space>D", require('fzf-lua').lsp_declarations)
         vim.keymap.set("n", "<space>s", require('fzf-lua').lsp_document_symbols)
         vim.keymap.set("n", "<space>S", require('fzf-lua').lsp_workspace_symbols)
-        vim.keymap.set("n", "<space>e", require('fzf-lua').lsp_document_diagnostics)
-        vim.keymap.set("n", "<space>E", require('fzf-lua').lsp_workspace_diagnostics)
+        vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
+        vim.keymap.set("n", "<space>E", function() vim.diagnostic.open_float({scope='b'}) end)
+        vim.keymap.set("n", "üe", require('fzf-lua').lsp_document_diagnostics)
+        vim.keymap.set("n", "üE", require('fzf-lua').lsp_workspace_diagnostics)
+
+        vim.keymap.set("n", "<space>h", vim.lsp.buf.document_highlight)
+        vim.keymap.set("n", "<space>c", vim.lsp.buf.clear_references)
 
         vim.keymap.set("i", "<C-h>", function()
             require('cmp').close()
