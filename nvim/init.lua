@@ -13,13 +13,18 @@ if vim.uv.fs_stat(local_plugin_path) then
    vim.cmd.source(local_plugin_path)
 end
 
+-- utils
 Plug('ibhagwan/fzf-lua')
 Plug('tpope/vim-surround')
-Plug('neovim/nvim-lspconfig')
+Plug('echasnovski/mini.nvim')
 Plug('nvim-tree/nvim-tree.lua')
+Plug('stevearc/oil.nvim')
 
 -- colorscheme
 Plug('sainnhe/everforest')
+
+-- lsp
+Plug('neovim/nvim-lspconfig')
 
 -- autocompletion
 Plug('hrsh7th/cmp-nvim-lsp')
@@ -29,6 +34,9 @@ Plug('hrsh7th/cmp-cmdline')
 Plug('hrsh7th/nvim-cmp')
 
 vim.call('plug#end')
+
+-- defaults are great, no need for its own setting file
+require('mini.ai').setup()
 
 ---------------
 -- apparence --

@@ -48,3 +48,4 @@ require("nvim-tree").setup({
 })
 
 vim.keymap.set('n', '<leader>n', '<cmd>NvimTreeFindFile<cr>')
+vim.keymap.set('n', '<leader>N', '<cmd>NvimTreeClose<cr>')
