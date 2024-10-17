@@ -250,6 +250,7 @@ fi
 
 
 ## VIM STUFF ##
+export NVIM_FILE_LIST="$HOME/tmp/nvim_ipc/file_list.txt"
 
 export SUDO_EDITOR=vim
 if which nvim &>/dev/null ; then 

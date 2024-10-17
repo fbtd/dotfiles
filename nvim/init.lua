@@ -1,5 +1,9 @@
 local vim = vim
 
+function P(a)
+    print(vim.inspect(a))
+end
+
 vim.g.mapleader = "ö"
 -- vim.g.maplocalleader = "ä"
 
@@ -97,11 +101,30 @@ vim.keymap.set('n', '<leader>9', ':9argu<CR>:lua EchomArgs()<CR>')
 vim.keymap.set('n', '<leader>a', ':argadd<CR>:argdedupe<CR>:lua EchomArgs()<CR>')
 vim.keymap.set('n', '<leader>A', ':argdelete %<CR>:lua EchomArgs()<CR>')
 vim.keymap.set('n', '<tab>', ':lua EchomArgs()<CR>')
-vim.keymap.set('n', '<leader>t', ':tabe \\| arglocal! %<left><left><left><left><left><left><left><left><left><left><left><left><left>')
+vim.keymap.set('n', '<leader>t', ':tabe | arglocal! %<left><left><left><left><left><left><left><left><left><left><left><left><left>')
 
 vim.keymap.set('n', '£', '<C-]>')   --follow link with £
 vim.keymap.set('n', '§', '<C-^>:lua EchomArgs()<CR>') -- alt file
 
+
+---------------------------
+-- commands from outside --
+---------------------------
+
+local formatter = vim.fn.stdpath('config') .. '/to_errorformat.awk'
+local file_list = os.getenv('NVIM_FILE_LIST')
+if file_list then
+    local cmd = 'system("awk -f ' .. formatter .. ' --assign cwd=' .. vim.uv.cwd() .. ' ' .. file_list ..'")'
+    vim.keymap.set('n', '<Leader>f', function () vim.cmd.cexpr(cmd) end)
+    vim.keymap.set('n', '<Leader>g', function () vim.cmd.cgetexpr(cmd) end)
+end
+
+-- execute cmd from ext file
+-- ...lets not do that
+-- vim.keymap.set('n', '<leader>SS', ':source ~/tmp/vim_to_this.vim<CR>')
+
+-- paste mode
+vim.keymap.set('n', '<Leader>p', ':set paste!<Esc>')
 
 --------------------
 -- buffer related --
@@ -208,7 +231,6 @@ vim.opt.mouse = {}  -- disable mouse
 vim.opt.exrc = true    -- enable local .exrc file
 vim.opt.swapfile = false    -- no .%.swp
 vim.opt.virtualedit = 'block' -- enable virtualedit for visual block mode
-vim.opt.formatoptions = {'t', 'l'}
 vim.opt.wrapscan = false    -- no file wrap during search
 vim.opt.modeline = true    -- allow modeline ( /* vim: set sw=2: */ )
 vim.opt.timeout = false
@@ -218,12 +240,6 @@ vim.opt.wildignore:append({'.git/*','venv/*'})
 -- fix Y behaviour
 vim.keymap.set('n', 'Y', 'y$')
 vim.keymap.set('n', 'q:', ':q<CR>')
-
--- paste mode
-vim.keymap.set('n', '<Leader>p', ':set paste!<Esc>')
-
--- execute cmd from ext file
-vim.keymap.set('n', '<leader>SS', ':source ~/tmp/vim_to_this.vim<CR>')
 
 -- leader leader to escape
 vim.keymap.set('c', '<Leader><Leader> ', '<Esc><Esc>')
@@ -249,9 +265,25 @@ vim.keymap.set('n', '<Leader>s', ':mksession!<CR>:wshada<CR>')
 vim.opt.shada = {'!', '\'200', '<1000', 's100' }
 
 
+------------------
+-- autocommands --
+------------------
+
+local ft = vim.api.nvim_create_augroup('init', { clear = false })
+vim.api.nvim_create_autocmd({ 'FileType' }, {
+    pattern = '*',
+    group = ft,
+    callback = function()
+        -- remove autocomments, event if the ft plugins want them
+        vim.opt.formatoptions:remove('c')
+        vim.opt.formatoptions:remove('r')
+        vim.opt.formatoptions:remove('o')
+    end
+})
+
+
 -- load local nvim configuration
 local local_init_path = os.getenv('HOME') .. '/nvim_init_local.lua'
 if vim.uv.fs_stat(local_init_path) then
    vim.cmd.source(local_init_path)
 end
-

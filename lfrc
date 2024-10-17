@@ -25,6 +25,7 @@ cmd fzf_jump ${{
 map üf :fzf_jump
 
 cmd to_vim_edit_this ${{
-    echo "edit $f" > ~/tmp/vim_to_this.vim
+    echo "$fx" > ~/tmp/nvim_ipc/file_list.txt
+
 }}
 map öe :to_vim_edit_this

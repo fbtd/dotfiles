@@ -2,6 +2,18 @@ local vim = vim
 ---------------
 -- PREFIX: ü --
 ---------------
+local actions = require "fzf-lua.actions"
+require'fzf-lua'.setup {
+    keymap = {
+        builtin = {
+            true,
+            ü = "toggle-preview-cw",
+        },
+    },
+    oldfiles = {
+        include_current_session = true,  -- include bufs from current session
+    },
+}
 
 -- for old time sake
 vim.keymap.set("n", "<c-P>", require('fzf-lua').files)
