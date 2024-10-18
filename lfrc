@@ -26,6 +26,5 @@ map üf :fzf_jump
 
 cmd to_vim_edit_this ${{
     echo "$fx" > ~/tmp/nvim_ipc/file_list.txt
-
 }}
 map öe :to_vim_edit_this

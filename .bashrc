@@ -151,8 +151,11 @@ function s2 () {
 
 function s3 () {
     [ -z ${TMUX+x} ] && tt  # if tmux is not running, start it
-    tmux split-window -t .0 -h
-    tmux split-window -t .1 -v
+    n_panes=$(tmux list-panes | wc -l)
+    if [ $n_panes -eq 1 ]; then
+        tmux split-window -t .0 -h
+        tmux split-window -t .1 -v
+    fi
     tmux resize-pane  -t .1 -x 87
 }
 

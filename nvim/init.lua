@@ -174,6 +174,11 @@ vim.keymap.set('n', '<down>', 'ddp')
 vim.keymap.set('v', '<up>', ':<C-u>sil! \'<,\'>m\'<-2<CR>\'<V\'>')
 vim.keymap.set('v', '<down>', 'dp\'[V\']')
 
+-- copy paste visual mode should not update the " register
+vim.keymap.set('v', 'p', '"_dP')
+-- same for 'c' and 's'
+vim.keymap.set('n', 'c', '"_c')
+vim.keymap.set('n', 's', '"_s')
 
 -----------------
 -- Insert mode --
@@ -278,6 +283,15 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
         vim.opt.formatoptions:remove('c')
         vim.opt.formatoptions:remove('r')
         vim.opt.formatoptions:remove('o')
+    end
+})
+
+local ft_man = vim.api.nvim_create_augroup('ft_map', { clear = false })
+vim.api.nvim_create_autocmd({ 'FileType' }, {
+    pattern = 'man',
+    group = ft_man,
+    callback = function()
+        vim.keymap.set('n', 'q', ':q<CR>', {buffer = 0, noremap=false})
     end
 })
 
