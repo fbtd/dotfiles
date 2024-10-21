@@ -84,9 +84,14 @@ alias l='ls -CF'
 alias t='tree -hC'
 alias td='tree -Cd'
 alias ..='cd ..'
+alias 2.='cd ../..'
+alias 3.='cd ../../..'
+alias 4.='cd ../../../..'
 alias hgrep='history | grep'
 alias dfc='df -h | cowsay -bn'
 alias tt='tmux -2 new-session -A -s wrk'
+
+# lol who still uses those?
 alias pd='pushd'
 alias pd2='pushd +2'
 alias pd3='pushd +3'
@@ -94,14 +99,14 @@ alias pd4='pushd +4'
 alias pd5='pushd +5'
 alias dv='dirs -v'
 
-#alias man='MANWIDTH=$COLUMNS man'
-#alias c8='COLUMNS=80'
 alias gl="git log --pretty='%C(yellow)%h %C(cyan)%ad %Creset%s%C(auto)%d' --date=relative"
 alias glg="gl --graph"
 alias gla='glg --all'
 
 alias p="python3"
 alias bp="python3 -m bpython"
+
+alias glow="glow -p -l --style light"
 
 function jqless () {
     jq '.' -C $1 | less -r
@@ -204,6 +209,9 @@ alias dps="docker ps"
 alias dpsa="docker ps -a"
 alias dcp="docker container prune"
 
+# chsht.sh
+export CHTSH_QUERY_OPTIONS="style=xcode"
+
 export CLICOLOR=1
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -233,7 +241,14 @@ function cgrep {
     echo "$(tput setaf 6)line count: $(tput setaf 5) $(wc -l $2)$(tput setaf 0)"
 }
 
+# lf and shell
 
+# PS1="\[$(tput bold)$(tput setaf 4)\]\w\[$(tput setaf 1)\$(test \$? != 0 && tput smso)\] \\$ \[$(tput sgr0)\]"
+PS1="$(test -v lf && echo '<LF> ' )$PS1"
+function lf {
+    [ -v lf ] && exit
+    command lf
+}
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile

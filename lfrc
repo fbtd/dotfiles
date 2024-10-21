@@ -2,7 +2,11 @@ set scrolloff 3
 set ratios 1:2:1
 set hidden
 
-cmd open &true
+#cmd open &true
+map <enter> ${{
+    [ -d $f ] && cd $f
+    $SHELL
+}}
 
 map ö2 :set ratios 1:2
 map ö3 :set ratios 1:2:1
