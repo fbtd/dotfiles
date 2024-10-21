@@ -23,6 +23,7 @@ Plug('tpope/vim-surround')
 Plug('echasnovski/mini.nvim')
 Plug('nvim-tree/nvim-tree.lua')
 Plug('stevearc/oil.nvim')
+Plug('folke/flash.nvim')
 
 -- colorscheme
 Plug('sainnhe/everforest')
