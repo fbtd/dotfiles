@@ -102,6 +102,7 @@ alias dv='dirs -v'
 alias gl="git log --pretty='%C(yellow)%h %C(cyan)%ad %Creset%s%C(auto)%d' --date=relative"
 alias glg="gl --graph"
 alias gla='glg --all'
+alias gb='git branch --list --all -vv'
 
 alias p="python3"
 alias bp="python3 -m bpython"
