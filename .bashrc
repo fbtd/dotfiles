@@ -245,9 +245,9 @@ function cgrep {
 # lf and shell
 
 # PS1="\[$(tput bold)$(tput setaf 4)\]\w\[$(tput setaf 1)\$(test \$? != 0 && tput smso)\] \\$ \[$(tput sgr0)\]"
-PS1="$(test -v lf && echo '<LF> ' )$PS1"
+PS1="$(test -v lf_info && echo '<LF> ' )$PS1"
 function lf {
-    [ -v lf ] && exit
+    [ -v lf_info ] && exit
     command lf
 }
 

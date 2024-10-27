@@ -8,6 +8,9 @@ map <enter> ${{
     $SHELL
 }}
 
+map <f-2> :rename
+map ör :reload
+
 map ö2 :set ratios 1:2
 map ö3 :set ratios 1:2:1
 map ö4 :set ratios 1:1:2:1
