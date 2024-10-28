@@ -24,6 +24,8 @@ Plug('echasnovski/mini.nvim')
 Plug('nvim-tree/nvim-tree.lua')
 Plug('stevearc/oil.nvim')
 Plug('folke/flash.nvim')
+Plug('nvim-lua/plenary.nvim')
+Plug('epwalsh/obsidian.nvim')
 
 -- colorscheme
 Plug('sainnhe/everforest')
@@ -74,6 +76,9 @@ vim.keymap.set('n', '<leader><S-tab>', ':set nonu nornu signcolumn=no<cr>')
 vim.keymap.set('n', '<leader><tab>', ':set nu nornu signcolumn=yes<cr>')
 vim.keymap.set('n', '<S-tab>', ':set rnu! nu<cr>')
 vim.keymap.set('n', '<Leader>l', ':set list!<Esc>')
+
+-- for markdown
+vim.opt.conceallevel = 1
 
 --------------------------
 -- moving between files --
@@ -170,8 +175,9 @@ vim.keymap.set('n', '<right>', '>>')
 vim.keymap.set('v', '<right>', '>gv')
 
 -- move lines up and down
-vim.keymap.set('n', '<up>', 'kddpk')
-vim.keymap.set('n', '<down>', 'ddp')
+-- commented out because of mouse scrolling
+-- vim.keymap.set('n', '<up>', 'kddpk')
+-- vim.keymap.set('n', '<down>', 'ddp')
 vim.keymap.set('v', '<up>', ':<C-u>sil! \'<,\'>m\'<-2<CR>\'<V\'>')
 vim.keymap.set('v', '<down>', 'dp\'[V\']')
 

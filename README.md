@@ -13,7 +13,7 @@ or append `. ~/dotfiles/.bashrc` to .bashrc
 
 ### .initrc
 maps *ctrl-y* to windows-style autocomplete <br/>
-`ln -s ~/dotfiles/.initrc ~/.initrc`<br/>
+`ln -s ~/dotfiles/.inputrc ~/.inputrc`<br/>
 
 ### TMUX
 `ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf`
