@@ -24,6 +24,8 @@ Plug('echasnovski/mini.nvim')
 Plug('nvim-tree/nvim-tree.lua')
 Plug('stevearc/oil.nvim')
 Plug('folke/flash.nvim')
+
+-- obsidian and dependencies
 Plug('nvim-lua/plenary.nvim')
 Plug('epwalsh/obsidian.nvim')
 
@@ -40,6 +42,9 @@ Plug('hrsh7th/cmp-path')
 Plug('hrsh7th/cmp-cmdline')
 Plug('hrsh7th/nvim-cmp')
 
+-- copilot
+Plug('zbirenbaum/copilot.lua')
+
 vim.call('plug#end')
 
 -- defaults are great, no need for its own setting file
@@ -53,6 +58,7 @@ vim.opt.termguicolors = true
 vim.g.everforest_background = 'hard'
 vim.g.everforest_dim_inactive_windows = '1'
 vim.g.everforest_sign_column_background = 'grey'
+vim.g.everforest_ui_contrast = 'high'
 vim.g.everforest_diagnostic_virtual_text = 'colored'
 vim.cmd.colorscheme('everforest')
 
@@ -203,6 +209,9 @@ vim.keymap.set('i', 'kk', '<Esc>k')
 vim.keymap.set('i', 'JJ', '<Esc>o')
 vim.keymap.set('i', 'KK', '<Esc>O')
 vim.keymap.set('i', 'jk', '<Esc>')
+
+-- insert pesky ```
+vim.keymap.set('i', 'kj3', '```')
 
 -- readline(3) movement in insert mode
 vim.keymap.set('i', '<C-a>', '<C-o>0')
