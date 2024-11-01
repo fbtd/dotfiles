@@ -31,6 +31,7 @@ Plug('epwalsh/obsidian.nvim')
 
 -- colorscheme
 Plug('sainnhe/everforest')
+-- Plug('catppuccin/nvim', { as = 'catppuccin' })
 
 -- lsp
 Plug('neovim/nvim-lspconfig')
@@ -61,6 +62,9 @@ vim.g.everforest_sign_column_background = 'grey'
 vim.g.everforest_ui_contrast = 'high'
 vim.g.everforest_diagnostic_virtual_text = 'colored'
 vim.cmd.colorscheme('everforest')
+
+
+-- vim.cmd.colorscheme('catppuccin-latte')
 
 vim.opt.number = true    -- line numbers
 vim.opt.showcmd = true    -- show the command you are typing
@@ -260,7 +264,6 @@ vim.opt.wildignore:append({'.git/*','venv/*'})
 
 -- fix Y behaviour
 vim.keymap.set('n', 'Y', 'y$')
-vim.keymap.set('n', 'q:', ':q<CR>')
 
 -- leader leader to escape
 vim.keymap.set('c', '<Leader><Leader> ', '<Esc><Esc>')

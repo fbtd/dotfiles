@@ -16,3 +16,4 @@ vim.keymap.set('n', '<Leader>k', function () require("flash").jump({
 })  end)
 
 vim.keymap.set('o', 'r', function() require("flash").remote() end)
+vim.api.nvim_set_hl(0, "FlashMatch", {bg= "red"})

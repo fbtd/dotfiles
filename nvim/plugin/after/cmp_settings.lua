@@ -29,7 +29,10 @@ cmp.setup({
     }, {
         { name = 'buffer' },
     }),
-    completion = { autocomplete = false },
+    completion = {
+        autocomplete = false
+    },
+    preselect = cmp.PreselectMode.None,
 })
 
 
