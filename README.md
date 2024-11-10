@@ -53,3 +53,6 @@ somewhre in your PATH put<br/>
 curl https://cht.sh/:cht.sh -o cht
 chmod u+x cht
 ```
+eventually curl `https://cheat.sh/:bash_completion` to `.bash_local`
+## fd and rg
+wip

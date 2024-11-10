@@ -3,7 +3,7 @@ local flash = require 'flash'
 flash.setup({
     labels = "asdfghlqwertyuiopzxcvbnm",
     search = { multi_window = false },
-    ["modes.char.jump_labels"] = true,
+    modes = {char = { enabled = false}},
 })
 
 

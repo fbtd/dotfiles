@@ -45,6 +45,7 @@ Plug('hrsh7th/nvim-cmp')
 
 -- copilot
 Plug('zbirenbaum/copilot.lua')
+-- Plug('CopilotC-Nvim/CopilotChat.nvim')
 
 vim.call('plug#end')
 

@@ -22,7 +22,6 @@ require('copilot').setup({
         keymap = {
             accept = "j<tab>",
             accept_word = "<S-tab>",
-            accept_line = "<C-tab>",
             next = "<C-j>",
             prev = "<C-k>",
             dismiss = "<C-e>",
@@ -44,3 +43,7 @@ require('copilot').setup({
 })
 
 vim.keymap.set('n', '<space><tab>', function() require("copilot.suggestion").toggle_auto_trigger() end)
+
+-- require("CopilotChat").setup {
+--
+-- }
