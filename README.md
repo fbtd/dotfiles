@@ -54,5 +54,10 @@ curl https://cht.sh/:cht.sh -o cht
 chmod u+x cht
 ```
 eventually curl `https://cheat.sh/:bash_completion` to `.bash_local`
+### GDB
+https://github.com/gdbinit/Gdbinit/tree/master
+```
+ln -s ~/dotfiles/.gdbinit ~/.gdbinit
+```
 ## fd and rg
 wip

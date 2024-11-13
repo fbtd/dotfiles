@@ -47,6 +47,8 @@ Plug('hrsh7th/nvim-cmp')
 Plug('zbirenbaum/copilot.lua')
 -- Plug('CopilotC-Nvim/CopilotChat.nvim')
 
+-- Plug 'mfussenegger/nvim-dap'
+
 vim.call('plug#end')
 
 -- defaults are great, no need for its own setting file
