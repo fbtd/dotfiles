@@ -60,7 +60,7 @@ require('mini.ai').setup()
 
 vim.opt.termguicolors = true
 vim.g.everforest_background = 'hard'
-vim.g.everforest_dim_inactive_windows = '1'
+vim.g.everforest_dim_inactive_windows = '0'
 vim.g.everforest_sign_column_background = 'grey'
 vim.g.everforest_ui_contrast = 'high'
 vim.g.everforest_diagnostic_virtual_text = 'colored'
@@ -79,6 +79,8 @@ vim.opt.splitright = true    -- split in a logic way
 vim.opt.wrap = false    -- end of line and trailing spaces visibility
 vim.keymap.set('n', '<Leader>r', ':set wrap!<CR>')
 vim.opt.display="uhex"  -- display unprintable chars as <xx>
+vim.opt.cursorline = true
+vim.opt.cursorcolumn = true
 
 -- preview window
 vim.keymap.set('n', '<Leader>v', ':execute "silent pedit +" . line(".") . "\\|normal\\\\ zt %"<cr>')
@@ -144,6 +146,7 @@ end
 
 -- paste mode
 vim.keymap.set('n', '<Leader>p', ':set paste!<Esc>')
+vim.keymap.set('n', '<Leader>y', ":let @+ = expand('%') . ':' . line('.')<CR>")
 
 --------------------
 -- buffer related --

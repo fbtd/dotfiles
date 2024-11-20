@@ -81,8 +81,6 @@ alias ee='exit'
 alias ll='ls -lah'
 alias la='ls -A'
 alias l='ls -CF'
-alias t='tree -hC'
-alias td='tree -Cd'
 alias ..='cd ..'
 alias 2.='cd ../..'
 alias 3.='cd ../../..'
@@ -91,6 +89,15 @@ alias hgrep='history | grep'
 alias dfc='df -h | cowsay -bn'
 alias tt='tmux -2 new-session -A -s wrk'
 alias ttt='tmuxinator start wrk'
+
+alias z='eza --icons -A'
+alias zz='eza --long --icons -A'
+alias zr='eza --icons --recurse -A'
+alias t='eza --tree --icons -A --git-ignore'
+alias t2='eza --tree --icons -L2 -A --git-ignore'
+alias t3='eza --tree --icons -L3 -A --git-ignore'
+alias t4='eza --tree --icons -L4 -A --git-ignore'
+alias t5='eza --tree --icons -L5 -A --git-ignore'
 
 # lol who still uses those?
 alias pd='pushd'
@@ -104,6 +111,7 @@ alias gl="git log --pretty='%C(yellow)%h %C(cyan)%ad %Creset%s%C(auto)%d' --date
 alias glg="gl --graph"
 alias gla='glg --all'
 alias gb='git branch --list --all -vv'
+alias gec='git_extract_conflicts.sh'
 
 alias p="python3"
 alias bp="python3 -m bpython"
