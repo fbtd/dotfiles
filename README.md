@@ -3,7 +3,7 @@ Configuration for my linux/osx workstation
 
 ## Installation
 ### Git
-local gitconfig is in .gitconfig_local <br/>
+local gitconfig is in `.gitconfig_local` <br/>
 `ln -s ~/dotfiles/gitconfig_global ~/.gitconfig`
 
 ### Bashrc
@@ -36,28 +36,12 @@ https://github.com/gokcehan/lf<br/>
 mkdir -p ~/.config/nvim
 ln -s ~/dotfiles/lfrc ~/.config/lf/lfrc
 ```
-
-### glow
-markdown viewer https://github.com/charmbracelet/glow<br/>
-```
-# wget https://github.com/charmbracelet/glow/releases/ whatever _x86.64.tar.gz
-# unpack, copy executable to bin
-# enable bash completion
-sudo cp completions/glow.bash /usr/share/bash-completion/completions/glow
-```
-
-### cheat.sh
-https://github.com/chubin/cheat.sh<br/>
-somewhre in your PATH put<br/>
-```
-curl https://cht.sh/:cht.sh -o cht
-chmod u+x cht
-```
-eventually curl `https://cheat.sh/:bash_completion` to `.bash_local`
 ### GDB
 https://github.com/gdbinit/Gdbinit/tree/master
 ```
 ln -s ~/dotfiles/.gdbinit ~/.gdbinit
 ```
-## fd and rg
-wip
+### .pythonrc
+```
+ln -s ~/dotfiles/.pythonrc ~/.pythonrc
+```

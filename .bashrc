@@ -257,7 +257,7 @@ function cgrep {
 PS1="$(test -v lf_info && echo '<LF> ' )$PS1"
 function lf {
     [ -v lf_info ] && exit
-    command lf
+    command lf $@
 }
 
 # enable programmable completion features (you don't need to enable
