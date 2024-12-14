@@ -43,6 +43,10 @@ Plug('hrsh7th/cmp-path')
 Plug('hrsh7th/cmp-cmdline')
 Plug('hrsh7th/nvim-cmp')
 
+-- tresitter
+Plug('nvim-treesitter/nvim-treesitter')
+Plug('nvim-treesitter/nvim-treesitter-textobjects')
+
 -- copilot
 Plug('zbirenbaum/copilot.lua')
 -- Plug('CopilotC-Nvim/CopilotChat.nvim')
@@ -60,10 +64,12 @@ require('mini.ai').setup()
 
 vim.opt.termguicolors = true
 vim.g.everforest_background = 'hard'
-vim.g.everforest_dim_inactive_windows = '0'
+vim.g.everforest_dim_inactive_windows = '1'
 vim.g.everforest_sign_column_background = 'grey'
 vim.g.everforest_ui_contrast = 'high'
 vim.g.everforest_diagnostic_virtual_text = 'colored'
+-- vim.g.everforest_inlay_hints_background = 'dimmed'
+
 vim.cmd.colorscheme('everforest')
 
 
@@ -80,7 +86,7 @@ vim.opt.wrap = false    -- end of line and trailing spaces visibility
 vim.keymap.set('n', '<Leader>r', ':set wrap!<CR>')
 vim.opt.display="uhex"  -- display unprintable chars as <xx>
 vim.opt.cursorline = true
-vim.opt.cursorcolumn = true
+-- vim.opt.cursorcolumn = true
 
 -- preview window
 vim.keymap.set('n', '<Leader>v', ':execute "silent pedit +" . line(".") . "\\|normal\\\\ zt %"<cr>')
@@ -169,7 +175,7 @@ vim.keymap.set('n', 'zh', '25zh')
 vim.keymap.set('n', '<C-y>', '<C-y><C-y><C-y>')
 vim.keymap.set('n', '<C-e>', '<C-e><C-e><C-e>')
 
--- no line jumping for w, W, b, B, e, E
+-- no line jumping for w, W, e, E
 local function more_words()
     return vim.fn.search("\\W\\w", "nW", vim.fn.line('.'))
 end
@@ -271,12 +277,6 @@ vim.opt.wildignore:append({'.git/*','venv/*'})
 -- fix Y behaviour
 vim.keymap.set('n', 'Y', 'y$')
 
--- leader leader to escape
-vim.keymap.set('c', '<Leader><Leader> ', '<Esc><Esc>')
-vim.keymap.set('i', '<Leader><Leader> ', '<Esc><Esc>')
-vim.keymap.set('n', '<Leader><Leader> ', '<Esc><Esc>')
-vim.keymap.set('v', '<Leader><Leader> ', '<Esc><Esc>')
-
 -- statusline
 vim.cmd.source(vim.fn.stdpath('config') .. '/statusline.vim')
 
@@ -326,3 +326,6 @@ local local_init_path = os.getenv('HOME') .. '/nvim_init_local.lua'
 if vim.uv.fs_stat(local_init_path) then
    vim.cmd.source(local_init_path)
 end
+
+vim.api.nvim_set_hl(0, "CursorLine", {bg = "#dfdfdf"})
+vim.api.nvim_set_hl(0, "MatchParen", {bg = "#a0a0a0"})

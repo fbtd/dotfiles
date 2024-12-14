@@ -38,7 +38,7 @@ vim.keymap.set("n", "üt", require('fzf-lua').tabs)
 vim.keymap.set("n", "üm", require('fzf-lua').marks)
 vim.keymap.set("n", "üj", require('fzf-lua').jumps)
 vim.keymap.set("n", "ü\"", require('fzf-lua').registers)
-vim.keymap.set("n", "üg", require('fzf-lua').grep)
+vim.keymap.set("n", "üg", require('fzf-lua').live_grep)
 vim.keymap.set("n", "ü:", require('fzf-lua').commands)
 
 vim.keymap.set("i", "üf", require('fzf-lua').complete_path)
