@@ -85,7 +85,6 @@ alias ..='cd ..'
 alias 2.='cd ../..'
 alias 3.='cd ../../..'
 alias 4.='cd ../../../..'
-alias hgrep='history | grep'
 alias dfc='df -h | cowsay -bn'
 alias tt='tmux -2 new-session -A -s wrk'
 alias ttt='tmuxinator start wrk'
@@ -164,14 +163,25 @@ function s2 () {
     tmux split-window -t .0 -v
 }
 
+HIST_FOLDER="$HOME/.var/bash_history"
 function s3 () {
+    which tmux >/dev/null || return
     [ -z ${TMUX+x} ] && tt  # if tmux is not running, start it
     n_panes=$(tmux list-panes | wc -l)
     if [ $n_panes -eq 1 ]; then
-        tmux split-window -t .0 -h
-        tmux split-window -t .1 -v
+        mkdir -p $HIST_FOLDER
+        p="$(pwd | sed 's%/%_%g; s/_//1')"
+        histfile=${HIST_FOLDER}/${p}
+
+        HISTFILE=${histfile}_0
+        history -c
+        history -r
+        tmux split-window -t .0 -h -e HISTFILE=${histfile}_1
+        tmux split-window -t .1 -v -e HISTFILE=${histfile}_2
     fi
     tmux resize-pane  -t .1 -x 87
+    tmux resize-pane  -t .2 -y 10
+    tmux select-pane  -t .0
 }
 
 function svba () {
@@ -368,6 +378,11 @@ if which fzf &>/dev/null ; then
         awk '{print $1}' | \
         xargs -r bash -c -i 'mm $1' 0
     }
+
+    # WIP
+    # function fhist() {
+    #     $(rg --no-heading --no-filename --no-line-number . ~/.var/bash_history | fzf)
+    # }
 
     f1=''
     f2=''

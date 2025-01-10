@@ -64,7 +64,7 @@ require('mini.ai').setup()
 
 vim.opt.termguicolors = true
 vim.g.everforest_background = 'hard'
-vim.g.everforest_dim_inactive_windows = '1'
+-- vim.g.everforest_dim_inactive_windows = '0'
 vim.g.everforest_sign_column_background = 'grey'
 vim.g.everforest_ui_contrast = 'high'
 vim.g.everforest_diagnostic_virtual_text = 'colored'
@@ -329,3 +329,4 @@ end
 
 vim.api.nvim_set_hl(0, "CursorLine", {bg = "#dfdfdf"})
 vim.api.nvim_set_hl(0, "MatchParen", {bg = "#a0a0a0"})
+vim.api.nvim_set_hl(0, "Normal", {bg = "#ffffff"})

@@ -24,7 +24,7 @@ vim.keymap.set("n", "üü", require('fzf-lua').builtin)
 vim.keymap.set("n", "üh", require('fzf-lua').helptags)
 vim.keymap.set("n", "üf", require('fzf-lua').files)
 vim.keymap.set("n", "üb", require('fzf-lua').buffers)
-vim.keymap.set("n", "ü/", function()
+vim.keymap.set("n", "üi", function()
     local number = vim.opt.ft:get() ~= "man"
     require('fzf-lua').blines({
     ["winopts.preview.layout"] = "vertical",
