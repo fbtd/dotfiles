@@ -91,6 +91,8 @@ alias ttt='tmuxinator start wrk'
 
 alias z='eza --icons -A'
 alias zz='eza --long --icons -A'
+alias zd='eza --long --icons -A --sort=date'
+alias zD='eza --long --icons -A --sort=date --reverse'
 alias zr='eza --icons --recurse -A'
 alias t='eza --tree --icons -A --git-ignore'
 alias t2='eza --tree --icons -L2 -A --git-ignore'
@@ -118,7 +120,7 @@ alias bp="python3 -m bpython"
 alias glow="glow -p -l --style light"
 
 function jqless () {
-    jq '.' -C $1 | less -r
+    jq '.' -C "$1" | less -r
 }
 
 # functions: TODO put in different file
@@ -133,10 +135,10 @@ function gs () {
 }
 
 function we() {
-    explorer.exe ${1:-.}
+    explorer.exe "${1:-.}"
 }
 
-function mkcd () { mkdir -p $1 && cd $1 ; }
+function mkcd () { mkdir -p "$1" && cd "$1" ; }
 function ,, () {
 echo ""
 echo ' _____ _   _ _______ ______ _____  __  __ _____  _____ _____ _____ ____  _   _ '
@@ -148,7 +150,7 @@ echo '|_____|_| \_|  |_|  |______|_|  \_\_|  |_|_____|_____/_____/|_____\____/|_
 echo "";
 }
 function , () {
-    for i in $(seq 1 $(tput cols)) ; do
+    for _ in $(seq 1 $(tput cols)) ; do
         echo -n "#"
     done
     echo ""
@@ -168,8 +170,8 @@ function s3 () {
     which tmux >/dev/null || return
     [ -z ${TMUX+x} ] && tt  # if tmux is not running, start it
     n_panes=$(tmux list-panes | wc -l)
-    if [ $n_panes -eq 1 ]; then
-        mkdir -p $HIST_FOLDER
+    if [ "$n_panes" -eq 1 ]; then
+        mkdir -p "$HIST_FOLDER"
         p="$(pwd | sed 's%/%_%g; s/_//1')"
         histfile=${HIST_FOLDER}/${p}
 
