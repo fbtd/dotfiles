@@ -25,9 +25,11 @@ Plug('nvim-tree/nvim-tree.lua')
 Plug('stevearc/oil.nvim')
 Plug('folke/flash.nvim')
 
--- obsidian and dependencies
-Plug('nvim-lua/plenary.nvim')
-Plug('epwalsh/obsidian.nvim')
+if not os.getenv('NO_OBSIDIAN') then
+    -- obsidian and dependencies
+    Plug('nvim-lua/plenary.nvim')
+    Plug('epwalsh/obsidian.nvim')
+end
 
 -- colorscheme
 Plug('sainnhe/everforest')
@@ -43,13 +45,17 @@ Plug('hrsh7th/cmp-path')
 Plug('hrsh7th/cmp-cmdline')
 Plug('hrsh7th/nvim-cmp')
 
--- tresitter
-Plug('nvim-treesitter/nvim-treesitter')
-Plug('nvim-treesitter/nvim-treesitter-textobjects')
+if not os.getenv('NO_TREESITTER') then
+    -- tresitter
+    Plug('nvim-treesitter/nvim-treesitter')
+    Plug('nvim-treesitter/nvim-treesitter-textobjects')
+end
 
--- copilot
-Plug('zbirenbaum/copilot.lua')
--- Plug('CopilotC-Nvim/CopilotChat.nvim')
+if not os.getenv('NO_COPILOT') then
+    -- copilot
+    Plug('zbirenbaum/copilot.lua')
+    -- Plug('CopilotC-Nvim/CopilotChat.nvim')
+end
 
 -- Plug 'mfussenegger/nvim-dap'
 

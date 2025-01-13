@@ -1,3 +1,4 @@
+if not os.getenv('NO_COPILOT') then
 require('copilot').setup({
     panel = {
         enabled = true,
@@ -47,3 +48,4 @@ vim.keymap.set('n', '<space><tab>', function() require("copilot.suggestion").tog
 -- require("CopilotChat").setup {
 --
 -- }
+end

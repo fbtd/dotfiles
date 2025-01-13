@@ -1,3 +1,4 @@
+if not os.getenv('NO_OBSIDIAN') then
 require("obsidian").setup({
     workspaces = {
         {
@@ -51,3 +52,4 @@ vim.keymap.set('n', 'äo', ':ObsidianLinks<CR>')
 vim.keymap.set('n', 'äi', ':ObsidianBacklinks<CR>')
 vim.keymap.set('n', 'ät', ':ObsidianTOC<CR>')
 vim.api.nvim_set_hl(0, "ObsidianHighlightText", {bg= "#eaf757"})
+end
