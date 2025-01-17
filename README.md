@@ -23,7 +23,7 @@ install latest neovim from https://github.com/neovim/neovim/blob/master/INSTALL.
 or add neovim-ppa to apt repos `sudo add-apt-repository ppa:neovim-ppa/unstable -y`<br/>
 ```bash
 mkdir -p ~/.config/nvim
-ln -s ~/dotfiles/nvim/ ~/.config/nvim
+ln -s ~/dotfiles/nvim/ ~/.config
 ```
 local config in `/nvim_init_local.lua`
 #### INSTALL vim-plug
