@@ -13,6 +13,10 @@ require'fzf-lua'.setup {
     oldfiles = {
         include_current_session = true,  -- include bufs from current session
     },
+    fzf_colors = {
+        ["fg+"] = {"fg", "Exception"},
+        -- ["bg+"] = {"bg", "Normal"},
+    },
 }
 
 -- for old time sake
