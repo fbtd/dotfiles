@@ -91,6 +91,7 @@ alias ttt='tmuxinator start wrk'
 
 alias z='eza --icons -A'
 alias zz='eza --long --icons -A'
+alias zn='eza --long --icons -A --numeric'
 alias zd='eza --long --icons -A --sort=date'
 alias zD='eza --long --icons -A --sort=date --reverse'
 alias zr='eza --icons --recurse -A'

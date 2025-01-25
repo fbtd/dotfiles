@@ -135,7 +135,6 @@ vim.keymap.set('n', '<leader>a', ':argadd<CR>:argdedupe<CR>:lua EchomArgs()<CR>'
 vim.keymap.set('n', '<leader>A', ':argdelete %<CR>:lua EchomArgs()<CR>')
 vim.keymap.set('n', '<tab>', ':lua EchomArgs()<CR>')
 vim.keymap.set('n', '<leader>t', ':tabe | arglocal! %<left><left><left><left><left><left><left><left><left><left><left><left><left>')
-vim.keymap.set('n', '<leader>-', '/^ *-\\(\\w, --\\)\\?-\\?')
 
 vim.keymap.set('n', '£', '<C-]>')   --follow link with £
 vim.keymap.set('n', '§', '<C-^>:lua EchomArgs()<CR>') -- alt file
@@ -192,6 +191,8 @@ for _, key in pairs {'w', 'W', 'e', 'E'} do
     end)
 end
 
+vim.keymap.set('n', '<leader>-', '/^ *-\\(\\w, --\\)\\?-\\?')
+vim.keymap.set('n', '<C-S-o>', '[{')
 
 ------------------------
 -- moving text around --
