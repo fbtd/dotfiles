@@ -7,3 +7,4 @@ tags
 .gdbinit.local
 .local_tmp
 .nvim.lua
+venv/
