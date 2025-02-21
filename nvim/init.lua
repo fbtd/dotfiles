@@ -78,6 +78,8 @@ vim.g.everforest_diagnostic_virtual_text = 'colored'
 
 vim.cmd.colorscheme('everforest')
 
+vim.opt.background = "light"
+
 
 -- vim.cmd.colorscheme('catppuccin-latte')
 
