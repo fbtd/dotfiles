@@ -81,3 +81,38 @@ function Fzf_args_n()
     require"fzf-lua".fzf_exec(args_n, opts)
 end
 vim.keymap.set('n', 'üa', Fzf_args_n, { noremap = true})
+
+function Fzf_upper_marks()
+    local opts = {
+        prompt = "Marks: ",
+        actions = {
+            ["default"] =  {
+            type = "cmd",
+            fn = function(selected)
+                local mark = selected[1]:sub(1,1)
+                vim.cmd("normal `" .. mark)
+            end,
+        },
+        },
+        preview = {
+            type = "cmd",
+            fn = function(items)
+                local path = items[1]:match(". (.*):")
+                local line = tonumber(items[1]:match(".*:(.*)"))
+                return "sed -n '" .. line .. "," .. line + 50 .. "p' " .. path
+            end,
+        }
+    }
+
+    local marks = vim.fn.getmarklist()
+
+    local marks_n = {}
+    for _, mark in pairs(marks) do
+        local mark_n = YELLOW .. mark["mark"]:sub(2) .. RESET .. "  " .. mark["file"] ..
+                       YELLOW .. ":" .. RESET .. tostring(mark["pos"][2])
+        table.insert(marks_n, mark_n)
+    end
+
+    require"fzf-lua".fzf_exec(marks_n, opts)
+end
+vim.keymap.set('n', 'üM', Fzf_upper_marks, { noremap = true})
