@@ -45,3 +45,5 @@ ln -s ~/dotfiles/.gdbinit ~/.gdbinit
 ```
 ln -s ~/dotfiles/.pythonrc ~/.pythonrc
 ```
+### XFCE
+

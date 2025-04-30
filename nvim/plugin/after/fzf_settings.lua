@@ -3,7 +3,7 @@ local vim = vim
 -- PREFIX: ü --
 ---------------
 local actions = require "fzf-lua.actions"
-require'fzf-lua'.setup {
+require 'fzf-lua'.setup {
     keymap = {
         builtin = {
             true,
@@ -11,11 +11,18 @@ require'fzf-lua'.setup {
         },
     },
     oldfiles = {
-        include_current_session = true,  -- include bufs from current session
+        include_current_session = true, -- include bufs from current session
     },
     fzf_colors = {
-        ["fg+"] = {"fg", "Exception"},
+        ["fg+"] = { "fg", "Exception" },
         -- ["bg+"] = {"bg", "Normal"},
+    },
+    grep = {
+        rg_opts            = "--column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e",
+        toggle_hidden_flag = "--hidden",
+        actions = {
+            ["ctrl-h"] = { actions.toggle_hidden },
+        }
     },
 }
 
@@ -31,11 +38,12 @@ vim.keymap.set("n", "üb", require('fzf-lua').buffers)
 vim.keymap.set("n", "üi", function()
     local number = vim.opt.ft:get() ~= "man"
     require('fzf-lua').blines({
-    ["winopts.preview.layout"] = "vertical",
-    ["winopts.preview.vertical"] = "down:90%",
-    ["winopts.preview.winopts.number"] = number,
-    ["winopts.fullscreen"] = true})
-end )
+        ["winopts.preview.layout"] = "vertical",
+        ["winopts.preview.vertical"] = "down:90%",
+        ["winopts.preview.winopts.number"] = number,
+        ["winopts.fullscreen"] = true
+    })
+end)
 vim.keymap.set("n", "üc", require('fzf-lua').quickfix)
 vim.keymap.set("n", "ül", require('fzf-lua').loclist)
 vim.keymap.set("n", "üt", require('fzf-lua').tabs)
@@ -54,13 +62,13 @@ function Fzf_args_n()
     local opts = {
         prompt = "Args: ",
         actions = {
-            ["default"] =  {
-            type = "cmd",
-            fn = function(selected)
-                local path = selected[1]:match(".[0-9]*. (.*)")
-                vim.cmd("edit " .. path)
-            end,
-        },
+            ["default"] = {
+                type = "cmd",
+                fn = function(selected)
+                    local path = selected[1]:match(".[0-9]*. (.*)")
+                    vim.cmd("edit " .. path)
+                end,
+            },
         },
         preview = {
             type = "cmd",
@@ -78,21 +86,22 @@ function Fzf_args_n()
         table.insert(args_n, arg_n)
     end
 
-    require"fzf-lua".fzf_exec(args_n, opts)
+    require "fzf-lua".fzf_exec(args_n, opts)
 end
-vim.keymap.set('n', 'üa', Fzf_args_n, { noremap = true})
+
+vim.keymap.set('n', 'üa', Fzf_args_n, { noremap = true })
 
 function Fzf_upper_marks()
     local opts = {
         prompt = "Marks: ",
         actions = {
-            ["default"] =  {
-            type = "cmd",
-            fn = function(selected)
-                local mark = selected[1]:sub(1,1)
-                vim.cmd("normal `" .. mark)
-            end,
-        },
+            ["default"] = {
+                type = "cmd",
+                fn = function(selected)
+                    local mark = selected[1]:sub(1, 1)
+                    vim.cmd("normal `" .. mark)
+                end,
+            },
         },
         preview = {
             type = "cmd",
@@ -109,10 +118,11 @@ function Fzf_upper_marks()
     local marks_n = {}
     for _, mark in pairs(marks) do
         local mark_n = YELLOW .. mark["mark"]:sub(2) .. RESET .. "  " .. mark["file"] ..
-                       YELLOW .. ":" .. RESET .. tostring(mark["pos"][2])
+            YELLOW .. ":" .. RESET .. tostring(mark["pos"][2])
         table.insert(marks_n, mark_n)
     end
 
-    require"fzf-lua".fzf_exec(marks_n, opts)
+    require "fzf-lua".fzf_exec(marks_n, opts)
 end
-vim.keymap.set('n', 'üM', Fzf_upper_marks, { noremap = true})
+
+vim.keymap.set('n', 'üM', Fzf_upper_marks, { noremap = true })

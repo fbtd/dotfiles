@@ -293,7 +293,7 @@ fi
 ## VIM STUFF ##
 export NVIM_FILE_LIST="$HOME/tmp/nvim_ipc/file_list.txt"
 
-export SUDO_EDITOR=vim
+export SUDO_EDITOR=vi
 if which nvim &>/dev/null ; then 
     # NVIM
     alias v=nvim
@@ -332,6 +332,9 @@ export T_RUN='./.run.sh'
 export T_MAKE='git status --short'
 
 export PYTHONSTARTUP=~/.pythonrc
+
+
+PS1="\$(history -a)$PS1"
 
 find_cmd='find'
 # fzf https://github.com/junegunn/fzf
@@ -383,9 +386,15 @@ if which fzf &>/dev/null ; then
     }
 
     # WIP
-    # function fhist() {
-    #     $(rg --no-heading --no-filename --no-line-number . ~/.var/bash_history | fzf)
-    # }
+    fh=''
+    function fh() {
+        fh=$(rg --no-heading --no-filename --no-line-number . ~/.var/bash_history/* | uniq | fzf)
+        [ -z "$fh" ] && return 1
+        echo $fh
+        echo $fh >> $HISTFILE
+        history -n
+    }
+
 
     f1=''
     f2=''
