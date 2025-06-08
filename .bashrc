@@ -86,12 +86,15 @@ alias 2.='cd ../..'
 alias 3.='cd ../../..'
 alias 4.='cd ../../../..'
 alias dfc='df -h | cowsay -bn'
+alias bat='batcat'
 alias tt='tmux -2 new-session -A -s wrk'
 alias ttt='tmuxinator start wrk'
 
 alias z='eza --icons -A'
 alias zz='eza --long --icons -A'
 alias zn='eza --long --icons -A --numeric'
+alias zs='eza --long --icons -A --sort=size'
+alias zS='eza --long --icons -A --sort=size --reverse'
 alias zd='eza --long --icons -A --sort=date'
 alias zD='eza --long --icons -A --sort=date --reverse'
 alias zr='eza --icons --recurse -A'
@@ -388,7 +391,7 @@ if which fzf &>/dev/null ; then
     # WIP
     fh=''
     function fh() {
-        fh=$(rg --no-heading --no-filename --no-line-number . ~/.var/bash_history/* | uniq | fzf)
+        fh=$(rg --no-heading --no-filename --no-line-number . ~/.var/bash_history/* | sort | uniq | fzf)
         [ -z "$fh" ] && return 1
         echo $fh
         echo $fh >> $HISTFILE
