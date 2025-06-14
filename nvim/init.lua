@@ -115,28 +115,26 @@ vim.opt.conceallevel = 1
 --------------------------
 vim.keymap.set('n', '<space>t', ':tabnext<CR>')
 vim.keymap.set('n', '<space>T', ':tabNext<CR>')
-vim.keymap.set('n', '<space>1', ':1tabnext<CR>')
-vim.keymap.set('n', '<space>2', ':2tabnext<CR>')
-vim.keymap.set('n', '<space>3', ':3tabnext<CR>')
-vim.keymap.set('n', '<space>4', ':4tabnext<CR>')
-vim.keymap.set('n', '<space>5', ':5tabnext<CR>')
-vim.keymap.set('n', '<space>6', ':6tabnext<CR>')
+
+for i = 1, 9 do
+    vim.keymap.set('n', '<space>' .. i, ':' .. i .. 'tabnext<CR>')
+end
+
+-- for i = 65, 90 do
+--     local C = string.char(i)          -- A-Z
+--     local c = string.char(i+32)       -- a-z
+--     vim.keymap.set('n', '<space>' .. c, '\'' .. C)
+--     vim.keymap.set('n', '<space>' .. C, '\'' .. C)
+-- end
 
 vim.cmd.source(vim.fn.stdpath('config') .. '/echomargs.lua')
-vim.keymap.set('n', '<leader>0', ':0argu<CR>:lua EchomArgs()<CR>')
-vim.keymap.set('n', '<leader>1', ':1argu<CR>:lua EchomArgs()<CR>')
-vim.keymap.set('n', '<leader>2', ':2argu<CR>:lua EchomArgs()<CR>')
-vim.keymap.set('n', '<leader>3', ':3argu<CR>:lua EchomArgs()<CR>')
-vim.keymap.set('n', '<leader>4', ':4argu<CR>:lua EchomArgs()<CR>')
-vim.keymap.set('n', '<leader>5', ':5argu<CR>:lua EchomArgs()<CR>')
-vim.keymap.set('n', '<leader>6', ':6argu<CR>:lua EchomArgs()<CR>')
-vim.keymap.set('n', '<leader>7', ':7argu<CR>:lua EchomArgs()<CR>')
-vim.keymap.set('n', '<leader>8', ':8argu<CR>:lua EchomArgs()<CR>')
-vim.keymap.set('n', '<leader>9', ':9argu<CR>:lua EchomArgs()<CR>')
+for i = 0, 9 do
+    vim.keymap.set('n', '<leader>' .. i, ':' .. i .. 'argu<CR>:lua EchomArgs()<CR>')
+end
 
 vim.keymap.set('n', '<leader>a', ':argadd<CR>:argdedupe<CR>:lua EchomArgs()<CR>')
 vim.keymap.set('n', '<leader>A', ':argdelete %<CR>:lua EchomArgs()<CR>')
-vim.keymap.set('n', '<tab>', ':lua EchomArgs()<CR>')
+vim.keymap.set('n', '<leader><leader>', ':lua EchomArgs()<CR>')
 vim.keymap.set('n', '<leader>t', ':tabe | arglocal! %<left><left><left><left><left><left><left><left><left><left><left><left><left>')
 vim.keymap.set('n', '<leader>.', function () vim.cmd('edit ' .. vim.fn.expand('%:p:h')) end)
 
@@ -304,7 +302,8 @@ vim.keymap.set('i', '<C-k>', '<C-p>')
 -- sessions and shada
 -- vim.keymap.set('n', '<Leader>s', ':mksession!<CR>:wshada '.. vim.fn.getcwd() ..'/.shada<CR>')
 vim.keymap.set('n', '<Leader>s', ':mksession!<CR>:wshada<CR>')
-vim.opt.shada = {'!', '\'200', '<1000', 's100' }
+-- vim.opt.shada = {'!', '\'200', '<1000', 's100', 'f0' }
+vim.opt.shada = {'!', '\'200', '<1000', 's100', 'f1', 'n$PWD/Shada.vim'}
 
 
 ------------------

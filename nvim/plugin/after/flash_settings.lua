@@ -6,10 +6,9 @@ flash.setup({
     modes = {char = { enabled = false}},
 })
 
-
-vim.keymap.set('n', '<Leader><leader>', function () require("flash").jump({
-  search = { wrap = true, multi_window = false },
-})  end)
+-- vim.keymap.set('n', '<Leader><leader>', function () require("flash").jump({
+--   search = { wrap = true, multi_window = false },
+-- })  end)
 
 vim.keymap.set('n', '<Leader>j', function () require("flash").jump({
   search = { forward = true, wrap = false, multi_window = false },

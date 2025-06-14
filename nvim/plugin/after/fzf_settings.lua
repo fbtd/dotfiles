@@ -3,6 +3,10 @@ local vim = vim
 -- PREFIX: ü --
 ---------------
 local actions = require "fzf-lua.actions"
+local fzf_lua = require("fzf-lua")
+local builtin = require("fzf-lua.previewer.builtin")
+
+
 require 'fzf-lua'.setup {
     keymap = {
         builtin = {
@@ -20,7 +24,7 @@ require 'fzf-lua'.setup {
     grep = {
         rg_opts            = "--column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e",
         toggle_hidden_flag = "--hidden",
-        actions = {
+        actions            = {
             ["ctrl-h"] = { actions.toggle_hidden },
         }
     },
@@ -30,6 +34,7 @@ require 'fzf-lua'.setup {
 vim.keymap.set("n", "<c-P>", require('fzf-lua').files)
 
 -- 'ü' will be our prefix
+vim.keymap.set('n', 'üa', require('fzf-lua').args)
 vim.keymap.set("n", "ür", require('fzf-lua').resume)
 vim.keymap.set("n", "üü", require('fzf-lua').builtin)
 vim.keymap.set("n", "üh", require('fzf-lua').helptags)
@@ -55,6 +60,22 @@ vim.keymap.set("n", "ü:", require('fzf-lua').commands)
 
 vim.keymap.set("i", "üf", require('fzf-lua').complete_path)
 
+local MarkPreviewer = builtin.buffer_or_file:extend()
+
+function MarkPreviewer:new(o, opts, fzf_win)
+    MarkPreviewer.super.new(self, o, opts, fzf_win)
+    setmetatable(self, MarkPreviewer)
+    return self
+end
+
+function MarkPreviewer:parse_entry(entry_str)
+    local _, path, line = entry_str:match("(.)%s+([^:]+):?(.*)")
+    return {
+        path = vim.fn.expand(path),
+        line = tonumber(line) or 1,
+        col = 1,
+    }
+end
 
 local YELLOW = "\27[33m"
 local RESET = "\27[0m"
@@ -62,6 +83,7 @@ function Fzf_args_n()
     local opts = {
         prompt = "Args: ",
         actions = {
+            ["tab"] = actions.dummy_abort,
             ["default"] = {
                 type = "cmd",
                 fn = function(selected)
@@ -74,7 +96,7 @@ function Fzf_args_n()
             type = "cmd",
             fn = function(items)
                 local path = items[1]:match(".[0-9]*. (.*)")
-                return "cat " .. path
+                return "head -n200 " .. path
             end,
         }
     }
@@ -89,12 +111,13 @@ function Fzf_args_n()
     require "fzf-lua".fzf_exec(args_n, opts)
 end
 
-vim.keymap.set('n', 'üa', Fzf_args_n, { noremap = true })
+vim.keymap.set('n', 'üö', Fzf_args_n, { noremap = true })
 
 function Fzf_upper_marks()
     local opts = {
-        prompt = "Marks: ",
+        prompt = "MARKS: ",
         actions = {
+            ["tab"] = actions.dummy_abort,
             ["default"] = {
                 type = "cmd",
                 fn = function(selected)
@@ -103,26 +126,21 @@ function Fzf_upper_marks()
                 end,
             },
         },
-        preview = {
-            type = "cmd",
-            fn = function(items)
-                local path = items[1]:match(". (.*):")
-                local line = tonumber(items[1]:match(".*:(.*)"))
-                return "sed -n '" .. line .. "," .. line + 50 .. "p' " .. path
-            end,
-        }
+        previewer = MarkPreviewer,
     }
 
     local marks = vim.fn.getmarklist()
 
     local marks_n = {}
     for _, mark in pairs(marks) do
-        local mark_n = YELLOW .. mark["mark"]:sub(2) .. RESET .. "  " .. mark["file"] ..
-            YELLOW .. ":" .. RESET .. tostring(mark["pos"][2])
-        table.insert(marks_n, mark_n)
+        if tonumber(mark["mark"]:sub(2)) == nil then
+            local mark_n = YELLOW .. mark["mark"]:sub(2) .. RESET .. "  " .. mark["file"] ..
+                YELLOW .. ":" .. RESET .. tostring(mark["pos"][2])
+            table.insert(marks_n, mark_n)
+        end
     end
 
     require "fzf-lua".fzf_exec(marks_n, opts)
 end
 
-vim.keymap.set('n', 'üM', Fzf_upper_marks, { noremap = true })
+vim.keymap.set('n', '<tab>', Fzf_upper_marks, { noremap = true })

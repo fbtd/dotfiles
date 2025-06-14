@@ -123,6 +123,10 @@ alias bp="python3 -m bpython"
 
 alias glow="glow -p -l --style light"
 
+
+function rgless () {
+    rg --color always "$@" | less -r
+}
 function jqless () {
     jq '.' -C "$1" | less -r
 }
@@ -348,13 +352,13 @@ fi
 
 if which fzf &>/dev/null ; then
     function fcd () {
-        dir=$(find $1 -type d 2>/dev/null | fzf --preview 'ls -ah {}' --tiebreak=length)
+        dir=$(find "$@" -type d 2>/dev/null | fzf --preview 'ls -ah {}' --tiebreak=length)
         [ -z "$dir" ] && return 1
         cd $dir
     }
 
     function ffcd () {
-        dir=$($find_cmd  $1 2>/dev/null | fzf --preview 'ls -ah {}' --tiebreak=length)
+        dir=$($find_cmd  "$@" 2>/dev/null | fzf --preview 'ls -ah {}' --tiebreak=length)
         [ -z "$dir" ] && return 1
         [ -d "$dir" ] && cd $dir && return 0
         cd $(dirname $dir)
@@ -403,17 +407,17 @@ if which fzf &>/dev/null ; then
     f2=''
     f3=''
     function f1 () {
-        f1=$($find_cmd $1 2>/dev/null | fzf --preview 'cat {}' --tiebreak=length)
+        f1=$($find_cmd "$@" 2>/dev/null | fzf --preview 'cat {}' --tiebreak=length)
         [ -z "$f1" ] && return 1
         echo $f1
     }
     function f2 () {
-        f2=$($find_cmd $1 2>/dev/null | fzf --preview 'cat {}' --tiebreak=length)
+        f2=$($find_cmd "$@" 2>/dev/null | fzf --preview 'cat {}' --tiebreak=length)
         [ -z "$f2" ] && return 1
         echo $f2
     }
     function f3 () {
-        f3=$($find_cmd $1 2>/dev/null | fzf --preview 'cat {}' --tiebreak=length)
+        f3=$($find_cmd "$@" 2>/dev/null | fzf --preview 'cat {}' --tiebreak=length)
         [ -z "$f3" ] && return 1
         echo $f3
     }
