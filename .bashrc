@@ -169,6 +169,7 @@ function f () {
 }
 
 function s2 () {
+    which tmux >/dev/null || return
     [ -z ${TMUX+x} ] && tt  # if tmux is not running, start it
     tmux split-window -t .0 -v
 }

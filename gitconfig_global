@@ -10,6 +10,12 @@
     pager = less -XF
     excludesFile = ~/dotfiles/.gitignore_global
 
+[delta]
+    dark = false
+    light = true
+    side-by-side = true
+    navigate = true
+
 [merge]
     tool = nvim
 #   tool = vimdiff
