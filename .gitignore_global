@@ -7,4 +7,5 @@ tags
 .gdbinit.local
 .local_tmp
 .nvim.lua
+.tmux.sh
 venv/

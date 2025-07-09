@@ -117,6 +117,8 @@ alias glg="gl --graph"
 alias gla='glg --all'
 alias gb='git branch --list --all -vv'
 alias gec='git_extract_conflicts.sh'
+alias gdd='git diff | delta'
+alias gdid='git diff --staged | delta'
 
 alias p="python3"
 alias bp="python3 -m bpython"
@@ -168,6 +170,8 @@ function f () {
     find . -not -path '*/.git/*' -not -path '*/venv/*' -not -path '*/.venv/*'
 }
 
+alias .t=". .tmux.sh"
+
 function s2 () {
     which tmux >/dev/null || return
     [ -z ${TMUX+x} ] && tt  # if tmux is not running, start it
@@ -177,22 +181,22 @@ function s2 () {
 HIST_FOLDER="$HOME/.var/bash_history"
 function s3 () {
     which tmux >/dev/null || return
-    [ -z ${TMUX+x} ] && tt  # if tmux is not running, start it
+    # [ -z ${TMUX+x} ] && tt  # if tmux is not running, start it
     n_panes=$(tmux list-panes | wc -l)
     if [ "$n_panes" -eq 1 ]; then
         mkdir -p "$HIST_FOLDER"
         p="$(pwd | sed 's%/%_%g; s/_//1')"
         histfile=${HIST_FOLDER}/${p}
 
-        HISTFILE=${histfile}_0
+        export HISTFILE=${histfile}_0
         history -c
         history -r
         tmux split-window -t .0 -h -e HISTFILE=${histfile}_1
         tmux split-window -t .1 -v -e HISTFILE=${histfile}_2
     fi
-    tmux resize-pane  -t .1 -x 87
-    tmux resize-pane  -t .2 -y 10
-    tmux select-pane  -t .0
+    tmux resize-pane -t .1 -x 78
+    tmux resize-pane -t .2 -y 10
+    tmux select-pane -t .0
 }
 
 function svba () {
