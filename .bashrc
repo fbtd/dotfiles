@@ -87,7 +87,7 @@ alias 3.='cd ../../..'
 alias 4.='cd ../../../..'
 alias dfc='df -h | cowsay -bn'
 alias bat='batcat'
-alias tt='tmux -2 new-session -A -s wrk'
+alias tt='tmux -2 new-session -A -s main'
 alias ttt='tmuxinator start wrk'
 
 alias z='eza --icons -A'
@@ -103,6 +103,11 @@ alias t2='eza --tree --icons -L2 -A --git-ignore'
 alias t3='eza --tree --icons -L3 -A --git-ignore'
 alias t4='eza --tree --icons -L4 -A --git-ignore'
 alias t5='eza --tree --icons -L5 -A --git-ignore'
+alias th='eza --tree --icons -A'
+alias th2='eza --tree --icons -L2 -A'
+alias th3='eza --tree --icons -L3 -A'
+alias th4='eza --tree --icons -L4 -A'
+alias th5='eza --tree --icons -L5 -A'
 
 # lol who still uses those?
 alias pd='pushd'
@@ -125,9 +130,15 @@ alias bp="python3 -m bpython"
 
 alias glow="glow -p -l --style light"
 
+alias rgh="rg --hidden --no-ignore"
+alias fdh="fd --hidden --no-ignore"
 
 function rgless () {
-    rg --color always "$@" | less -r
+    rg --pretty "$@" | less -r
+}
+
+function rghless () {
+    rg --pretty --hidden --no-ignore "$@" | less -r
 }
 function jqless () {
     jq '.' -C "$1" | less -r
@@ -170,7 +181,7 @@ function f () {
     find . -not -path '*/.git/*' -not -path '*/venv/*' -not -path '*/.venv/*'
 }
 
-alias .t=". .tmux.sh"
+alias .t=". ./.tmux.sh"
 
 function s2 () {
     which tmux >/dev/null || return
@@ -243,6 +254,10 @@ alias drrm="docker run --rm"
 alias dps="docker ps"
 alias dpsa="docker ps -a"
 alias dcp="docker container prune"
+
+# kubernetes
+alias k=kubectl
+
 
 # chsht.sh
 export CHTSH_QUERY_OPTIONS="style=xcode"
