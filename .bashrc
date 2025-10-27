@@ -85,6 +85,10 @@ alias ..='cd ..'
 alias 2.='cd ../..'
 alias 3.='cd ../../..'
 alias 4.='cd ../../../..'
+function cdh () {
+    cd "$h"
+}
+
 alias dfc='df -h | cowsay -bn'
 alias bat='batcat'
 alias tt='tmux -2 new-session -A -s main'
@@ -200,10 +204,11 @@ function s3 () {
         histfile=${HIST_FOLDER}/${p}
 
         export HISTFILE=${histfile}_0
+        export h="$(pwd)"
         history -c
         history -r
-        tmux split-window -t .0 -h -e HISTFILE=${histfile}_1
-        tmux split-window -t .1 -v -e HISTFILE=${histfile}_2
+        tmux split-window -t .0 -h -e HISTFILE=${histfile}_1 -e h="$(pwd)"
+        tmux split-window -t .1 -v -e HISTFILE=${histfile}_2 -e h="$(pwd)"
     fi
     tmux resize-pane -t .1 -x 78
     tmux resize-pane -t .2 -y 10
