@@ -46,4 +46,6 @@ ln -s ~/dotfiles/.gdbinit ~/.gdbinit
 ln -s ~/dotfiles/.pythonrc ~/.pythonrc
 ```
 ### XFCE
-
+```
+ln -s ~/dotfiles/xfce/xfce4-keyboard-shortcuts.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
+```
