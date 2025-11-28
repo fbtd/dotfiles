@@ -134,7 +134,8 @@ for i = 0, 9 do
 end
 
 vim.keymap.set('n', '<leader>a', ':argadd<CR>:argdedupe<CR>:lua EchomArgs()<CR>')
-vim.keymap.set('n', '<leader>A', ':argdelete %<CR>:lua EchomArgs()<CR>')
+vim.keymap.set('n', '<leader>d', ':argdelete %<CR>:lua EchomArgs()<CR>')
+vim.keymap.set('n', '<leader>D', ':%argdelete <CR>')
 vim.keymap.set('n', '<leader><leader>', ':lua EchomArgs()<CR>')
 vim.keymap.set('n', '<leader>t', ':tabe | arglocal! %<left><left><left><left><left><left><left><left><left><left><left><left><left>')
 vim.keymap.set('n', '<leader>.', function () vim.cmd('edit ' .. vim.fn.expand('%:p:h')) end)
@@ -196,6 +197,7 @@ end
 
 vim.keymap.set('n', '<leader>-', '/^ *-\\(\\w, --\\)\\?-\\?')
 vim.keymap.set('n', '<C-S-o>', '[{')
+vim.keymap.set('n', '<leader><C-o>', '<C-i>') -- jump forward
 
 ------------------------
 -- moving text around --
