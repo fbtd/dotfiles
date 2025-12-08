@@ -17,7 +17,7 @@ require 'fzf-lua'.setup {
         include_current_session = true, -- include bufs from current session
     },
     fzf_colors = {
-        ["fg+"] = { "fg", "Exception" },
+        -- ["fg+"] = { "fg", "Exception" },
         -- ["bg+"] = {"bg", "Normal"},
     },
     grep = {

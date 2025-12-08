@@ -1,0 +1,14 @@
+theme = rose-pine-dawn
+# theme = CLRS
+# background-opacity = 0.88
+# background = #FFFFFF
+gtk-adwaita = false
+window-decoration = false
+font-family =  CaskaydiaCove Nerd Font Mono
+font-feature = -liga, +calt, -dlig
+# ~-  => {} <= != *** //
+font-size = 16
+minimum-contrast = 1.2
+window-decoration = false
+keybind = clear
+keybind = super+v=paste_from_clipboard

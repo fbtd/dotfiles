@@ -16,6 +16,10 @@
       "rev": "c642487086dbd9a93160e1679a1327be111cbc25",
       "src": "https://github.com/hrsh7th/cmp-path"
     },
+    "edge": {
+      "rev": "b7dfb8e3c42a9393b68e284eac9b7a5973f24fe1",
+      "src": "https://github.com/sainnhe/edge"
+    },
     "everforest": {
       "rev": "b10ed9a8b37d6b7448908be98ff8f58f550adc48",
       "src": "https://github.com/sainnhe/everforest"
@@ -28,9 +32,21 @@
       "rev": "0284d640fd88c56f100a43f41103c5b564699e15",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
+    "material.nvim": {
+      "rev": "8a34cb0d05e12a05b64edaf6ca1c3c7bde545628",
+      "src": "https://github.com/marko-cerovac/material.nvim"
+    },
+    "melange-nvim": {
+      "rev": "ce42f6b629beeaa00591ba73a77d3eeac4cf28ce",
+      "src": "https://github.com/savq/melange-nvim"
+    },
     "mini.nvim": {
       "rev": "e27fcecf6cbffd8ed391bdf0eb746fdb5b9bfa44",
       "src": "https://github.com/echasnovski/mini.nvim"
+    },
+    "neovim": {
+      "rev": "cf2a288696b03d0934da713d66c6d71557b5c997",
+      "src": "https://github.com/rose-pine/neovim"
     },
     "nvim-cmp": {
       "rev": "d97d85e01339f01b842e6ec1502f639b080cb0fc",

@@ -77,6 +77,7 @@ if not os.getenv('NO_TREESITTER') then
         on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
     }
 
+    vim.api.nvim_set_hl(0, "TreesitterContextSeparator", {link = "NormalFloat"})
 
 
 end
