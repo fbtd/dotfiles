@@ -1,6 +1,6 @@
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-require 'lspconfig'.lua_ls.setup {
+vim.lsp.config('lua_ls', {
     capabilities = capabilities,
     settings = {
         Lua = {
@@ -19,14 +19,10 @@ require 'lspconfig'.lua_ls.setup {
             }
         }
     }
-}
-
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = 'sh',
-  callback = function()
-    vim.lsp.start({
-      name = 'bash-language-server',
-      cmd = { 'bash-language-server', 'start' },
-    })
-  end,
 })
+
+-- vim.lsp.config('bashls', {
+--     capabilities = capabilities,
+-- })
+
+vim.lsp.enable{'lua_ls'}

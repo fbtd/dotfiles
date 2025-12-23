@@ -22,7 +22,7 @@ maps *ctrl-y* to windows-style autocomplete <br/>
 install latest neovim from https://github.com/neovim/neovim/blob/master/INSTALL.md#appimage-universal-linux-package<br/>
 or add neovim-ppa to apt repos `sudo add-apt-repository ppa:neovim-ppa/unstable -y`<br/>
 ```bash
-mkdir -p ~/.config/nvim
+mkdir -p ~/.config
 ln -s ~/dotfiles/nvim/ ~/.config/nvim
 ```
 local config in `/nvim_init_local.lua`
