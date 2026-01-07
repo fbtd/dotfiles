@@ -326,32 +326,28 @@ fi
 export NVIM_FILE_LIST="$HOME/tmp/nvim_ipc/file_list.txt"
 
 export SUDO_EDITOR=vi
-if which nvim &>/dev/null ; then 
+if which nvim_0_12 &>/dev/null ; then 
+    # NVIM 0.12
+    function v() {
+        NVIM_APPNAME=nvim_0_12 nvim_0_12 "$@"
+    }
+elif which nvim &>/dev/null ; then 
     # NVIM
     alias v=nvim
-    export EDITOR=nvim
-
-    function mm () {
-        if man --where $* &> /dev/null ; then
-            nvim -c "Man $*" -c 'only'
-        else
-           echo 'man page not found'
-        fi
-    }
 else
     # VIM
-    alias v=vim
-    export EDITOR=vim
-
-    function mm () {
-        if man --where $* &> /dev/null ; then
-           vim -c 'source $VIMRUNTIME/ftplugin/man.vim' -c "Man $*" -c 'only'
-        else
-           echo 'man page not found'
-        fi
-    }
+    alias v=vi
 fi
 
+
+export EDITOR=v
+function mm () {
+    if man --where $* &> /dev/null ; then
+       v -c 'source $VIMRUNTIME/ftplugin/man.vim' -c "Man $*" -c 'only'
+    else
+       echo 'man page not found'
+    fi
+}
 # edit file:linenumber passed in as $1
 function vl {
     v +${1#*:} ${1%%:*}

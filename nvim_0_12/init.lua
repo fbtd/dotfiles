@@ -31,6 +31,7 @@ require("preview_window")
 require("quickfix")
 require("relative_numbers")
 require("sessions")
+require("mini-setup")
 require("treesitter-setup")
 
 require("colors")

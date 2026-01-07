@@ -5,8 +5,7 @@
     username = fbtd
 
 [core]
-    editor = nvim
-#   editor = vim
+    editor = vi
     pager = less -XF
     excludesFile = ~/dotfiles/.gitignore_global
 

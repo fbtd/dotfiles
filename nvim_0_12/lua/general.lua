@@ -32,7 +32,7 @@ vim.keymap.set('n', 'zl', '25zl')
 vim.keymap.set('n', 'zh', '25zh')
 vim.keymap.set('n', '<C-y>', '<C-y><C-y><C-y>')
 vim.keymap.set('n', '<C-e>', '<C-e><C-e><C-e>')
-vim.keymap.set('n', '<leader>-', '/^ *-\\(\\w, --\\)\\?-\\?')
+vim.keymap.set('n', '<leader>-', '/\\C^ *-\\(\\w, --\\)\\?-\\?')
 vim.keymap.set('n', '<C-S-o>', '[{')
 vim.keymap.set('n', '<leader><C-o>', '<C-i>') -- jump forward
 vim.keymap.set('n', 'Y', 'y$')

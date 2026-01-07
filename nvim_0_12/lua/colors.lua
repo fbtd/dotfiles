@@ -117,7 +117,7 @@ require('nightfox').setup({
     -- Compiled file's destination location
     compile_path = vim.fn.stdpath("cache") .. "/nightfox",
     compile_file_suffix = "_compiled", -- Compiled file suffix
-    transparent = false,     -- Disable setting background
+    transparent = true,     -- Disable setting background
     terminal_colors = false, -- Set terminal colors (vim.g.terminal_color_*) used in `:terminal`
     dim_inactive = true,     -- Non focused panes set to alternative background
     module_default = true,   -- Default enable value for modules
@@ -131,7 +131,7 @@ require('nightfox').setup({
       },
     },
     styles = {               -- Style to be applied to different syntax groups
-      comments = "NONE",     -- Value is any valid attr-list value `:help attr-list`
+      comments = "italic",     -- Value is any valid attr-list value `:help attr-list`
       conditionals = "NONE",
       constants = "NONE",
       functions = "NONE",
@@ -143,7 +143,7 @@ require('nightfox').setup({
       variables = "NONE",
     },
     inverse = {             -- Inverse highlight for different types
-      match_paren = false,
+      match_paren = true,
       visual = false,
       search = false,
     },
@@ -175,4 +175,5 @@ vim.opt.background = "light"
 -- vim.api.nvim_set_hl(0, "CursorLine", {bg = "#dfdfdf"})
 -- vim.api.nvim_set_hl(0, "MatchParen", {bg = "#a0a0a0"})
 -- vim.api.nvim_set_hl(0, "Normal", {bg = "#ffffff"})
+vim.api.nvim_set_hl(0, "MiniIndentscopeSymbol", {fg = "#837a72"})
 vim.g.vim_json_conceal = 0

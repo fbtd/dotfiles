@@ -11,6 +11,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set("n", "<space>d", require('fzf-lua').lsp_definitions)
         vim.keymap.set("n", "<space>D", require('fzf-lua').lsp_declarations)
         vim.keymap.set("n", "<space>i", require('fzf-lua').lsp_incoming_calls)
+        vim.keymap.set("n", "<space>t", require('fzf-lua').lsp_typedefs)
         vim.keymap.set("n", "üs", require('fzf-lua').lsp_document_symbols)
         vim.keymap.set("n", "üS", require('fzf-lua').lsp_workspace_symbols)
         vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
@@ -39,3 +40,6 @@ vim.lsp.config('bashls', {
 })
 
 vim.lsp.enable { 'bashls' }
+
+-- diagnostics
+vim.diagnostic.config({underline=false})

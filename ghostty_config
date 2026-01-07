@@ -1,7 +1,7 @@
 theme = dayfox
 # theme = rose-pine-dawn
 # theme = CLRS
-# background-opacity = 0.88
+background-opacity = 0.93
 background = #FFFFFF
 cursor-color = #a4c1c2
 gtk-adwaita = false
@@ -10,7 +10,7 @@ font-family =  CaskaydiaCove Nerd Font Mono
 font-feature = -liga, +calt, -dlig
 # ~-  => {} <= != *** //
 font-size = 16
-minimum-contrast = 1.2
+# minimum-contrast = 1.2
 window-decoration = false
 keybind = clear
 keybind = super+v=paste_from_clipboard
