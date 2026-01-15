@@ -14,13 +14,13 @@ vim.pack.add({
     'https://github.com/folke/flash.nvim',
     'https://github.com/sindrets/diffview.nvim',
 
-    'https://github.com/sainnhe/everforest',
+    -- 'https://github.com/sainnhe/everforest',
     -- 'https://github.com/sainnhe/edge',
     -- 'https://github.com/marko-cerovac/material.nvim',
     -- 'https://github.com/savq/melange-nvim',
-    'https://github.com/rose-pine/neovim',
+    -- 'https://github.com/rose-pine/neovim',
     'https://github.com/EdenEast/nightfox.nvim',
-    'https://github.com/lunacookies/vim-colors-xcode',
+    -- 'https://github.com/lunacookies/vim-colors-xcode',
 
 
     { src = 'https://github.com/nvim-treesitter/nvim-treesitter', version = "master" },

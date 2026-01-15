@@ -13,10 +13,25 @@ require 'fzf-lua'.setup {
             ü = "toggle-preview-cw",
         },
     },
+    files = {
+        actions = {
+            -- not sure why cant i just call split...
+            ["ctrl-h"] = function(selected, opts)
+                actions.file_split(selected, opts)
+                actions.dummy_abort(selected, opts)
+            end,
+            ["ctrl-A"] = function(selected, opts)
+                vim.cmd("%argdelete")
+                actions.arg_add(selected, opts)
+            end,
+        },
+    },
     oldfiles = {
+        true,
         include_current_session = true, -- include bufs from current session
     },
     fzf_colors = {
+        true,
         -- ["fg+"] = { "fg", "Exception" },
         -- ["bg+"] = {"bg", "Normal"},
     },
@@ -145,3 +160,5 @@ function Fzf_upper_marks()
 end
 
 vim.keymap.set('n', '<tab>', Fzf_upper_marks, { noremap = true })
+
+require "fzf-lua".register_ui_select()

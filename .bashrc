@@ -86,7 +86,7 @@ alias 2.='cd ../..'
 alias 3.='cd ../../..'
 alias 4.='cd ../../../..'
 function cdh () {
-    cd "$h"
+    cd "$h" || exit
 }
 
 alias dfc='df -h | cowsay -bn'

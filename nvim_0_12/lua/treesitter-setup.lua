@@ -17,8 +17,8 @@ if not os.getenv('NO_TREESITTER') then
             enable = true,
             keymaps = {
                 init_selection = "<space>v", -- set to `false` to disable one of the mappings
-                node_incremental = "<S-space>",
-                scope_incremental = "<space>",
+                node_incremental = "<space><space>",
+                scope_incremental = "<S-space>",
                 node_decremental = "<backspace>",
             },
         },

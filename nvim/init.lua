@@ -117,9 +117,9 @@ vim.opt.conceallevel = 1
 vim.keymap.set('n', '<space>t', ':tabnext<CR>')
 vim.keymap.set('n', '<space>T', ':tabNext<CR>')
 
-for i = 1, 9 do
-    vim.keymap.set('n', '<space>' .. i, ':' .. i .. 'tabnext<CR>')
-end
+-- for i = 1, 9 do
+--     vim.keymap.set('n', '<space>' .. i, ':' .. i .. 'tabnext<CR>')
+-- end
 
 -- for i = 65, 90 do
 --     local C = string.char(i)          -- A-Z
