@@ -1,0 +1,2 @@
+model: groq/openai/gpt-oss-120b
+analytics-disable: true
