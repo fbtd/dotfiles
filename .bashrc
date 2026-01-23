@@ -128,6 +128,7 @@ alias gb='git branch --list --all -vv'
 alias gec='git_extract_conflicts.sh'
 alias gdd='git diff | delta'
 alias gdid='git diff --staged | delta'
+alias gai='git add --interactive'
 
 alias p="python3"
 alias bp="python3 -m bpython"

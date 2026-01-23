@@ -36,6 +36,11 @@ https://github.com/gokcehan/lf<br/>
 mkdir -p ~/.config/nvim
 ln -s ~/dotfiles/lfrc ~/.config/lf/lfrc
 ```
+### aider
+https://aider.chat/docs/<br/>  
+```
+ln -s ~/dotfiles/.aider.conf.yml ~/.aider.conf.yml
+```
 ### GDB
 https://github.com/gdbinit/Gdbinit/tree/master
 ```

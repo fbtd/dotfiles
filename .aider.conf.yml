@@ -1,2 +1,9 @@
 model: groq/openai/gpt-oss-120b
 analytics-disable: true
+auto-lint: false
+gitignore: false
+alias:
+  - "i:groq/llama-3.1-8b-instant"
+  - "g:groq/openai/gpt-oss-120b"
+  - "f:groq/openai/gpt-oss-20b"
+  - "k:groq/moonshotai/kimi-k2-instruct-0905"

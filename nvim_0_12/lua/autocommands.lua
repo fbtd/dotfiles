@@ -16,6 +16,15 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
     end
 })
 
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = {"js", "javascript", "javascriptreact", "typescript", "jsx"},
+  callback = function()
+       vim.opt.tabstop = 2
+       vim.opt.shiftwidth = 2
+       vim.opt.softtabstop = 2
+      end,
+})
+
 local ft = vim.api.nvim_create_augroup('init', { clear = false })
 vim.api.nvim_create_autocmd({ 'FileType' }, {
     pattern = '*',
