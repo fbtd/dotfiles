@@ -92,7 +92,7 @@ function cdh () {
 alias dfc='df -h | cowsay -bn'
 alias bat='batcat'
 alias tt='tmux -2 new-session -A -s main'
-alias ttt='tmuxinator start wrk'
+# alias ttt='tmuxinator start wrk'
 
 alias z='eza --icons -A'
 alias zz='eza --long --icons -A'

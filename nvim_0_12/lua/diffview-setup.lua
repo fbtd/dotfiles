@@ -113,7 +113,7 @@ require("diffview").setup({
       -- { "n", "<C-w>gf",     actions.goto_file_tab,                  { desc = "Open the file in a new tabpage" } },
       { "n", "<backspace>e",  actions.focus_files,                    { desc = "Bring focus to the file panel" } },
       { "n", "<backspace>f",  actions.toggle_files,                   { desc = "Toggle the file panel." } },
-      { "n", "g<C-x>",        actions.cycle_layout,                   { desc = "Cycle through available layouts." } },
+      { "n", "<backspace><backspace>",        actions.cycle_layout,                   { desc = "Cycle through available layouts." } },
       { "n", "[x",            actions.prev_conflict,                  { desc = "In the merge-tool: jump to the previous conflict" } },
       { "n", "]x",            actions.next_conflict,                  { desc = "In the merge-tool: jump to the next conflict" } },
       { "n", "<backsapce>o",  actions.conflict_choose("ours"),        { desc = "Choose the OURS version of a conflict" } },
@@ -242,5 +242,6 @@ require("diffview").setup({
 
 -- global mappings
 
+vim.keymap.set('n', '<backspace>o', function() require("diffview").open() end, { noremap = true })
 vim.keymap.set('n', '<backspace>d', function() require("diffview").open("llm") end, { noremap = true })
 vim.keymap.set('n', '<backspace>c', ':tabclose<CR>', { noremap = true })

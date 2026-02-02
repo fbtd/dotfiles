@@ -22,6 +22,19 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set("n", "<space>h", vim.lsp.buf.document_highlight)
         vim.keymap.set("n", "<space>c", vim.lsp.buf.clear_references)
 
+        vim.keymap.set("n", "<space>u", function()
+            local is_underline = vim.diagnostic.config().underline
+            vim.diagnostic.config({
+                underline = not is_underline,
+            })
+        end)
+        vim.keymap.set("n", "<space>l", function()
+            local is_vl = vim.diagnostic.config().virtual_lines
+            vim.diagnostic.config({
+                virtual_lines = not is_vl,
+            })
+        end)
+
         vim.keymap.set("i", "<C-h>", function()
             require('cmp').close()
             vim.lsp.buf.signature_help()
@@ -42,4 +55,7 @@ vim.lsp.config('bashls', {
 vim.lsp.enable { 'bashls' }
 
 -- diagnostics
-vim.diagnostic.config({underline=false})
+vim.diagnostic.config({
+    underline = false,
+    severity_sort = true,
+})
