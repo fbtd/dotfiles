@@ -414,6 +414,17 @@ if which fzf &>/dev/null ; then
         xargs -r bash -c -i 'mm $1' 0
     }
 
+    function fdf() {
+        cmd=$( \
+        echo $EDITOR $(diff --recursive --brief --no-dereference "$@" | \
+        fzf | \
+        sed -e 's/^Files \(.*\) and \(.*\) differ$/-d "\1" "\2"/' \
+            -e 's/^Only in \(.*\): \(.*\)$/\1\/\2/' ) )
+
+        bash -ic "$cmd"
+    }
+
+
     # WIP
     fh=''
     function fh() {
@@ -423,7 +434,6 @@ if which fzf &>/dev/null ; then
         echo $fh >> $HISTFILE
         history -n
     }
-
 
     f1=''
     f2=''
