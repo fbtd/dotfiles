@@ -1,8 +1,9 @@
-model: groq/openai/gpt-oss-120b
+model: deepseek/deepseek-chat
 analytics-disable: true
 auto-lint: false
 gitignore: false
 alias:
+  - "d:deepseek/deepseek-chat"
   - "i:groq/llama-3.1-8b-instant"
   - "g:groq/openai/gpt-oss-120b"
   - "f:groq/openai/gpt-oss-20b"
