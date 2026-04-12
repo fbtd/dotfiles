@@ -23,8 +23,7 @@ vim.pack.add({
     -- 'https://github.com/lunacookies/vim-colors-xcode',
 
 
-    { src = 'https://github.com/nvim-treesitter/nvim-treesitter', version = "master" },
-    { src = 'https://github.com/nvim-treesitter/nvim-treesitter-textobjects', version = "master" },
-    { src = 'https://github.com/nvim-treesitter/nvim-treesitter-context', version = "master" },
-    -- { src = 'https://github.com/nvim-treesitter/nvim-treesitter', version = "main" },
+    { src = 'https://github.com/nvim-treesitter/nvim-treesitter', version = "main" },
+    { src = 'https://github.com/nvim-treesitter/nvim-treesitter-textobjects', version = "main" },
+    { src = 'https://github.com/nvim-treesitter/nvim-treesitter-context', version = "main" },
 })

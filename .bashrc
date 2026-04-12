@@ -129,6 +129,7 @@ alias gec='git_extract_conflicts.sh'
 alias gdd='git diff | delta'
 alias gdid='git diff --staged | delta'
 alias gai='git add --interactive'
+alias gau='git add --update'
 alias gr='git rebase --interactive HEAD~20'
 
 alias p="python3"
@@ -216,6 +217,7 @@ function s3 () {
     tmux resize-pane -t .2 -y 10
     tmux select-pane -t .0
 }
+alias s8='tmux resize-pane -t .1 -x 78'
 
 function svba () {
     if [ -n "$1" ]; then

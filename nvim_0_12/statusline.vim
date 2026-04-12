@@ -1,5 +1,5 @@
 set laststatus=2        " statusline ALWAYS visible
-set statusline=%f\ %#Todo#%m%*\ [%{strlen(&fenc)?(&fenc.','):''}%{&ff}]\ %{MarksHere()}\ %h%r%=c0x%B\ %c,%l/%L\ %{Hbar()}\ b%{bufnr(\"%\")}\ %p%%
+set statusline=%{expand('%:.')}\ %#Todo#%m%*\ [%{strlen(&fenc)?(&fenc.','):''}%{&ff}]\ %{MarksHere()}\ %h%r%=c0x%B\ %c,%l/%L\ %{Hbar()}\ b%{bufnr(\"%\")}\ %p%%
 
 " horizontal bar
 " above < visible > below (%)
