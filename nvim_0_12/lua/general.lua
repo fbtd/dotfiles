@@ -97,4 +97,3 @@ vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 vim.opt.expandtab = true  -- use spaces, not tabs
 vim.opt.autoindent = true -- automatic indentation
-

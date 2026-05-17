@@ -4,7 +4,7 @@ if not os.getenv('NO_TREESITTER') then
         "gitattributes", "gitcommit", "gitignore", "go", "goctl", "gpg", "graphql", "groovy",
         "html", "http", "java", "jq", "jsdoc", "json", "json5", "lua", "luap", "luau",
         "luadoc", "make", "markdown", "matlab", "mermaid", "nginx", "passwd",
-        "pony", "php", "powershell", "puppet", "python", "r", "regex", "robots", "ruby",
+        "pony", "php", "powershell", "puppet", "python", "r", "regex", "ruby",
         "rust", "scss", "sql", "ssh_config", "strace", "svelte", "tcl", "terraform", "tsv",
         "tmux", "toml", "typescript", "vim", "vimdoc", "vue", "wgsl", "yaml", "zig"
     }

@@ -12,17 +12,17 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
     pattern = 'man',
     group = ft_man,
     callback = function()
-        vim.keymap.set('n', 'q', ':q<CR>', {buffer = 0, noremap=false})
+        vim.keymap.set('n', 'q', ':q<CR>', { buffer = 0, noremap = false })
     end
 })
 
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = {"js", "javascript", "javascriptreact", "typescript", "jsx"},
-  callback = function()
-       vim.opt.tabstop = 2
-       vim.opt.shiftwidth = 2
-       vim.opt.softtabstop = 2
-      end,
+    pattern = { "js", "javascript", "javascriptreact", "typescript", "jsx" },
+    callback = function()
+        vim.opt.tabstop = 2
+        vim.opt.shiftwidth = 2
+        vim.opt.softtabstop = 2
+    end,
 })
 
 local ft = vim.api.nvim_create_augroup('init', { clear = false })
