@@ -31,7 +31,7 @@ vim.opt.termguicolors = true
 -- require("rose-pine").setup({
 --     variant = "dawn", -- auto, main, moon, or dawn
 --     dark_variant = "main", -- main, moon, or dawn
---     dim_inactive_windows = true,
+--     dim_inactive_windows = false,
 --     extend_background_behind_borders = false,
 --
 --     enable = {
@@ -42,8 +42,8 @@ vim.opt.termguicolors = true
 --
 --     styles = {
 --         bold = true,
---         italic = false,
---         transparency = false,
+--         italic = true,
+--         transparency = true,
 --     },
 --
 --     groups = {
@@ -167,8 +167,25 @@ require('nightfox').setup({
 vim.cmd("colorscheme dayfox")
 
 
+-- require("bluloco").setup({
+--   style = "dark",               -- "auto" | "dark" | "light"
+--   transparent = true,
+--   italics = true,
+--   terminal = vim.fn.has("gui_running") == 1, -- bluoco colors are enabled in gui terminals per default.
+--   guicursor = true,
+--   rainbow_headings = true,     -- if you want different colored headings for each heading level
+--   float_window = "transparent" -- "default" | "transparent"
+-- })
+--
+-- vim.opt.termguicolors = true
+-- vim.cmd('colorscheme bluloco')
 
 -- vim.cmd("colorscheme xcodelight")
+
+-- vim.g.ayucolor="light"
+-- vim.cmd("colorscheme ayu")
+
+
 
 vim.opt.background = "light"
 

@@ -21,6 +21,9 @@ vim.pack.add({
     -- 'https://github.com/rose-pine/neovim',
     'https://github.com/EdenEast/nightfox.nvim',
     -- 'https://github.com/lunacookies/vim-colors-xcode',
+    -- 'https://github.com/ayu-theme/ayu-vim',
+    -- 'https://github.com/rktjmp/lush.nvim',
+    -- 'https://github.com/uloco/bluloco.nvim',
 
 
     { src = 'https://github.com/nvim-treesitter/nvim-treesitter', version = "main" },
