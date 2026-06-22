@@ -18,6 +18,8 @@
 [merge]
     tool = nvim
 #   tool = vimdiff
+[merge "ours"]
+    driver = true
 [mergetool "nvim"]
     cmd = nvim -d $MERGED $LOCAL $REMOTE
 

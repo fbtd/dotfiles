@@ -321,10 +321,6 @@ if [ -f /usr/share/bash-completion/completions/man ]; then
     complete -o default -o nospace -F _man mm
 fi
 
-if [ -f ~/.bash_local ] ; then
-    . ~/.bash_local
-fi
-
 
 ## VIM STUFF ##
 export NVIM_FILE_LIST="$HOME/tmp/nvim_ipc/file_list.txt"
@@ -456,4 +452,11 @@ if which fzf &>/dev/null ; then
         [ -z "$f3" ] && return 1
         echo $f3
     }
+fi
+
+# remotes
+alias sshhurk='TERM=tmux-256color ssh hermes@vmi2751986.contaboserver.net'
+
+if [ -f ~/.bash_local ] ; then
+    . ~/.bash_local
 fi
