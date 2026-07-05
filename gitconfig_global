@@ -4,6 +4,9 @@
 [credential]
     username = fbtd
 
+[init]
+defaultBranch = master
+
 [core]
     editor = vi
     pager = less -XF
