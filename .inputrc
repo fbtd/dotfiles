@@ -1,1 +1,10 @@
 C-y: menu-complete
+
+set colored-stats on
+set colored-completion-prefix on
+set mark-symlinked-directories on
+
+$if Bash
+# ctrl + alt + e: expand variable
+"\e\C-e": shell-expand-line
+$endif
