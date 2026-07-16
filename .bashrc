@@ -121,6 +121,7 @@ alias pd4='pushd +4'
 alias pd5='pushd +5'
 alias dv='dirs -v'
 
+alias gcm="git commit -m"
 alias gl="git log --pretty='%C(yellow)%h %C(cyan)%ad %Creset%s%C(auto)%d' --date=relative"
 alias glg="gl --graph"
 alias gla='glg --all'
