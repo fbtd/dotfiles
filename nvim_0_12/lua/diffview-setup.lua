@@ -116,16 +116,16 @@ require("diffview").setup({
       { "n", "<backspace><backspace>",        actions.cycle_layout,                   { desc = "Cycle through available layouts." } },
       { "n", "[x",            actions.prev_conflict,                  { desc = "In the merge-tool: jump to the previous conflict" } },
       { "n", "]x",            actions.next_conflict,                  { desc = "In the merge-tool: jump to the next conflict" } },
-      { "n", "<backsapce>o",  actions.conflict_choose("ours"),        { desc = "Choose the OURS version of a conflict" } },
-      { "n", "<backsapce>t",  actions.conflict_choose("theirs"),      { desc = "Choose the THEIRS version of a conflict" } },
-      { "n", "<backsapce>b",  actions.conflict_choose("base"),        { desc = "Choose the BASE version of a conflict" } },
-      { "n", "<backsapce>a",  actions.conflict_choose("all"),         { desc = "Choose all the versions of a conflict" } },
-      { "n", "<backsapce>n",  actions.conflict_choose("none"),        { desc = "Delete the conflict region" } },
-      { "n", "<backsapce>O",  actions.conflict_choose_all("ours"),    { desc = "Choose the OURS version of a conflict for the whole file" } },
-      { "n", "<backsapce>T",  actions.conflict_choose_all("theirs"),  { desc = "Choose the THEIRS version of a conflict for the whole file" } },
-      { "n", "<backsapce>B",  actions.conflict_choose_all("base"),    { desc = "Choose the BASE version of a conflict for the whole file" } },
-      { "n", "<backsapce>A",  actions.conflict_choose_all("all"),     { desc = "Choose all the versions of a conflict for the whole file" } },
-      { "n", "<backsapce>N",  actions.conflict_choose_all("none"),    { desc = "Delete the conflict region for the whole file" } },
+      { "n", "<backspace>o",  actions.conflict_choose("ours"),        { desc = "Choose the OURS version of a conflict" } },
+      { "n", "<backspace>t",  actions.conflict_choose("theirs"),      { desc = "Choose the THEIRS version of a conflict" } },
+      { "n", "<backspace>b",  actions.conflict_choose("base"),        { desc = "Choose the BASE version of a conflict" } },
+      { "n", "<backspace>a",  actions.conflict_choose("all"),         { desc = "Choose all the versions of a conflict" } },
+      { "n", "<backspace>n",  actions.conflict_choose("none"),        { desc = "Delete the conflict region" } },
+      { "n", "<backspace>O",  actions.conflict_choose_all("ours"),    { desc = "Choose the OURS version of a conflict for the whole file" } },
+      { "n", "<backspace>T",  actions.conflict_choose_all("theirs"),  { desc = "Choose the THEIRS version of a conflict for the whole file" } },
+      { "n", "<backspace>B",  actions.conflict_choose_all("base"),    { desc = "Choose the BASE version of a conflict for the whole file" } },
+      { "n", "<backspace>A",  actions.conflict_choose_all("all"),     { desc = "Choose all the versions of a conflict for the whole file" } },
+      { "n", "<backspace>N",  actions.conflict_choose_all("none"),    { desc = "Delete the conflict region for the whole file" } },
     },
     diff1 = {
       -- Mappings in single window diff layouts
@@ -242,6 +242,7 @@ require("diffview").setup({
 
 -- global mappings
 
-vim.keymap.set('n', '<backspace>o', function() require("diffview").open() end, { noremap = true })
+vim.keymap.set('n', '<backspace>p', function() require("diffview").open() end, { noremap = true })
+vim.keymap.set('n', '<backspace>h', function() require("diffview").file_history() end, { noremap = true })
 vim.keymap.set('n', '<backspace>d', function() require("diffview").open("llm") end, { noremap = true })
 vim.keymap.set('n', '<backspace>c', ':tabclose<CR>', { noremap = true })
