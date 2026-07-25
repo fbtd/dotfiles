@@ -355,7 +355,7 @@ function vl {
 }
 
 # display
-export DISPLAY=:0
+# export DISPLAY=:0
 
 export T_RUN='./.run.sh'
 export T_MAKE='git status --short'
@@ -456,7 +456,7 @@ if which fzf &>/dev/null ; then
 fi
 
 # remotes
-alias sshhurk='TERM=tmux-256color ssh hermes@vmi2751986.contaboserver.net'
+alias sshhurk='TERM=tmux-256color ssh -Y hermes@vmi2751986.contaboserver.net'
 
 if [ -f ~/.bash_local ] ; then
     . ~/.bash_local

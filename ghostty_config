@@ -15,7 +15,7 @@ font-family =  CaskaydiaCove Nerd Font Mono
 font-feature = -liga, +calt, -dlig
 # ~-  => {} <= != *** //
 font-size = 16
-# minimum-contrast = 1.3
+minimum-contrast = 1.2
 # window-decoration = false
 window-show-tab-bar = never
 keybind = clear
