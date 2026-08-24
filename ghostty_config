@@ -1,7 +1,7 @@
 # theme = dayfox
 # theme = rose-pine-dawn
-# theme = Dayfox
-theme = Ayu Light
+theme = Dayfox
+# theme = Ayu Light
 # background-opacity = 0.93
 background-opacity = 0.88
 alpha-blending = native
@@ -14,11 +14,14 @@ window-decoration = false
 font-family =  CaskaydiaCove Nerd Font Mono
 font-feature = -liga, +calt, -dlig
 # ~-  => {} <= != *** //
-font-size = 16
+font-size = 12
 minimum-contrast = 1.2
 # window-decoration = false
 window-show-tab-bar = never
 keybind = clear
+# Omarchy Super+C/V injects these into terminals; Super never reaches Ghostty.
+keybind = control+insert=copy_to_clipboard
+keybind = shift+insert=paste_from_clipboard
 keybind = super+v=paste_from_clipboard
 keybind = performable:super+c=copy_to_clipboard
 keybind = performable:alt+s>n=new_tab

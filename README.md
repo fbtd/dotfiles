@@ -26,10 +26,18 @@ mkdir -p ~/.config
 ln -s ~/dotfiles/nvim/ ~/.config/nvim
 ```
 local config in `/nvim_init_local.lua`
-#### INSTALL vim-plug
+#### INSTALL vim-plug (deprecated)
 see https://github.com/junegunn/vim-plug<br/>
 `sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'`<br/>
+### hyperland (for omarchy)
+```bash
+ln -s ~/dotfiles/hypr/ ~/.config/hypr
+```
+### hrdr
+```bash
+ln -s ~/dotfiles/hrdr/ ~/.config/hrdr
+```
 ### lf
 https://github.com/gokcehan/lf<br/>  
 ```
