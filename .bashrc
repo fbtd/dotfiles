@@ -92,6 +92,7 @@ function cdh () {
 alias dfc='df -h | cowsay -bn'
 alias bat='batcat'
 alias tt='tmux -2 new-session -A -s main'
+alias tm='tmux -2 new-session -A -s'
 # alias ttt='tmuxinator start wrk'
 
 alias z='eza --icons -A'
@@ -461,3 +462,4 @@ alias sshhurk='TERM=tmux-256color ssh -Y hermes@vmi2751986.contaboserver.net'
 if [ -f ~/.bash_local ] ; then
     . ~/.bash_local
 fi
+. "$HOME/.cargo/env"

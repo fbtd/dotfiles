@@ -4,7 +4,7 @@ vim.opt.termguicolors = true
 --everforest--
 --------------
 -- vim.cmd.colorscheme('everforest')
--- vim.g.everforest_background = 'hard'
+-- vim.g.everforest_background = 'soft'
 -- vim.g.everforest_dim_inactive_windows = '0'
 -- vim.g.everforest_sign_column_background = 'grey'
 -- vim.g.everforest_ui_contrast = 'high'
@@ -112,59 +112,59 @@ vim.opt.termguicolors = true
 ------------
 --nightfox--
 ------------
-require('nightfox').setup({
-  options = {
-    -- Compiled file's destination location
-    compile_path = vim.fn.stdpath("cache") .. "/nightfox",
-    compile_file_suffix = "_compiled", -- Compiled file suffix
-    transparent = true,     -- Disable setting background
-    terminal_colors = false, -- Set terminal colors (vim.g.terminal_color_*) used in `:terminal`
-    dim_inactive = false,     -- Non focused panes set to alternative background
-    module_default = true,   -- Default enable value for modules
-    colorblind = {
-      enable = false,        -- Enable colorblind support
-      simulate_only = false, -- Only show simulated colorblind colors and not diff shifted
-      severity = {
-        protan = 0,          -- Severity [0,1] for protan (red)
-        deutan = 0,          -- Severity [0,1] for deutan (green)
-        tritan = 0,          -- Severity [0,1] for tritan (blue)
-      },
-    },
-    styles = {               -- Style to be applied to different syntax groups
-      comments = "italic",     -- Value is any valid attr-list value `:help attr-list`
-      conditionals = "NONE",
-      constants = "NONE",
-      functions = "NONE",
-      keywords = "NONE",
-      numbers = "NONE",
-      operators = "NONE",
-      strings = "NONE",
-      types = "NONE",
-      variables = "NONE",
-    },
-    inverse = {             -- Inverse highlight for different types
-      match_paren = true,
-      visual = false,
-      search = false,
-    },
-    modules = {             -- List of various plugins and additional options
-      -- ...
-    },
-  },
-  palettes = {
--- https://github.com/EdenEast/nightfox.nvim/blob/ba47d4b4c5ec308718641ba7402c143836f35aa9/lua/nightfox/palette/dayfox.lua#L10
-    dayfox = {
-        bg0 = "#F5F5F5",
-        bg1 = "#FFFFFF",
-        bg3 = "#F4F4F4",
-    }
-  },
-  specs = {},
-  groups = {},
-})
-
--- setup must be called before loading
-vim.cmd("colorscheme dayfox")
+-- require('nightfox').setup({
+--   options = {
+--     -- Compiled file's destination location
+--     compile_path = vim.fn.stdpath("cache") .. "/nightfox",
+--     compile_file_suffix = "_compiled", -- Compiled file suffix
+--     transparent = true,     -- Disable setting background
+--     terminal_colors = false, -- Set terminal colors (vim.g.terminal_color_*) used in `:terminal`
+--     dim_inactive = false,     -- Non focused panes set to alternative background
+--     module_default = true,   -- Default enable value for modules
+--     colorblind = {
+--       enable = false,        -- Enable colorblind support
+--       simulate_only = false, -- Only show simulated colorblind colors and not diff shifted
+--       severity = {
+--         protan = 0,          -- Severity [0,1] for protan (red)
+--         deutan = 0,          -- Severity [0,1] for deutan (green)
+--         tritan = 0,          -- Severity [0,1] for tritan (blue)
+--       },
+--     },
+--     styles = {               -- Style to be applied to different syntax groups
+--       comments = "italic",     -- Value is any valid attr-list value `:help attr-list`
+--       conditionals = "NONE",
+--       constants = "NONE",
+--       functions = "NONE",
+--       keywords = "NONE",
+--       numbers = "NONE",
+--       operators = "NONE",
+--       strings = "NONE",
+--       types = "NONE",
+--       variables = "NONE",
+--     },
+--     inverse = {             -- Inverse highlight for different types
+--       match_paren = true,
+--       visual = false,
+--       search = false,
+--     },
+--     modules = {             -- List of various plugins and additional options
+--       -- ...
+--     },
+--   },
+--   palettes = {
+-- -- https://github.com/EdenEast/nightfox.nvim/blob/ba47d4b4c5ec308718641ba7402c143836f35aa9/lua/nightfox/palette/dayfox.lua#L10
+--     dayfox = {
+--         bg0 = "#F5F5F5",
+--         bg1 = "#FFFFFF",
+--         bg3 = "#F4F4F4",
+--     }
+--   },
+--   specs = {},
+--   groups = {},
+-- })
+--
+-- -- setup must be called before loading
+-- vim.cmd("colorscheme dayfox")
 
 
 -- require("bluloco").setup({
@@ -185,8 +185,85 @@ vim.cmd("colorscheme dayfox")
 -- vim.g.ayucolor="light"
 -- vim.cmd("colorscheme ayu")
 
+--------------
+--catppuccin--
+--------------
+
+-- require("catppuccin").setup({
+--     flavour = "latte", -- latte, frappe, macchiato, mocha
+--     background = { -- :h background
+--         light = "latte",
+--         dark = "mocha",
+--     },
+--     transparent_background = false, -- disables setting the background color.
+--     float = {
+--         transparent = false, -- enable transparent floating windows
+--         solid = false, -- use solid styling for floating windows, see |winborder|
+--     },
+--     term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
+--     dim_inactive = {
+--         enabled = false, -- dims the background color of inactive window
+--         shade = "dark",
+--         percentage = 0.15, -- percentage of the shade to apply to the inactive window
+--     },
+--     no_italic = false, -- Force no italic
+--     no_bold = false, -- Force no bold
+--     no_underline = false, -- Force no underline
+--     styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
+--         comments = { "italic" }, -- Change the style of comments
+--         conditionals = { "italic" },
+--         loops = {},
+--         functions = {},
+--         keywords = {},
+--         strings = {},
+--         variables = {},
+--         numbers = {},
+--         booleans = {},
+--         properties = {},
+--         types = {},
+--         operators = {},
+--         -- miscs = {}, -- Uncomment to turn off hard-coded styles
+--     },
+--     lsp_styles = { -- Handles the style of specific lsp hl groups (see `:h lsp-highlight`).
+--         virtual_text = {
+--             errors = { "italic" },
+--             hints = { "italic" },
+--             warnings = { "italic" },
+--             information = { "italic" },
+--             ok = { "italic" },
+--         },
+--         underlines = {
+--             errors = { "underline" },
+--             hints = { "underline" },
+--             warnings = { "underline" },
+--             information = { "underline" },
+--             ok = { "underline" },
+--         },
+--         inlay_hints = {
+--             background = true,
+--         },
+--     },
+--     color_overrides = {},
+--     custom_highlights = {},
+--     auto_integrations = true,
+--     integrations = {
+--         cmp = true,
+--         gitsigns = true,
+--         nvimtree = true,
+--         notify = false,
+--         mini = {
+--             enabled = true,
+--             indentscope_color = "",
+--         },
+--         -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+--     },
+-- })
+--
+-- -- setup must be called before loading
+-- vim.cmd.colorscheme "catppuccin-nvim"
 
 
+vim.cmd.colorscheme "xcodelight"
 vim.opt.background = "light"
 
 -- vim.api.nvim_set_hl(0, "CursorLine", {bg = "#dfdfdf"})

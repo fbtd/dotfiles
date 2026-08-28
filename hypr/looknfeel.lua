@@ -64,3 +64,9 @@ hl.config({
 --     column_width = 0.97,
 --   },
 -- })
+
+hl.config({
+  binds = {
+    window_direction_monitor_fallback = false,
+  },
+})

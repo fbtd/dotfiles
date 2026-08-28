@@ -20,6 +20,19 @@
 -- hl.unbind("SUPER + SPACE")
 -- o.bind("SUPER + SPACE", "Omarchy menu", "omarchy-menu toggle root")
 
+hl.unbind("SUPER ALT + RETURN") --tmux
+hl.unbind("SUPER CTRL + RETURN") --herdr
+hl.unbind("SUPER + S") --scratchpad
+
+hl.unbind("SUPER + N")
+o.bind("SUPER + N", "next workspace", hl.dsp.focus({workspace = "+1"}))
+
+hl.unbind("SUPER + P")
+o.bind("SUPER + P", "prev workspace", hl.dsp.focus({workspace = "-1"}))
+
+hl.unbind("SUPER + TAB")
+o.bind("SUPER + TAB", "former workspace", hl.dsp.focus({workspace = "previous"}))
+
 -- Disable a default binding without replacing it.
 -- hl.unbind("SUPER + SHIFT + B")
 
