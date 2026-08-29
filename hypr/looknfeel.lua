@@ -8,8 +8,7 @@ hl.config({
     gaps_out = 0,
     border_size = 4,
 
-    -- Change to niri-like side-scrolling layout.
-    -- layout = "scrolling",
+    layout = "master",
   },
 })
 
@@ -33,6 +32,13 @@ hl.config({
 --   },
 -- })
 
+-- https://wiki.hypr.land/Configuring/Layouts/Master-Layout/
+hl.config({
+  master = {
+    mfact = 2 / 3,
+    new_status = "slave",
+  },
+})
 -- https://wiki.hypr.land/Configuring/Layouts/Dwindle-Layout/
 hl.config({
   dwindle = {

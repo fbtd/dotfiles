@@ -26,3 +26,14 @@ vim.lsp.config('lua_ls', {
 -- })
 
 vim.lsp.enable{'lua_ls'}
+
+local hypr = vim.api.nvim_create_augroup('local', { clear = false })
+vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
+  pattern = 'hypr/*.lua',
+  group = hypr,
+  callback = function()
+    vim.opt.tabstop = 2
+    vim.opt.shiftwidth = 2
+    vim.opt.softtabstop = 2
+  end
+})
