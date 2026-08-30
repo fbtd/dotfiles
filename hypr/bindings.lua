@@ -23,6 +23,7 @@
 hl.unbind("SUPER ALT + RETURN") --tmux
 hl.unbind("SUPER CTRL + RETURN") --herdr
 hl.unbind("SUPER + S") --scratchpad
+hl.unbind("SUPER + L") --layout switch
 
 hl.unbind("SUPER + N")
 o.bind("SUPER + N", "next workspace", hl.dsp.focus({workspace = "+1"}))
@@ -33,6 +34,15 @@ o.bind("SUPER + P", "prev workspace", hl.dsp.focus({workspace = "-1"}))
 hl.unbind("SUPER + TAB")
 o.bind("SUPER + TAB", "former workspace", hl.dsp.focus({workspace = "previous"}))
 
+o.bind("SUPER + M", "swap with master", hl.dsp.layout("swapwithmaster"))
+
+-- o.bind("SUPER + L", "screensaver", "omarchy-launch-screensaver force")
+o.bind("SUPER + L", "screensaver", "omarchy system lock")
+
+-- webapps
+o.bind("SUPER + A", "dsh webapp - localhost:3080", { webapp = "http://127.0.0.1:3080" })
+o.bind("SUPER + D", "learn - localhost:8000", { webapp = "http://127.0.0.1:8000" })
+
 -- Disable a default binding without replacing it.
 -- hl.unbind("SUPER + SHIFT + B")
 
@@ -40,3 +50,6 @@ o.bind("SUPER + TAB", "former workspace", hl.dsp.focus({workspace = "previous"})
 -- o.bind("SUPER + SHIFT + S", nil, "omarchy-capture-screenshot")
 -- o.bind("SUPER + H", nil, "voxtype record toggle")
 -- o.bind("SUPER + PERIOD", nil, "omarchy-shell shell toggle omarchy.emojis")
+
+-- Workspace switcher popup (number + name), same UI as omarchy-menu-select.
+o.bind("SUPER + S", "Workspace switcher", "omarchy-menu-workspaces")

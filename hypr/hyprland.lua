@@ -30,13 +30,21 @@ require("default.hypr.toggles")
 
 -- Pin workspaces to monitors. Ultrawide (DP-2 / Xiaomi) owns 1-9;
 -- portrait Eizo (DP-1) owns 10 and is the default for that screen.
-for workspace = 1, 9 do
+for workspace = 1, 8 do
   hl.workspace_rule({
     workspace = tostring(workspace),
     monitor = "DP-2",
     default = workspace == 1,
+    layout = "master",
   })
 end
+
+hl.workspace_rule({
+  workspace = "9",
+  monitor = "DP-2",
+  default = false,
+  layout = "scrolling",
+})
 
 hl.workspace_rule({
   workspace = "10",

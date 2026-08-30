@@ -64,12 +64,12 @@ hl.config({
 -- })
 
 -- https://wiki.hypr.land/Configuring/Layouts/Scrolling-Layout/
--- hl.config({
---   scrolling = {
---     -- See only one column per screen instead of two.
---     column_width = 0.97,
---   },
--- })
+hl.config({
+  scrolling = {
+    -- See only one column per screen instead of two.
+    column_width = 0.25,
+  },
+})
 
 hl.config({
   binds = {
