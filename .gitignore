@@ -3,3 +3,5 @@
 .vim/doc/
 .vim/plugin/
 .vim/plugged/
+**/*.bak.*
+herdr/
