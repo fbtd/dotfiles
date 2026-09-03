@@ -23,6 +23,7 @@
 hl.unbind("SUPER ALT + RETURN") --tmux
 hl.unbind("SUPER CTRL + RETURN") --herdr
 hl.unbind("SUPER + S") --scratchpad
+hl.unbind("SUPER + SHIFT + S") --map
 hl.unbind("SUPER + L") --layout switch
 
 hl.unbind("SUPER + N")
@@ -36,7 +37,7 @@ o.bind("SUPER + TAB", "former workspace", hl.dsp.focus({workspace = "previous"})
 
 o.bind("SUPER + M", "swap with master", hl.dsp.layout("swapwithmaster"))
 
--- o.bind("SUPER + L", "screensaver", "omarchy-launch-screensaver force")
+o.bind("SUPER + SHIFT + S", "screensaver", "omarchy-launch-screensaver force")
 o.bind("SUPER + L", "screensaver", "omarchy system lock")
 
 -- webapps
