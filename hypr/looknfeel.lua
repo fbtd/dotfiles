@@ -35,6 +35,7 @@ hl.config({
 -- https://wiki.hypr.land/Configuring/Layouts/Master-Layout/
 hl.config({
   master = {
+    orientation = "center",
     mfact = 2 / 3,
     new_status = "slave",
   },
