@@ -38,11 +38,16 @@ vim.keymap.set('n', '<leader><C-o>', '<C-i>') -- jump forward
 vim.keymap.set('n', 'Y', 'y$')
 vim.keymap.set('n', '<C-h>', ':sp<CR>')
 
--- [ & ] moves
+-- [ & ] tab moves
 vim.keymap.set('n', '[t', ':tabp<CR>')
 vim.keymap.set('n', ']t', ':tabn<CR>')
 vim.keymap.set('n', '[T', ':tabfirst<CR>')
 vim.keymap.set('n', ']T', ':tablast<CR>')
+vim.keymap.set('n', '¨¨', ':tabnext #<CR>')
+vim.keymap.set('n', '¨1', ':tabnext 1<CR>')
+vim.keymap.set('n', '¨2', ':tabnext 2<CR>')
+vim.keymap.set('n', '¨3', ':tabnext 3<CR>')
+vim.keymap.set('n', '¨4', ':tabnext 4<CR>')
 
 -- relative numbers
 vim.keymap.set('n', '<leader><S-tab>', ':set nonu nornu signcolumn=no<cr>')
