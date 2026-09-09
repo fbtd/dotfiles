@@ -35,7 +35,7 @@ hl.config({
 -- https://wiki.hypr.land/Configuring/Layouts/Master-Layout/
 hl.config({
   master = {
-    orientation = "center",
+    orientation = "left",
     mfact = 2 / 3,
     new_status = "slave",
   },
@@ -68,7 +68,7 @@ hl.config({
 hl.config({
   scrolling = {
     -- See only one column per screen instead of two.
-    column_width = 0.25,
+    column_width = 0.45,
   },
 })
 

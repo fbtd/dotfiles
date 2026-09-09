@@ -20,20 +20,35 @@
 -- hl.unbind("SUPER + SPACE")
 -- o.bind("SUPER + SPACE", "Omarchy menu", "omarchy-menu toggle root")
 
-hl.unbind("SUPER ALT + RETURN") --tmux
+hl.unbind("SUPER ALT + RETURN")  --tmux
 hl.unbind("SUPER CTRL + RETURN") --herdr
-hl.unbind("SUPER + S") --scratchpad
-hl.unbind("SUPER + SHIFT + S") --map
-hl.unbind("SUPER + L") --layout switch
+hl.unbind("SUPER + S")           --scratchpad
+hl.unbind("SUPER + SHIFT + S")   --map
+hl.unbind("SUPER + L")           --layout switch
+
+o.bind("SUPER + I", "layout master", function()
+  local ws = hl.get_active_workspace()
+  if ws then
+    hl.workspace_rule({ workspace = tostring(ws.id), layout = "master" })
+  end
+end)
+hl.unbind("SUPER + U") --layout switch
+o.bind("SUPER + U", "layout scrolling", function()
+    local ws = hl.get_active_workspace()
+  if ws then
+    hl.workspace_rule({ workspace = tostring(ws.id), layout = "scrolling" })
+  end
+end)
+
 
 hl.unbind("SUPER + N")
-o.bind("SUPER + N", "next workspace", hl.dsp.focus({workspace = "+1"}))
+o.bind("SUPER + N", "next workspace", hl.dsp.focus({ workspace = "+1" }))
 
 hl.unbind("SUPER + P")
-o.bind("SUPER + P", "prev workspace", hl.dsp.focus({workspace = "-1"}))
+o.bind("SUPER + P", "prev workspace", hl.dsp.focus({ workspace = "-1" }))
 
 hl.unbind("SUPER + TAB")
-o.bind("SUPER + TAB", "former workspace", hl.dsp.focus({workspace = "previous"}))
+o.bind("SUPER + TAB", "former workspace", hl.dsp.focus({ workspace = "previous" }))
 
 hl.unbind("SUPER + SHIFT + M")
 o.bind("SUPER + M", "swapwithmaster", hl.dsp.layout("swapwithmaster master"))
@@ -41,7 +56,7 @@ o.bind("SUPER + SHIFT + M", "focus master", hl.dsp.layout("focusmaster previous"
 hl.unbind("SUPER + COMMA")
 o.bind("SUPER + COMMA", "swapnext", hl.dsp.layout("swapnext noloop"))
 o.bind("SUPER + PERIOD", "swapprev", hl.dsp.layout("swapprev noloop"))
-o.bind("SUPER + MINUS", "orientationcycle", hl.dsp.layout("orientationcycle left center"))
+o.bind("SUPER + MINUS", "cyclenext", hl.dsp.layout("cyclenext"))
 
 o.bind("SUPER + SHIFT + S", "screensaver", "omarchy-launch-screensaver force")
 o.bind("SUPER + L", "screensaver", "omarchy system lock")
