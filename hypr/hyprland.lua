@@ -36,7 +36,7 @@ for workspace = 1, 8 do
     workspace = tostring(workspace),
     monitor = "DP-2",
     default = workspace == 1,
-    layout = "master",
+    layout = "scrolling",
   })
 end
 

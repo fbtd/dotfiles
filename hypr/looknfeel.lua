@@ -4,11 +4,11 @@
 hl.config({
   general = {
     -- No gaps between windows or borders.
-    gaps_in = 0,
-    gaps_out = 0,
+    gaps_in = 3,
+    gaps_out = 3,
     border_size = 4,
 
-    layout = "master",
+    layout = "scrolling",
   },
 })
 
@@ -68,7 +68,9 @@ hl.config({
 hl.config({
   scrolling = {
     -- See only one column per screen instead of two.
-    column_width = 0.45,
+    column_width = 0.495,
+    wrap_focus = false,
+    wrap_swapcol = false,
   },
 })
 
