@@ -34,6 +34,10 @@ see https://github.com/junegunn/vim-plug<br/>
 ```bash
 ln -s ~/dotfiles/hypr/ ~/.config/hypr
 ```
+### omarchy-menu-workspaces
+```bash
+ln -s ~/scripts/omarchy-menu-workspaces ~/.local/bin/omarchy-menu-workspaces
+```
 ### hrdr
 ```bash
 ln -s ~/dotfiles/hrdr/ ~/.config/hrdr
