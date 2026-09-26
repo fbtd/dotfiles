@@ -318,10 +318,32 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-if [ -f /usr/share/bash-completion/completions/man ]; then
-    . /usr/share/bash-completion/completions/man
-    complete -o default -o nospace -F _man mm
+# mm opens man pages in vim; reuse the man-page completer.
+# bash-completion >= 2.12 loads it lazily as _comp_cmd_man from
+# completions-core/man.bash (the old completions/man + _man path is gone).
+_mm_load_completion() {
+    declare -F _comp_cmd_man &>/dev/null && return 0
+    declare -F _comp_load &>/dev/null && _comp_load man && return 0
+    local f
+    for f in \
+        /usr/share/bash-completion/completions-core/man.bash \
+        /usr/share/bash-completion/completions/man
+    do
+        if [ -f "$f" ]; then
+            . "$f"
+            return 0
+        fi
+    done
+    return 1
+}
+if _mm_load_completion; then
+    if declare -F _comp_cmd_man &>/dev/null; then
+        complete -o default -o nospace -F _comp_cmd_man mm
+    elif declare -F _man &>/dev/null; then
+        complete -o default -o nospace -F _man mm
+    fi
 fi
+unset -f _mm_load_completion
 
 
 ## VIM STUFF ##
