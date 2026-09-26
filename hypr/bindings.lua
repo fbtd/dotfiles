@@ -54,6 +54,7 @@ hl.unbind("SUPER + PERIOD")
 hl.unbind("SUPER + COMMA")
 hl.unbind("SUPER + MINUS")
 hl.unbind("SUPER + SHIFT + M")
+hl.unbind("SUPER + CTRL + S")
 
 o.bind("SUPER + M", "widen all columns 0.66", hl.dsp.layout("colresize 0.66"))
 o.bind("SUPER + COMMA", "widen all columns 0.495", hl.dsp.layout("colresize 0.495"))
@@ -68,6 +69,7 @@ o.bind("SUPER + BACKSPACE", "consume or expel", hl.dsp.layout("consume_or_expel 
 
 o.bind("SUPER + SHIFT + S", "screensaver", "omarchy-launch-screensaver force")
 o.bind("SUPER + L", "screensaver", "omarchy system lock")
+o.bind("SUPER + CTRL + S", "screensaver", "omarchy system sleep lock && systemctl suspend")
 
 -- webapps
 o.bind("SUPER + A", "dsh webapp - localhost:3080", { webapp = "http://127.0.0.1:3080" })
