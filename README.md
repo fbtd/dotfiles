@@ -42,6 +42,12 @@ ln -s ~/scripts/omarchy-menu-workspaces ~/.local/bin/omarchy-menu-workspaces
 ```bash
 ln -s ~/dotfiles/hrdr/ ~/.config/hrdr
 ```
+### fish
+```bash
+ln -s ~/dotfiles/fish/dotfiles.fish ~/.config/fish/conf.d/dotfiles.fish
+mkdir -p ~/.config/fish/functions
+ln -s ~/dotfiles/fish/functions ~/.config/fish/functions
+```
 ### lf
 https://github.com/gokcehan/lf<br/>  
 ```
