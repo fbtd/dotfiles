@@ -128,6 +128,13 @@ abbr -a sshhurk 'TERM=tmux-256color ssh -Y hermes@vmi2751986.contaboserver.net'
 # Ctrl-R history, Ctrl-T files, Alt-C cd.
 command -q fzf; and fzf --fish | source
 
+# Bash ctrl-x ctrl-e. Same as alt-e: edit_command_buffer, so $EDITOR (nvim).
+# ctrl-x alone is still clipboard copy. Without this timeout fish waits forever
+# after ctrl-x to see if ctrl-e is coming. 500ms matches readline's keyseq-timeout.
+set -g fish_sequence_key_delay_ms 500
+bind ctrl-x,ctrl-e edit_command_buffer
+bind -M insert ctrl-x,ctrl-e edit_command_buffer
+
 # fd if present, else find. Shared by the fzf pickers.
 function _dotfiles_find
     if command -q fd

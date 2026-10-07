@@ -39,5 +39,5 @@ o.bind("SUPER + F1", "snippet: email", paste_snippet("fabiano.taddei@gmail.com")
 local sauce = "cite the official documentation page that defines it - not a blog, Stack Overflow answer, or aggregator - and if you cannot name that page, say so instead of guessing."
 o.bind("SUPER + F2", "snippet: sauce", paste_snippet("\nFor each function, module, symbol, or capability you mention, "  .. sauce))
 o.bind("SUPER + F3", "snippet: sauce", paste_snippet(sauce))
-
+o.bind("SUPER + F4", "snippet: u222693", paste_snippet("u222693"))
 
