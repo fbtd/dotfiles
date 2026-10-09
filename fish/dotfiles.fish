@@ -125,6 +125,10 @@ abbr -a s8 'tmux resize-pane -t .1 -x 78'
 # Kept verbatim for now. An ssh config Host would be the better home.
 abbr -a sshhurk 'TERM=tmux-256color ssh -Y hermes@vmi2751986.contaboserver.net'
 
+# Bash !!. Anywhere, so `sudo !!` works. Name goes last: a leading --
+# would swallow the flags. The function is autoloaded.
+abbr -a --position anywhere --function last_history_item !!
+
 # Ctrl-R history, Ctrl-T files, Alt-C cd.
 command -q fzf; and fzf --fish | source
 
