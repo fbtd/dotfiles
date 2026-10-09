@@ -96,7 +96,7 @@ abbr -a th3 'eza --tree --icons -L3 -A'
 abbr -a th4 'eza --tree --icons -L4 -A'
 abbr -a th5 'eza --tree --icons -L5 -A'
 
-abbr -a gcm 'git commit -m'
+abbr -a --set-cursor gcm 'git commit -m "%"'
 # Abbreviations do not expand inside each other, so glg/gla repeat gl.
 set -l _gl "git log --pretty='%C(yellow)%h %C(cyan)%ad %Creset%s%C(auto)%d' --date=relative"
 abbr -a gl "$_gl"
