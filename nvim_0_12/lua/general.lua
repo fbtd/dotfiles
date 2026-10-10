@@ -37,6 +37,7 @@ vim.keymap.set('n', '<C-S-o>', '[{')
 vim.keymap.set('n', '<leader><C-o>', '<C-i>') -- jump forward
 vim.keymap.set('n', 'Y', 'y$')
 vim.keymap.set('n', '<C-h>', ':sp<CR>')
+vim.keymap.set('n', 'ç', ':vertical resize 80<CR>')
 
 -- [ & ] tab moves
 vim.keymap.set('n', '[t', ':tabp<CR>')
