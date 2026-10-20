@@ -40,4 +40,5 @@ local sauce = "cite the official documentation page that defines it - not a blog
 o.bind("SUPER + F2", "snippet: sauce", paste_snippet("\nFor each function, module, symbol, or capability you mention, "  .. sauce))
 o.bind("SUPER + F3", "snippet: sauce", paste_snippet(sauce))
 o.bind("SUPER + F4", "snippet: u222693", paste_snippet("u222693"))
+o.bind("SUPER + F5", "snippet: implement next", paste_snippet("/implement next ticket"))
 

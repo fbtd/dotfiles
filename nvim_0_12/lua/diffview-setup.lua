@@ -242,6 +242,7 @@ require("diffview").setup({
 
 -- global mappings
 
+vim.keymap.set('n', '<backspace><backspace>', function() require("diffview").file_history(nil, {"%"}) end, { noremap = true })
 vim.keymap.set('n', '<backspace>p', function() require("diffview").open() end, { noremap = true })
 vim.keymap.set('n', '<backspace>h', function() require("diffview").file_history() end, { noremap = true })
 vim.keymap.set('n', '<backspace>d', function() require("diffview").open("llm") end, { noremap = true })
