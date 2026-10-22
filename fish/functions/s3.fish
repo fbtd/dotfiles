@@ -18,5 +18,7 @@ end
 
 function _hist_slug
     # /home/boris/proj -> home_boris_proj, the slug the bash HISTFILE used.
-    string replace -r '^_+' '' -- (string replace -a / _ -- $PWD)
+    # fish_history must be a variable name: letters, digits, and underscores.
+    # "/", ".", "-", and every other illegal character become "_".
+    string replace -r '^_+' '' -- (string replace -a -r '[^\p{L}\p{N}_]' _ -- $PWD)
 end
