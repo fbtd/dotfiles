@@ -127,6 +127,7 @@ abbr -a sshhurk 'TERM=tmux-256color ssh -Y hermes@vmi2751986.contaboserver.net'
 
 # Bash !!. Anywhere, so `sudo !!` works. Name goes last: a leading --
 # would swallow the flags. The function is autoloaded.
+function last_history_item; echo $history[1]; end
 abbr -a --position anywhere --function last_history_item !!
 
 # Ctrl-R history, Ctrl-T files, Alt-C cd.
