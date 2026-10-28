@@ -37,8 +37,9 @@ set --global fish_pager_color_selected_prefix
 
 # Prepend cargo, append scripts, same order as bash. --path writes PATH itself
 # so scripts stay after the system directories instead of jumping ahead of them.
-fish_add_path --path --move $HOME/.cargo/bin
+# fish_add_path --path --move $HOME/.cargo/bin
 fish_add_path --path --append --move $HOME/scripts
+fish_add_path --path --append --move $HOME/.local/bin
 
 # v is an abbreviation, so a program that execs EDITOR must get the real binary.
 set -gx EDITOR nvim
