@@ -18,6 +18,9 @@ maps *ctrl-y* to windows-style autocomplete <br/>
 ### TMUX
 `ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf`
 
+### ghostty
+`ln -s ~/dotfiles/ghostty_config ~/.config/ghostty/config`
+
 ### NEOVIM
 install latest neovim from https://github.com/neovim/neovim/blob/master/INSTALL.md#appimage-universal-linux-package<br/>
 or add neovim-ppa to apt repos `sudo add-apt-repository ppa:neovim-ppa/unstable -y`<br/>
