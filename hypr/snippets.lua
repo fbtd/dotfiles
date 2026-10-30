@@ -41,4 +41,4 @@ o.bind("SUPER + F2", "snippet: sauce", paste_snippet("\nFor each function, modul
 o.bind("SUPER + F3", "snippet: sauce", paste_snippet(sauce))
 o.bind("SUPER + F4", "snippet: u222693", paste_snippet("u222693"))
 o.bind("SUPER + F5", "snippet: implement next", paste_snippet("/implement next ticket"))
-
+o.bind("SUPER + F6", "snippet: abort grill", paste_snippet("abort the grilling session"))

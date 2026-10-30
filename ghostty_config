@@ -1,9 +1,10 @@
-# theme = dayfox
-# theme = rose-pine-dawn
-# theme = Dayfox
+theme = Catppuccin Latte
+# theme = Rose Pine Dawn
+# theme = Adwaita
+# theme = TokyoNight Day
 # theme = Everforest Light Med
-theme = Ayu Light
-# background-opacity = 0.93
+# theme = TokyoNight Night
+background-opacity = 0.95
 # background-opacity = 0.88
 alpha-blending = native
 background = #FFFFFF
@@ -13,13 +14,18 @@ selection-background = #f52798
 # gtk-adwaita = false
 window-decoration = false
 font-family =  FiraCode Nerd Font Mono
-font-feature = -liga, +calt, -dlig
+# font-family = JetBrainsMono Nerd Font
+font-style = Medium
+font-feature = +liga, +calt, +dlig
 # ~-  => {} <= != *** //
 font-size = 12
-minimum-contrast = 1.2
+minimum-contrast = 1.6
 # window-decoration = false
 window-show-tab-bar = never
+# window-padding-y = 15,0
 window-padding-balance = true
+confirm-close-surface = false
+
 keybind = clear
 # Omarchy Super+C/V injects these into terminals; Super never reaches Ghostty.
 keybind = control+insert=copy_to_clipboard
