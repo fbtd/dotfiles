@@ -155,3 +155,5 @@ function _fzf_stash --argument-names dest
     set -g $dest $picked
     echo $picked
 end
+
+test -f $HOME/.fish_local && source $HOME/.fish_local
