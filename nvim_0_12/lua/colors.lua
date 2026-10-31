@@ -132,7 +132,7 @@ require('nightfox').setup({
       },
     },
     styles = {               -- Style to be applied to different syntax groups
-      comments = "italic",     -- Value is any valid attr-list value `:help attr-list`
+      comments = "NONE",     -- Value is any valid attr-list value `:help attr-list`
       conditionals = "NONE",
       constants = "NONE",
       functions = "NONE",
@@ -304,6 +304,36 @@ vim.cmd("colorscheme dayfox")
 -- -- setup must be called before loading
 -- vim.cmd.colorscheme "catppuccin-nvim"
 
+
+
+---------------
+--SilkCricuit--
+---------------
+
+-- require("silkcircuit").setup({
+--   transparent = false,
+--   terminal_colors = true,
+--   dim_inactive = true,
+--   variant = "dawn",       -- "neon" | "vibrant" | "soft" | "glow" | "dawn"
+--
+--   styles = {
+--     comments = { italic = false },
+--     keywords = { bold = false },
+--     functions = { bold = false, italic = false },
+--     variables = {},
+--     strings = { italic = false },
+--   },
+--
+--   integrations = {
+--     telescope = true,     -- all 39 ship enabled; set one false to skip it
+--     neotree = true,
+--     notify = true,
+--     cmp = true,
+--     mini = true,
+--   },
+-- })
+--
+-- vim.cmd.colorscheme "silkcircuit"
 
 -- vim.cmd.colorscheme "xcodelight"
 vim.opt.background = "light"

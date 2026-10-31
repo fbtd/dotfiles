@@ -26,6 +26,7 @@ vim.pack.add({
     -- 'https://github.com/rktjmp/lush.nvim',
     -- 'https://github.com/uloco/bluloco.nvim',
 
+    'https://github.com/hyperb1iss/silkcircuit',
 
     { src = 'https://github.com/nvim-treesitter/nvim-treesitter', version = "main" },
     { src = 'https://github.com/nvim-treesitter/nvim-treesitter-textobjects', version = "main" },
